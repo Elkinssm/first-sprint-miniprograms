@@ -1,7 +1,7 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
-    "pages/index/index"
+    "pages/plan-detail/plan-detail"
   ],
   "window": {
     "defaultTitle": "My App"
