@@ -1,0 +1,24 @@
+<view>
+  <custom-header text="¿Cómo hago el cambio de SIM card para mi empresa?" iconUrl="/assets/svg/sim-card.svg">
+  </custom-header>
+  <view class="claro-gray-300-text header-text">
+    Para realizar el cambio de SIM card para tu empresa o negocio, ten en cuenta:
+  </view>
+  <claro-ol-list padding list="{{changeSimList}}"></claro-ol-list>
+  <view class="h4 claro-gray-text claro-small-padding-text">
+    Para trámites realizados en los Centros de Atención y Ventas CAV, se realizará una previa validación para determinar que se pueda hacer el trámite de manera exitosa.
+  </view>
+  <view class="claro-gray-300-text claro-small-padding-text">
+    Te invitamos a consultar aquí el Centro de Atención y Ventas más cercano:
+  </view>
+  <view class="footer">
+    <custom-button
+      text="Centros de Atención"
+      iconUrl="/assets/svg/home-pin.svg"
+      size="large"
+      onCustomButtonTap="handleCustomButtonTap"
+    >
+    </custom-button>
+  </view>
+</view>
+<web-view a:if="{{ showCentrosAtencionPage }}" src="https://www.claro.com.co/personas/soporte/cavs/" />

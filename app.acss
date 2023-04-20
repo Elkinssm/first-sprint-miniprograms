@@ -1,3 +1,53 @@
 page {
-  background: #f7f7f7;
+  background: #ffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 32rpx;
+}
+
+.h1 {
+  font-weight: bold;
+  font-size: 48rpx;
+}
+
+.h2 {
+  font-weight: bold;
+  font-size: 42rpx;
+}
+
+.h3 {
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+.h4 {
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.claro-gray-text {
+  color: #4e4e4e;
+}
+
+.claro-gray-300-text {
+  color: #9D9D9D;
+}
+
+.claro-red-text {
+  color: #DB493E;
+}
+
+.claro-black-text {
+  color: #000000;
+}
+
+.claro-red {
+  background: #DB493E;
+}
+
+.claro-padding-text {
+  padding: 54rpx 40rpx 0rpx 40rpx;
+}
+
+.claro-small-padding-text {
+  padding: 54rpx 20rpx 0rpx 20rpx;
 }

@@ -1,0 +1,9 @@
+.ol-list {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.text {
+  margin-left: 15rpx;
+}

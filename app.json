@@ -1,9 +1,14 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/contract-assignment/contract-assignment",
+    "pages/plan-management/plan-management",
+    "pages/transfer/transfer",
+    "pages/sim-management/sim-management"
   ],
   "window": {
-    "defaultTitle": "My App"
+    "defaultTitle": "Mi Claro",
+    "titleBarColor": "#4B4B4B"
   }
 }

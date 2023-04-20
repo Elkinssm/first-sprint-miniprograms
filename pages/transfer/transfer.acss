@@ -1,0 +1,11 @@
+.header-text {
+  padding: 0rpx 20rpx;
+}
+
+.external-link {
+  cursor: pointer;
+}
+
+.footer {
+  padding: 40rpx 30rpx 70rpx 30rpx;
+}

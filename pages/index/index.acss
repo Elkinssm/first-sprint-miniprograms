@@ -1,0 +1,12 @@
+.header-title {
+  padding: 60rpx 30rpx 20rpx 30rpx;
+}
+
+.title-description {
+  padding: 0rpx 30rpx 60rpx 30rpx;
+}
+
+.page-main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

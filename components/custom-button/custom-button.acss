@@ -1,0 +1,41 @@
+.button {
+  min-height: 100rpx;
+  padding: 0rpx 70rpx 0rpx 70rpx;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.small {
+  max-width: 160rpx;
+}
+
+.medium {
+  max-width: 320rpx;
+}
+
+.large {
+  max-width: 640rpx;
+}
+
+.button:hover {
+  background: #DB493E60;
+  transition: 0.3s ease;
+}
+
+.button:active {
+  background: #DB493E90;
+}
+
+.button-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.button-text {
+  margin: 0rpx 0rpx 0rpx 20rpx;
+  color: #ffff;
+}
