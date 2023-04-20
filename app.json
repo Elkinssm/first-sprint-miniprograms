@@ -1,9 +1,10 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
-    "pages/plan-detail/plan-detail"
+    "pages/plan-detail/plan-detail",
+    "pages/payment/payment"
   ],
   "window": {
-    "defaultTitle": "My App"
+    "defaultTitle": "SuperApp Claro"
   }
 }
