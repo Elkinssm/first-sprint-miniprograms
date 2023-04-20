@@ -1,6 +1,7 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
+    "pages/returnOfEquipment/returnOfEquipment",
     "pages/index/index"
   ],
   "window": {
