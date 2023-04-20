@@ -1,0 +1,32 @@
+<view class="acces-container">
+
+  <view class="tab-header">
+    <view class="tab-item">
+      <image class="company-icon" src="../../assets/icons/company.svg" />
+      Empresas
+    </view>
+  </view>
+
+  <view class="acquire-products">
+    <view class="products-card">
+      <image class="products-icon" src="../../assets/icons/productos.svg" />
+      <text class="product-text">Adquirir productos</text>
+    </view>
+    <image class="configure-products" src="../../assets/icons/settings.svg" />
+  </view>
+
+
+  <view class="acces-grid">
+
+    <block a:for="{{access}}" a:for-index="index" a:for-item="item">
+      <view class="item-image" onTap="onIconClick" data-index="{{index}}">
+        <image class="icon-images" src="{{item.iconUrl}}"></image>
+        <text class="text-access">{{item.text}}</text>
+      </view>
+    </block>
+
+
+
+
+
+  </view>

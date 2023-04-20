@@ -1,0 +1,149 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 15px;
+
+}
+
+.business-info {
+  margin-bottom: 10px;
+}
+
+.info-text {
+  color: var(--claro-color);
+  font-size: x-large;
+  font-weight: bolder;
+
+}
+
+.horizontal-divider {
+  height: 2px;
+  width: 100%;
+  background-color: #cccccc;
+
+}
+
+.image-scroll-view {
+  margin-top: 10px;
+  white-space: nowrap;
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+
+}
+
+.item-image {
+  margin-right: 20px;
+  height: 300px;
+}
+
+.image-scroll-view image {
+  width: 240px;
+  height: 300px;
+}
+
+
+
+.scroll-bar-horizontal {
+  margin-top: 10px;
+  height: 2px;
+  width: 100%;
+  background-color: #cccccc;
+
+}
+
+.access-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.access-text {
+  margin-top: 5px;
+  display: flex;
+  font-weight: bold;
+
+}
+
+.item {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.icon-access {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: 1px #cccccc solid;
+  width: 60px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.30);
+}
+
+.item-image-top {
+  margin-right: 20px;
+  height: 300px;
+}
+
+
+
+.text-icons {
+  display: flex;
+  text-align: center;
+  font-size: medium;
+}
+
+
+.item image {
+  width: 30px;
+  height: 30px;
+}
+
+.text-icons {
+  margin-top: 10px;
+  font-size: small;
+}
+
+.access-image {
+  width: 30px;
+  height: 30px;
+}
+
+.item-image-bottom {
+  margin-right: 20px;
+  height: 300px;
+  margin-bottom: 0;
+}
+
+.image-scroll-view-bottom {
+  margin-top: 10px;
+  white-space: nowrap;
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+ 
+
+}
+
+.image-scroll-view-bottom image {
+  width: 300px;
+  height: 240px;
+}
+
+.item {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}

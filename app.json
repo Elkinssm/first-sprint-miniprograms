@@ -1,9 +1,14 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
-    "pages/index/index"
+    "pages/home/home",
+    "pages/index/index",
+    "pages/zona-publica/zona-publica",
+    "pages/test/test"
   ],
   "window": {
-    "defaultTitle": "My App"
+    "defaultTitle": "SuperApp Claro",
+    "titleBarColor": "#121D24",
+    "gestureBack": "YES"
   }
 }
