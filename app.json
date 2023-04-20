@@ -4,8 +4,8 @@
     "pages/home/home",
     "pages/index/index",
     "pages/zona-publica/zona-publica",
-    "pages/test/test"
-    "pages/returnOfEquipment/returnOfEquipment",
+    "pages/test/test",
+    "pages/returnOfEquipment/returnOfEquipment"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",
