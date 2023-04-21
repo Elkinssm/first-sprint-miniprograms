@@ -1,0 +1,29 @@
+<view>
+  <custom-header text="¿Cómo puedo realizar un traslado?" iconUrl="/assets/icons/move.svg">
+  </custom-header>
+  <view class="claro-gray-300-text header-text">
+    Si vas a cambiarte de sede, edificio u oficina y necesitas trasladar tus servicios, estos son los pasos que debes seguir:
+  </view>
+  <claro-ol-list padding list="{{[{text: 'Debe solicitarlo directamente el representante legal o tercero autorizado. A través de nuestras líneas de atención al cliente o al correo electrónico'}]}}">
+  </claro-ol-list>
+  <view class="h4 claro-black-text claro-padding-text external-link" onTap="goToMailApp">
+    Contactopyme.co@claro.com.co
+  </view>
+  <block a:for="{{ transferList }}" a:key="*item">
+    <claro-ol-list padding isCustomNumber customNumber={{index + 2}} list="{{[item]}}">
+    </claro-ol-list>
+  </block>
+  <view class="h4 claro-gray-text claro-small-padding-text">
+    Encuentra el punto más cercano en:
+  </view>
+  <view class="footer">
+    <custom-button
+      text="Centros de Atención"
+      iconUrl="/assets/icons/home-pin.svg"
+      size="large"
+      onCustomButtonTap="handleCustomButtonTap"
+    >
+    </custom-button>
+  </view>
+</view>
+<web-view a:if="{{ showCentrosAtencionPage }}" src="https://www.claro.com.co/personas/soporte/cavs/" />
