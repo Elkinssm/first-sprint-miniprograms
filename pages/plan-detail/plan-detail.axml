@@ -1,5 +1,5 @@
 <!--Navigate to back-->
-<view class="back-container bg-dark">
+<!--<view class="back-container bg-dark">
   <image
     class="image"
     mode="widthFix"
@@ -10,8 +10,7 @@
   <view class="text-container">
     <text class="text">Detalle de tu plan</text>
   </view>
-</view>
-
+</view>-->
 
 <!--Contenedor de page-->
 <view class="container pb-3">
@@ -25,7 +24,7 @@
         alt="Descripción de la imagen"
       />
     </view>
-    
+
     <view class="col-6" style="font-weight: bold">
       Número de línea
     </view>
@@ -43,12 +42,12 @@
 
   <view class="row pt-2 pl-4 pb-1">
     <view class="col">
-      <text style="font-weight: bold">Inhouse Claro M ULTRA MxSm</text>
+      <text style="font-weight: bold">{{planName}}</text>
     </view>
   </view>
 
 
-  <view class="divider"> </view>
+  <view class="divider"></view>
 
   <!--contenido plan-->
 
@@ -60,7 +59,7 @@
         <view class="text-bold pl-5 pt-2">Datos</view>
       </view>
     </view>
-    <view class="row pl-5 pb-3">
+    <view class="row pl-5 pb-2">
       <view class="col-3">
         <image
           class="image"
@@ -72,7 +71,7 @@
       </view>
       <view class="col-8 pt-5">
         <view class="text-bold" style="color: red; font-size: 20px;">
-          20.00 GB
+          {{planText}}
         </view>
         <view class="text-muted" style="font-size: 11px; color: gray">
           Navegación incluida
@@ -81,16 +80,18 @@
           Aunque hayas consumido los datos de tu plan tienes acceso a:
         </view>
 
-        <view class="row pl-1">
-          <view class="col">
-            icon
-          </view>
-          <view class="col">
-            icon
-          </view>
-          <view class="col">
-            icon
-          </view>
+        <view class="row pt-2">
+          <block a:for="{{ socialNetworks }}" a:for-item="network">
+            <view class="col-2 p-1">
+              <image
+                class="image"
+                mode="widthFix"
+                style="width:30px; height: 30px;"
+                src="{{network}}"
+                alt="Descripción de la imagen"
+              />
+            </view>
+          </block>
         </view>
 
       </view>
@@ -114,7 +115,7 @@
       </view>
       <view class="col-8 pt-5">
         <view class="text-bold" style="color: red; font-size: 20px;">
-          Ilimitado
+          {{voiceText}}
         </view>
         <view class="text-muted" style="font-size: 11px; color: gray">
           Segundos incluidos a móvil o fijo nacional
@@ -138,7 +139,7 @@
       </view>
       <view class="col-8 pt-5">
         <view class="text-bold" style="color: red; font-size: 20px;">
-          Ilimitado
+          {{smsText}}
         </view>
         <view class="text-muted" style="font-size: 11px; color: gray">
           Mensajes de texto incluidos
@@ -153,21 +154,24 @@
     <view class="row pt-2">
 
       <view class="col">
-        <text class="pl-2 text-bold" style="color:red; font-size:20px">Descripción del plan</text>
+        <text onTap="toggleCollapse" class="pl-2 text-bold" style="color:red; font-size:20px">
+          Descripción del plan
+        </text>
       </view>
 
       <view class="pr-1">
         <image
-        class="image"
-        mode="widthFix"
-        style="width:40px; height: 40px;"
-        src= {{iconDefault}}
-        alt="Descripción de la imagen"
-        onTap="toggleCollapse"/>
+          class="image"
+          mode="widthFix"
+          style="width:40px; height: 40px;"
+          src={{iconDefault}}
+          alt="Descripción de la imagen"
+          onTap="toggleCollapse"
+        />
       </view>
 
       <view a:if="{{showContent}}" class="planDescription">
-        <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</text>
+        <text>{{planDescription}}</text>
 
       </view>
 
@@ -177,13 +181,13 @@
 
       <button class="btnDescription" onTap="onPayment">
         <image
-        class="image"
-        mode="widthFix"
-        style="width:30px; height: 33px;"
-        src="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/event_note/default/48px.svg"
-        alt="Descripción de la imagen"
+          class="image"
+          mode="widthFix"
+          style="width:30px; height: 33px;"
+          src="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/event_note/default/48px.svg"
+          alt="Descripción de la imagen"
         />
-      Compra de Paquetes y Recargas
+        Compra de Paquetes y Recargas
       </button>
 
     </view>
