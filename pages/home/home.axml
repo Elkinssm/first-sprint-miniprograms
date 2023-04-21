@@ -14,7 +14,7 @@
     <view class="image-scroll">
       <scroll-view class="image-scroll-view" scroll-x={{true}}>
         <block a:for="{{imagesList}}" a:for-index="index" a:for-item="item">
-          <view class="item-image-top" onTap="onIconClick" data-index="{{index}}">
+          <view class="item-image-top" onTap="onImageTopClick" data-index="{{index}}">
             <image class="icon" src="{{item.imageSrc}}"></image>
           </view>
         </block>
@@ -51,7 +51,7 @@
     <view class="image-scroll-bottom">
       <scroll-view class="image-scroll-view-bottom" scroll-x={{true}}>
         <block a:for="{{imagesBottom}}" a:for-index="index" a:for-item="item">
-          <view class="item-image-bottom" onTap="onIconClick" data-index="{{index}}">
+          <view class="item-image-bottom" onTap="onImageBottomClick" data-index="{{index}}">
             <image class="image-bottom" src="{{item.imageSrc}}"></image>
           </view>
         </block>

@@ -39,12 +39,12 @@ Page({
       {
         iconUrl: "/assets/icons/start.svg",
         text: "Guía y novedades",
-        pageUrl: "/pages/test/test"
+        pageUrl: "/pages/guia-novedades/guia-novedades"
       },
       {
         iconUrl: "/assets/icons/devices.svg",
         text: "Devolución de equipos",
-        pageUrl: "/pages/test/test"
+        pageUrl: "/pages/returnOfEquipment/returnOfEquipment"
       }
     ]
   },
