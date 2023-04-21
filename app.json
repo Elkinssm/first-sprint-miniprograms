@@ -4,7 +4,8 @@
     "pages/home/home",
     "pages/index/index",
     "pages/zona-publica/zona-publica",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/onlinePayments/onlinePayments"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",
