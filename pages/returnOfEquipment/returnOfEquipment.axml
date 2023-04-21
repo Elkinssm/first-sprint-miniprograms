@@ -1,1 +1,3 @@
-<web-view src="https://forms.office.com/Pages/ResponsePage.aspx?id=uCK7RixM_0CDYHtjNIISeUEuAggo7mFEp-_9Oh_RVb9UQjVIMkNLQVhaQjFDWE5TTFgzTFlOSFFHRS4u"></web-view>
+<view>
+  <web-view src="{{webViewUrl}}"></web-view>
+</view>
