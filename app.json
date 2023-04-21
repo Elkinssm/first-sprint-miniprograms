@@ -5,6 +5,7 @@
     "pages/index/index",
     "pages/zona-publica/zona-publica",
     "pages/test/test",
+    "pages/login-screen/login-screen"
     "pages/onlinePayments/onlinePayments"
   ],
   "window": {
