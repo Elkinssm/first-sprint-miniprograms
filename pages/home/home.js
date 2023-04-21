@@ -3,8 +3,8 @@ Page({
     imagesList: [
       {
         imageSrc: "/assets/repetir.png",
-        text: ""
-        // pageUrl: "/pages/test/test"
+        text: "",
+        pageUrl: "/pages/test/test"
       },
       {
         imageSrc: "/assets/repetir.png",
@@ -20,18 +20,18 @@ Page({
     imagesBottom: [
       {
         imageSrc: "/assets/repetir2.png",
-        text: ""
-        // pageUrl: "/pages/cesion-de-contrato/cesion-de-contrato"
+        text: "",
+        pageUrl: "/pages/test/test"
       },
       {
         imageSrc: "/assets/repetir2.png",
         text: ""
-        // pageUrl: "/pages/cambio-de-plan/cambio-de-plan"
+        // pageUrl: "/pages/test/test"
       },
       {
         imageSrc: "/assets/repetir2.png",
         text: ""
-        // pageUrl: "/pages/translados/translados"
+        // pageUrl: "/pages/test/test"
       }
     ],
     access: [
@@ -61,6 +61,16 @@ Page({
   onIconClick(e) {
     const index = e.target.dataset.index;
     const pageUrl = this.data.access[index].pageUrl;
+    my.navigateTo({ url: pageUrl });
+  },
+  onImageTopClick(e) {
+    const index = e.target.dataset.index;
+    const pageUrl = this.data.imagesList[index].pageUrl;
+    my.navigateTo({ url: pageUrl });
+  },
+  onImageBottomClick(e) {
+    const index = e.target.dataset.index;
+    const pageUrl = this.data.imagesBottom[index].pageUrl;
     my.navigateTo({ url: pageUrl });
   }
 });
