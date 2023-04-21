@@ -34,7 +34,7 @@ Page({
       {
         iconUrl: "/assets/icons/chat-empresarial.svg",
         text: "Chat empresarial",
-        pageUrl: "/pages/test/test"
+        pageUrl: "/pages/chatService/chatService"
       },
       {
         iconUrl: "/assets/icons/start.svg",
