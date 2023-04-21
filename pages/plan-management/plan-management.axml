@@ -1,5 +1,5 @@
 <view>
-  <custom-header text="¿Cómo puedo realizar un cambio de plan?" iconUrl="/assets/svg/change-plan.svg">
+  <custom-header text="¿Cómo puedo realizar un cambio de plan?" iconUrl="/assets/icons/change-plan.svg">
   </custom-header>
   <view class="h4 claro-gray-300-text header-text">
     Para realizar cambio de plan de las líneas de tu Empresa o Negocio, lo podrás hacer a través de los siguientes medios:
@@ -41,7 +41,7 @@
   <view class="footer">
     <custom-button
       text="Centros de Atención"
-      iconUrl="/assets/svg/home-pin.svg"
+      iconUrl="/assets/icons/home-pin.svg"
       size="large"
       onCustomButtonTap="handleCustomButtonTap"
     >

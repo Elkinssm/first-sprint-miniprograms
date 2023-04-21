@@ -1,5 +1,5 @@
 <view>
-  <custom-header text="¿Cómo puedo realizar un traslado?" iconUrl="/assets/svg/move.svg">
+  <custom-header text="¿Cómo puedo realizar un traslado?" iconUrl="/assets/icons/move.svg">
   </custom-header>
   <view class="claro-gray-300-text header-text">
     Si vas a cambiarte de sede, edificio u oficina y necesitas trasladar tus servicios, estos son los pasos que debes seguir:
@@ -19,7 +19,7 @@
   <view class="footer">
     <custom-button
       text="Centros de Atención"
-      iconUrl="/assets/svg/home-pin.svg"
+      iconUrl="/assets/icons/home-pin.svg"
       size="large"
       onCustomButtonTap="handleCustomButtonTap"
     >

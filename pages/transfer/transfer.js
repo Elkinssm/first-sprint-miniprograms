@@ -25,6 +25,9 @@ Page({
       }
     ]
   },
+  /**
+   * ToDo: Question that! A method to open the default email app.
+   */
   goToMailApp() {
     my.navigateToMiniProgram({
       appId: "20000067",

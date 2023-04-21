@@ -1,5 +1,5 @@
 <view>
-  <custom-header text="¿Cómo hago el cambio de SIM card para mi empresa?" iconUrl="/assets/svg/sim-card.svg">
+  <custom-header text="¿Cómo hago el cambio de SIM card para mi empresa?" iconUrl="/assets/icons/sim-card.svg">
   </custom-header>
   <view class="claro-gray-300-text header-text">
     Para realizar el cambio de SIM card para tu empresa o negocio, ten en cuenta:
@@ -14,7 +14,7 @@
   <view class="footer">
     <custom-button
       text="Centros de Atención"
-      iconUrl="/assets/svg/home-pin.svg"
+      iconUrl="/assets/icons/home-pin.svg"
       size="large"
       onCustomButtonTap="handleCustomButtonTap"
     >

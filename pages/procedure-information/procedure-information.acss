@@ -1,3 +1,12 @@
+.h4 {
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.claro-gray-text {
+  color: #4e4e4e;
+}
+
 .header-title {
   padding: 60rpx 30rpx 20rpx 30rpx;
 }

@@ -1,3 +1,12 @@
+.h4 {
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.claro-red {
+  background: #db493e;
+}
+
 .button {
   min-height: 100rpx;
   padding: 0rpx 70rpx 0rpx 70rpx;
@@ -22,12 +31,12 @@
 }
 
 .button:hover {
-  background: #DB493E60;
+  background: #db493e60;
   transition: 0.3s ease;
 }
 
 .button:active {
-  background: #DB493E90;
+  background: #db493e90;
 }
 
 .button-icon {

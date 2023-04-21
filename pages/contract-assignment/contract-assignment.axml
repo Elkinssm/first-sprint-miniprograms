@@ -9,7 +9,7 @@
   </view>
   <view class="tab-content">
     <block a:if="{{tabIndex === 0}}">
-      <custom-header iconUrl="/assets/svg/request-page.svg" text="¿Cómo puedo realizar la cesión de contrato?">
+      <custom-header iconUrl="/assets/icons/request-page.svg" text="¿Cómo puedo realizar la cesión de contrato?">
       </custom-header>
       <view class="claro-gray-300-text header-text">
         Si eres atendido por un asesor de servicio por favor comunícate con él para realizar el trámite. Para todos los demás casos debes tener en cuenta lo siguiente:
@@ -45,7 +45,7 @@
       <view class="footer-tab-0">
         <custom-button
           text="Centros de Atención"
-          iconUrl="/assets/svg/home-pin.svg"
+          iconUrl="/assets/icons/home-pin.svg"
           size="large"
           onCustomButtonTap="handleCustomButtonTap"
         >
@@ -53,7 +53,7 @@
       </view>
     </block>
     <block a:elif="{{tabIndex === 1}}">
-      <custom-header iconUrl="/assets/svg/request-page.svg" text="¿Cómo puedo realizar la cesión de contrato?">
+      <custom-header iconUrl="/assets/icons/request-page.svg" text="¿Cómo puedo realizar la cesión de contrato?">
       </custom-header>
       <view class="claro-gray-300-text header-text">
         Si eres atendido por un consultor Comercial, por favor comunícate con él para realizar el trámite. Para todos los demás casos debes tener en cuenta lo siguiente:

@@ -1,3 +1,7 @@
+/**
+ * ToDo: This page will be must the home page for the HU_05_10_012.
+ * How to implement that?
+ */
 Page({
   data: {
     nodes: [
@@ -29,22 +33,22 @@ Page({
     proceduresMenu: [
       {
         id: "contract",
-        iconUrl: "/assets/svg/request-page.svg",
+        iconUrl: "/assets/icons/request-page.svg",
         text: "Cesión de contrato"
       },
       {
         id: "plan",
-        iconUrl: "/assets/svg/change-plan.svg",
+        iconUrl: "/assets/icons/change-plan.svg",
         text: "Cambio de plan"
       },
       {
         id: "transfer",
-        iconUrl: "/assets/svg/move.svg",
+        iconUrl: "/assets/icons/move.svg",
         text: "Traslados"
       },
       {
         id: "sim",
-        iconUrl: "/assets/svg/sim-card.svg",
+        iconUrl: "/assets/icons/sim-card.svg",
         text: "Cambio de SIM card"
       }
     ]

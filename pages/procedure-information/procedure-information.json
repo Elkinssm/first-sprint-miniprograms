@@ -3,5 +3,6 @@
     "card-button": "/components/card-button/card-button",
     "custom-button": "/components/custom-button/custom-button",
     "custom-header": "/components/custom-header/custom-header"
-  }
+  },
+  "defaultTitle": "Información de trámites"
 }
