@@ -1,4 +1,12 @@
 
 <view>
-  Template Hu
+  <form>
+    <view class="">
+    <view class="">
+      <button onTap="serviceChat" size="default" >Chat</button>
+    </view>
+  </view>
+  <web-view a:if={{sChat}} src={{urlCaht}} onMessage="google">
+  </web-view>
+  </form>
 </view>
