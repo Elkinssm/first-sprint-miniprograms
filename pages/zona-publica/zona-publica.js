@@ -29,7 +29,7 @@ Page({
       {
         iconUrl: "/assets/icons/tramites.svg",
         text: "Información de tramites",
-        pageUrl: "/pages/test/test"
+        pageUrl: "/pages/procedure-information/procedure-information"
       },
       {
         iconUrl: "/assets/icons/chat-empresarial.svg",

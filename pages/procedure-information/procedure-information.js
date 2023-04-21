@@ -1,7 +1,3 @@
-/**
- * ToDo: This page will be must the home page for the HU_05_10_012.
- * How to implement that?
- */
 Page({
   data: {
     nodes: [
