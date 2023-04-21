@@ -44,7 +44,7 @@ Page({
       {
         iconUrl: "/assets/icons/devices.svg",
         text: "Devolución de equipos",
-        pageUrl: "/pages/test/test"
+        pageUrl: "/pages/returnOfEquipment/returnOfEquipment"
       }
     ]
   },
