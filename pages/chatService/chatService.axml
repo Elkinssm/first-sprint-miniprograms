@@ -1,0 +1,3 @@
+<view>
+  <web-view src={{urlCaht}} ></web-view>
+</view>
