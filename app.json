@@ -1,10 +1,19 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
-    "pages/procedure-information/procedure-information",
-    "pages/contract-assignment/contract-assignment",
-    "pages/plan-management/plan-management",
-    "pages/transfer/transfer",
-    "pages/sim-management/sim-management"
-  ]
+    "pages/home/home",
+    "pages/index/index",
+    "pages/zona-publica/zona-publica",
+    "pages/test/test",
+    "pages/login-screen/login-screen",
+    "pages/onlinePayments/onlinePayments",
+    "pages/chatService/chatService",
+    "pages/returnOfEquipment/returnOfEquipment",
+    "pages/guia-novedades/guia-novedades"
+  ],
+  "window": {
+    "defaultTitle": "SuperApp Claro",
+    "titleBarColor": "#121D24",
+    "gestureBack": "YES"
+  }
 }
