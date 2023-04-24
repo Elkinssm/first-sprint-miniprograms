@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  height: 100vh;
+}
+
+.container-btns {
+  width: 90%;
+  height: 20%;
+  padding: 20rpx;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 25rpx;
+}
+
+.container-web-view {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20rpx 20rpx 20rpx;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.container-web-view:active {
+  transform: scale(1.1);
+}
+
+.image-clic {
+  height: 512rpx;
+  width: 512rpx;
+}
+
+/* Estilos */
+
+.style-text {
+  color: #9d9d9d;
+}
+
+.size {
+  font-weight: bold;
+  font-size: 32rpx;
+}

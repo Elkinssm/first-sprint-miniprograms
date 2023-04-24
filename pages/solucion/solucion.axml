@@ -1,0 +1,65 @@
+<view class="container">
+
+  <view class="section-container">
+
+    <scroll-view class="scroll-view-h" scroll-x="{{true}}" scroll-into-view="{{positionData}}" scroll-with-animation="{{scrollAnimation}}">
+
+      <block a:for="{{ dataSolutions }}" a:key="*this" a:for-item="solution">
+        <view class="section-scroll" id="{{solution.idVideo}}">
+          
+            <video
+            style="width: 90%; height: 40%; border-radius: 10rpx;"
+            id="myVideo"
+            src="{{video.src}}"
+            controls="{{video.showAllControls}}"
+            loop="{{video.isLooping}}"
+            muted="{{video.muteWhenPlaying}}"
+            show-fullscreen-btn="{{video.showFullScreenButton}}"
+            show-play-btn="{{video.showPlayButton}}"
+            show-center-play-btn="{{video.showCenterButton}}"
+            object-fit="{{video.objectFit}}"
+            autoplay="{{video.autoPlay}}"
+            direction="{{video.directionWhenFullScreen}}"
+            initial-time="{{video.initTime}}"
+            mobilenet-hint-type="{{video.mobilenetHintType}}"
+            onPlay="onPlay"
+            onPause="onPause"
+            onEnded="onEnded"
+          />
+
+          <view class="item-section">
+
+            <scroll-view class="scroll-view-v" scroll-y="{{true}}">
+              <view class="section-description">
+                <view class="title">{{solution.titulo}}</view>
+                <view class="description">{{solution.texto}}</view>
+                <hiperlink-button a:for="{{ solution.link }}" a:for-item="link" url="{{link.valor}}" linkIndex="{{index}}">
+                  {{link.nombre}}
+                </hiperlink-button>
+              </view>
+            </scroll-view>
+
+          </view>
+
+        </view>
+      </block>
+
+    </scroll-view>
+
+  </view>
+
+  <view class="btns-container">
+    <view class="btns-central">
+      <generic-button onTap="onRedirect" stateImg="{{false}}">Adquirir Servicio</generic-button>
+    </view>
+    <view class="btns-movement">
+      <button class="btn-before {{ stateBefore == true ? 'btn-active' : 'btn-desactive'}}" onTap="onBefore" >
+        <image mode="scaleToFill" src="/assets/icons/navigateBefore.svg" />
+      </button>
+      <button class="btn-next {{ stateNext == true ? 'btn-active' : 'btn-desactive'}}" onTap="onNext">
+        <image mode="scaleToFill" src="/assets/icons/navigateNext.svg" />
+      </button>
+    </view>
+  </view>
+
+</view>
