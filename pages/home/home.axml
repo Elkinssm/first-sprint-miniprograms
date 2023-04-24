@@ -46,6 +46,11 @@
     </view>
 
   </view>
+  <view class="access-bar-two">
+    <text class="access-text-two">
+      Disfruta más de más beneficios
+
+    </text>
 
   <view class="container-image-scroll-bottom">
     <view class="image-scroll-bottom">
