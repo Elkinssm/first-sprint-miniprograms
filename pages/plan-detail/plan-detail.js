@@ -1,79 +1,7 @@
 Page({
 
   data: {
-    response: {
-      "PlanName": "Mi Claro XS PRO Mx",
-      "planesRecurrentes": [],
-      "datos": "30720",
-      "sms": "Ilimitado",
-      "voz": "Ilimitado",
-      "PlanID": "26311",
-      "PlanID_TMCODE": "26311",
-      "PlanCode": "4103",
-      "PlanDescription": "Mi Claro XS PRO Mx: Cargo Fijo Mensual: $43.900. Incluye: Llamadas ilimitadas a todo destino fijo o movil nacional. SMS Ilimitado a Todo Destino Nacional. Navegacion: 30GB. Incluye acceso gratis a funcionalidades seleccionadas de Whastapp, Facebook, Twitter. Tarifas con impuestos incluidos. No Incluye: Roaming Internacional, LDI, MMS, ni descarga de contenidos con costo. Mayor informacion www.claro.com.co. El prestador del servicio es el operador de telefonia Movil Comcel S.A.",
-      "PlanAmount": "$43.900",
-      "SocialNetworks": 1,
-      "SocialNetworksList": [{
-          "SocialNetworkType": "Facebook",
-          "icon": "https://apiselfservice.co/archivos/catalogoIcons/facebook.png"
-        },
-        {
-          "SocialNetworkType": "Twitter",
-          "icon": "https://apiselfservice.co/archivos/catalogoIcons/twitter.png"
-        },
-        {
-          "SocialNetworkType": "Whatsapp",
-          "icon": "https://apiselfservice.co/archivos/catalogoIcons/whatsapp.png"
-        },
-        {
-          "SocialNetworkType": "Claro Video",
-          "icon": "https://apiselfservice.co/archivos/catalogoIcons/clarovideo.png"
-        }
-      ],
-      "descripcionSocialNetworkList": "<div style='padding:2% 5%;'><p style='text-align:justify'>El uso de las apps consume datos del plan; una vez consumas tus datos podr\u00e1s seguir usando las apps sin costo adicional hasta tu fecha de corte. No aplica para descarga y actualizaci\u00f3n de las apps, servicios de voz a trav\u00e9s de las apps, carga y descarga de fotos fuera de las apps, redireccionamiento a URLs externas, ni la reproducci\u00f3n de videos alojados en Facebook y Twitter. </p></div></br><br/><br/><div style='padding:2% 5%;'><center><h2>Claro video</h2></center><br/><p style='text-align:justify'>Con tu plan pospago Claro tienes incluida sin costo la suscripci\u00f3n mensual a Claro Video por 12 meses para ver miles de pel\u00edculas y series donde y cuando quieras! <br/> Accede ya a este beneficio registr\u00e1ndote en <a href='https://www.clarovideo.com' target='_blank'>clarovideo.com</a> o descargando la app de Claro Video. <br/>  Puedes contratar por un valor mensual adicional los servicios Premium de HBO , FOX \u00f3 Noggin. La suscripci\u00f3n no incluye pel\u00edculas de alquiler. <br/> El uso de la app Claro video consume datos de tu plan.</p></div></br>",
-      "viewMail": 0,
-      "PlanVoiceUnit": "Seg",
-      "datosCompartidos": "false",
-      "familiaYamigos": "false",
-      "familiaYamigos2": "0",
-      "FrequentNumbersAllowed": {
-        "Text": "0",
-        "Call": "0",
-        "Free": "0"
-      },
-      "LDI": {
-        "descripcion": "",
-        "minutos": "0"
-      },
-      "LDIlist": [],
-      "blindaje": {
-        "Descripcion": "Beneficio Todo Claro 25GBDescripci\u00f3n de la campa\u00f1a",
-        "MBsIncluidos": "25600",
-        "MBsConsumidos": "22915.2",
-        "fechaActivacion": "2021-11-09T00:00:00-05:00",
-        "fechaExpiracion": "2024-12-10T07:08:38-05:00"
-      },
-      "beneficio": {
-        "total": "25,00",
-        "disponible": "2,62",
-        "consumido": "22,38",
-        "nombre": "Beneficio Todo Claro 25GBDescripci\u00f3n de la campa\u00f1a",
-        "fechaInicio": "2021-11-09",
-        "fechaCorte": "2024-12-10",
-        "colorHexa": "#0097ab",
-        "colorRGB": {
-          "r": "0",
-          "g": "151",
-          "b": "171"
-        }
-      },
-      "textDatos": "30,00 GB",
-      "textBeneficios": "25,00 GB",
-      "textTotal": "55 GB",
-      "isIlimitado": "false",
-      "textTethering": "",
-      "CapacityData": ""
-    },
+    response: {},
     showContent: false,
     iconDefault: 'https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/keyboard_arrow_down/default/48px.svg',
 
@@ -106,13 +34,46 @@ Page({
   },
 
   onLoad() {
-    this.setData({
-      planName: this.data.response.PlanName,
-      planText: this.data.response.textDatos,
-      socialNetworks: this.data.response.SocialNetworksList.map(social => social.icon),
-      voiceText: this.data.response.voz,
-      smsText: this.data.response.sms,
-      planDescription: this.data.response.PlanDescription
+
+    my.request({
+      url: 'https://apiselfservice.co/api/index.php/v1/soap/retrievePlan.json',
+      method : 'POST',
+      data: {
+        "AccountId":"3058863237",
+        "accountIdHEader":"",
+        "alias":"3058863237",
+        "custcode":"",
+        "esEmpresas":0,
+        "isZonaPublica":false,
+        "LineOfBusiness":"3",
+        "selected":false,
+        "token":"U2FsdGVkX1/igaNe0wMoxrqEdx/ivbleV2MBMDQ7wBWX5GXT7qQaWXXL3cq5c0xfkwMEnVgfM/YcMpPsJUQx0PBbxV4c5Mtn0T7dy8Z5ZHessY7S06xPS2Cq3zrqK6LFOGSMrQxcWA/w7QZotwXHCv21CxUFM6aL4qVU+6OUm/na3PpzkrpzSkCEHMNM6b8qcLmtYj2+wa5OempXLaQQSZO6HXcoCMfwRKZOMy/LEQ0RgSXt4Lqn7lCfXRvIUqpibiUN7ZSWHjoxvKUMtXnVczOGoQV5GzngyR5WLFDEdOximSnaeWZRccDKJdHJsBIG343Cm7ZTVkCHUMSdSLV6CuwmT56v1AhzpeFKpAtUP1xaqjmWSyysZx3iDllbqAiSziLrq+Y86/QavbJumi3Tn8Plq7Mp44iUXQm5hoCxNOB2UGdTwiKVUtdGgRI1ekBvbd6477YLZ/qdid6Chf2bTRv8MngBf9Zpwf0oEHG7DvWqe8VOvq6RpvSJkwKZU/CnHuCMkvCuQQjGbzNQpMPbXTBCsvzkttuk3dhyr/cyQ4QlZY9HuxdmTvpPWxEn18LTwp5t/YbipQXdVtkEXv1xbTuxItei37ZbThvSbL82L9nzRLFGAPBxVDibQ6j73NZF7joKBPTGYW22MRtJLLApmNy/c81fMr9zp05Vv87mXhD/Yo0cUD7a37Y+vaHgI7mAQ7gpN0BwvcgZ1I+up9tNSUzlXn6rjWlo5RvTzNaFSI9A4eVGxIKlDm4n6TbvsvKvwe4lr9iRye/vrXi1Zp2YsV8wSsrIbPfLHm3RReLneh8jb/KzKSy3hf9VPM7MeQTqKGVL4lm6s5mDRuUco8MVdCAVQnEaISlkmm596jWZ6ExAAyyw4oMvaqVBACSCZgh8gQbCTwyxE/KDPVwQo18E7Fi4gKUmaRQCLrRxsINA7Vr8E3I2rrTVhodoZn1tLgSwVxEs9JzjAinO0FjNxZT6Xw\u003d\u003d",
+        "valida":0
+      },
+      headers: {
+        'X-MC-MAIL':'juan.saavedra9306@gmail.com',
+        'X-MC-SO':'android',
+        'X-MC-DEVIDE-ID':'AUZ0ymJgRXcXNz2z3Ny6wxq7fKe95gHEpnHdSuYqR+WPGE9cfPsmcuBJtQ/pb0P2pFX9oTzHfojwr1KYCL+Ux0PkJDRSqjl4TqeT1GLdh28GUguVlFo/U6K+3XmxLA8S8lD40TOfrfzCOyxQcR4PxG4mxm8Kq0TsmNeANigJ6lVwg9r3fSuWL2pvcK5AxwC8',
+        'X-MC-USER-AGENT':'eyJpcCI6IjEwLjAuMi4xNSIsInVzZXJBZ2VudCI6Ik1pQ2xhcm9BcHAvMC4wLjEgKE9uZVBsdXM7IE9ORVBMVVMgQTMwMTA7IFx1MDAzY2FuZHJvaWQvNy4xLjFcdTAwM2UpIn0=',
+        'X-SESSION-ID':'U2FsdGVkX19zUQNNE4kYeMvX1rxcucK5vhLEphYo0g+tSs+pPE9Q6uNDSWPBoTqIJR90hHnPTB56zNtMiEK4JUzHCWMOkWiHykoDia/1G0cuGsBK4XEcrEA/PnQ6IndcUvWAOp9KhiARdkNnWY0zK922Az5ZtJUgKvqlDVaN26PSEy8J94gXxnD/S2viWtPT2aGqhtPF/yGENfElzNsDOJQbK/NjfXaGlDr5xQpb7k6tzti96Guyx5c0ePrJ2yd9jx9C6x1KiRk+inmvbITnaj+qw5HuyV9uoAfC6p5fYQj9bt8i1kWKzOeM0gipGaIbOK1HTcnydnafdWRa0QT4I3c9/Pk1t9rDwzgxNcoWsScFf+ZhS9OX/eryxNltfwOvdDD5T+K0WzMQGx0QzqTKpTX0BHBBu3qcy4TEKNzfbRRYrBqWUe+Uoj23f/4g/cZAjLwX8BCSaTrj0cPs1pg2gu3eVTBUpbzl2iCwxzHj33tqM91QMR5KZJOBIcn5atH7nPbrz12tfMgODQdoT1ZfR6Suie/qgNly3vDpOEDL+eqBsT9ZWkhiqjGDvhHUMzqh+UUk0zB71QQqgFjGW8Jh2/kJnrmcv0Lg8aAaO+d1pU8BPG2yC6wR3sssHMhl5aFP4G5/1McF2r87gMEHspaoUQTtxN52Z8By/G+RakRruEndOpYi4ppi26O6R2Z4/TKs5R6e3ceRVL3yijTqSWCeflX1bhDz5PVbJ79AflMTsHN+Fjt/rfRpPoTLkv5FyxIWdTUT4myzByTR+6zyS4Hu83rwJUTcDcGL8UxclQljZ4FpSQNv5t4bkXS9OLQkSHwzIH59RItsc9EkHlRGOKCbAOhZjfmvxOTWUn93DZODyxwgE11QM5hlluTcnsLYXuqLBP6Q3yr0gDr891YGnh/2U5aXFS5IPzYkupivM+KxQFILg5YUXTxxik6rQhw8x6qr7bdRrCwVcxRt05S7jTQcBQ==',  
+        'X-MC-LINE':'3058863237',
+        'X-MC-LOB':'3',
+      },
+      success: (res) => {
+        console.log(process.env)
+        console.log(res);
+        this.setData({
+          planName: res.data.response.PlanName,
+          planText: res.data.response.textDatos,
+          socialNetworks: res.data.response.SocialNetworksList.map(social => social.icon),
+          voiceText: res.data.response.voz,
+          smsText: res.data.response.sms,
+          planDescription: res.data.response.PlanDescription
+        });
+      },
+      fail: (res) => {
+        my.alert(res.data.message);
+      }
     });
   },
 

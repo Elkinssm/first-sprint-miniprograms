@@ -13,7 +13,7 @@
 </view>-->
 
 <!--Contenedor de page-->
-<view class="container pb-3">
+<view class="container pb-8">
   <view class="row pt-3">
     <view class="col">
       <image
@@ -56,11 +56,11 @@
     <!--Datos-->
     <view class="row">
       <view class="col">
-        <view class="text-bold pl-5 pt-2">Datos</view>
+        <view class="text-bold pl-5 pt-4">Datos</view>
       </view>
     </view>
-    <view class="row pl-5 pb-2">
-      <view class="col-3">
+    <view class="row pl-5">
+      <view class="col-3 pb-9">
         <image
           class="image"
           mode="widthFix"
