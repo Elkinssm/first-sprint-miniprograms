@@ -1,0 +1,4 @@
+<view class="container-banner">
+  <image class="banner-image" mode="widthFix" src="{{img}}"  onTap="redirectBanner"/>
+</view>
+<web-view a:if="{{ isActive }}" src="{{url}}" />

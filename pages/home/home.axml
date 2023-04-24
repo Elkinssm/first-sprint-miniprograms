@@ -1,0 +1,73 @@
+<view class="home-container">
+
+  <view class="business-info">
+    <text class="info-text">
+      Empresas y negocios
+    </text>
+  </view>
+
+  <view class="horizontal-divider">
+
+  </view>
+
+  <view class="container-image-scroll">
+    <view class="image-scroll">
+      <scroll-view class="image-scroll-view" scroll-x={{true}}>
+        <block a:for="{{imagesList}}" a:for-index="index" a:for-item="item">
+          <view class="item-image-top" onTap="onImageTopClick" data-index="{{index}}">
+            <image class="icon" src="{{item.imageSrc}}"></image>
+          </view>
+        </block>
+
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class="scroll-bar-horizontal"></view>
+
+  <view class="access-bar">
+    <text class="access-text">
+      Accesos a rapidos
+
+    </text>
+
+    <view class="access-container">
+
+      <block a:for="{{access}}" a:for-index="index" a:for-item="item">
+        <view class="item" onTap="onIconClick" data-index="{{index}}">
+          <view class="icon-access">
+            <image class="image-top" src="{{item.iconUrl}}" />
+          </view>
+
+          <text class="text-icons">{{item.text}}</text>
+        </view>
+
+      </block>
+    </view>
+
+  </view>
+
+    <text class="access-text-two">
+      Disfruta más de más beneficios
+
+    </text>
+
+  <view class="container-image-scroll-bottom">
+    <view class="image-scroll-bottom">
+      <scroll-view class="image-scroll-view-bottom" scroll-x={{true}}>
+        <block a:for="{{imagesBottom}}" a:for-index="index" a:for-item="item">
+          <view class="item-image-bottom" onTap="onImageBottomClick" data-index="{{index}}">
+            <image class="image-bottom" src="{{item.imageSrc}}"></image>
+          </view>
+        </block>
+
+      </scroll-view>
+    </view>
+  </view>
+
+
+
+</view>
+
+
+

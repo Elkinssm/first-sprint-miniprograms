@@ -1,0 +1,18 @@
+<view>
+  <rich-text nodes="{{nodes}}" class="header-title">
+  </rich-text>
+  <view class="h4 claro-gray-text title-description">
+    Conoce la documentación necesaria y los pasos para gestionar tus procesos.
+  </view>
+  <view class="page-main">
+    <block a:for="{{ proceduresMenu }}" a:key="*item">
+      <card-button
+        id="{{item.id}}"
+        iconUrl="{{item.iconUrl}}"
+        text="{{item.text}}"
+        onButtonTap=goToPage
+      >
+      </card-button>
+    </block>
+  </view>
+</view>

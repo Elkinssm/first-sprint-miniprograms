@@ -1,0 +1,20 @@
+
+<view class="container-novedades">
+  <view class="flex-container-banner">
+    <image id="icon-banner" mode="scaleToFill" src="/assets/icons/start.svg" />
+    <view class="container-icono-banner"> Guía y Novedades</view>
+  </view>
+  <view class="flex-container-btn-banner">
+      <scroll-view  id="scroll-banner" scroll-y="{{true}}"  onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class="container-l" a:for="{{bannerList}}" a:for-item="banner">
+          <banner img="{{banner.image}}" title="{{banner.name}}" url="{{banner.url}}"/>
+        </view>
+      </scroll-view>
+  </view>
+    <view class="flex-container-btn-banner">
+        <view class="container-btn-guia-login">
+          <button class="btn-guia-login"size="default" type="primary" onTap="redirectToLogin">Ingresa o registrate</button>
+      </view>
+    </view>
+  </view>
+  
