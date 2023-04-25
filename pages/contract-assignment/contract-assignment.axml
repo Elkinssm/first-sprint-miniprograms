@@ -37,7 +37,7 @@
         class="h4 claro-black-text claro-small-padding-text external-link"
         onTap="goToExternalPage"
       >
-        https://www.claro.com.co/personas/soporte/ cavs/
+        https://www.claro.com.co/personas/cavs/
       </view>
       <view class="h4 claro-gray-300-text claro-small-padding-text">
         Encuentra el punto más cercano en:
@@ -72,5 +72,5 @@
     </block>
   </view>
 </view>
-<web-view a:if="{{ showSoportePage }}" src="https://www.claro.com.co/personas/soporte/cavs/" />
-<web-view a:if="{{ showCentrosAtencionPage }}" src="https://www.claro.com.co/personas/soporte/cavs/" />
+<web-view a:if="{{ showSoportePage }}" src="https://www.claro.com.co/personas/cavs/" />
+<web-view a:if="{{ showCentrosAtencionPage }}" src="https://www.claro.com.co/personas/cavs/" />
