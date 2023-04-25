@@ -14,7 +14,9 @@
     "pages/contract-assignment/contract-assignment",
     "pages/plan-management/plan-management",
     "pages/transfer/transfer",
-    "pages/sim-management/sim-management"
+    "pages/sim-management/sim-management",
+    "pages/plan-detail/plan-detail",
+    "pages/payment/payment"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",

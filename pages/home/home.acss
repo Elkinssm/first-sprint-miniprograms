@@ -65,7 +65,6 @@
   margin-top: 5px;
   display: flex;
   font-weight: bold;
-
 }
 
 .item {
@@ -95,6 +94,11 @@
   height: 300px;
 }
 
+.access-text-two {
+  margin-top: 20px;
+  display: flex;
+  font-weight: bold;
+}
 
 
 .text-icons {
@@ -126,7 +130,7 @@
 }
 
 .image-scroll-view-bottom {
-  margin-top: 10px;
+  margin-top: 15px;
   white-space: nowrap;
   display: flex;
   overflow-x: scroll;

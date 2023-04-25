@@ -14,7 +14,7 @@ Page({
       {
         iconUrl: "/assets/icons/detalle.svg",
         text: "Detalle de tu plan",
-        pageUrl: "/pages/test/test"
+        pageUrl: "/pages/plan-detail/plan-detail"
       },
       {
         iconUrl: "/assets/icons/pagos.svg",

@@ -47,6 +47,11 @@
 
   </view>
 
+    <text class="access-text-two">
+      Disfruta más de más beneficios
+
+    </text>
+
   <view class="container-image-scroll-bottom">
     <view class="image-scroll-bottom">
       <scroll-view class="image-scroll-view-bottom" scroll-x={{true}}>
