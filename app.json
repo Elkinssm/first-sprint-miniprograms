@@ -7,8 +7,16 @@
     "pages/test/test",
     "pages/login-screen/login-screen",
     "pages/onlinePayments/onlinePayments",
+    "pages/chatService/chatService",
     "pages/returnOfEquipment/returnOfEquipment",
-    "pages/guia-novedades/guia-novedades"
+    "pages/guia-novedades/guia-novedades",
+    "pages/procedure-information/procedure-information",
+    "pages/contract-assignment/contract-assignment",
+    "pages/plan-management/plan-management",
+    "pages/transfer/transfer",
+    "pages/sim-management/sim-management",
+    "pages/plan-detail/plan-detail",
+    "pages/payment/payment"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",

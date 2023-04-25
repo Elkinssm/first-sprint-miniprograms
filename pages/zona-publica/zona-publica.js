@@ -14,7 +14,7 @@ Page({
       {
         iconUrl: "/assets/icons/detalle.svg",
         text: "Detalle de tu plan",
-        pageUrl: "/pages/test/test"
+        pageUrl: "/pages/plan-detail/plan-detail"
       },
       {
         iconUrl: "/assets/icons/pagos.svg",
@@ -29,12 +29,12 @@ Page({
       {
         iconUrl: "/assets/icons/tramites.svg",
         text: "Información de tramites",
-        pageUrl: "/pages/test/test"
+        pageUrl: "/pages/procedure-information/procedure-information"
       },
       {
         iconUrl: "/assets/icons/chat-empresarial.svg",
         text: "Chat empresarial",
-        pageUrl: "/pages/test/test"
+        pageUrl: "/pages/chatService/chatService"
       },
       {
         iconUrl: "/assets/icons/start.svg",

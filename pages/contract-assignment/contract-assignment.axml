@@ -1,0 +1,76 @@
+<view class="tab-panel">
+  <view class="h4 tab-header">
+    <view class="tab-item {{tabIndex === 0 ? 'active': ''}}" data-tab={{0}} onTap="switchTab">
+      Soluciones Móviles
+    </view>
+    <view class="tab-item {{tabIndex === 1 ? 'active': ''}}" data-tab={{1}} onTap="switchTab">
+      Soluciones Fijas
+    </view>
+  </view>
+  <view class="tab-content">
+    <block a:if="{{tabIndex === 0}}">
+      <custom-header iconUrl="/assets/icons/request-page.svg" text="¿Cómo puedo realizar la cesión de contrato?">
+      </custom-header>
+      <view class="claro-gray-300-text header-text">
+        Si eres atendido por un asesor de servicio por favor comunícate con él para realizar el trámite. Para todos los demás casos debes tener en cuenta lo siguiente:
+      </view>
+      <view class="h4 claro-red-text claro-padding-text">
+        La línea a ceder debe tener mínimo una antigüedad de 2 meses.
+      </view>
+      <view class="h4 claro-gray-text claro-padding-text">
+        La Empresa que cede la línea como la que recibe debe estar al día en sus facturas.
+      </view>
+      <view class="claro-gray-300-text claro-padding-text">
+        Deben acercarse a un centro de atención y ventas, los representantes legales o perfilados especiales de ambas empresas y en caso del cedente puede ser un tercero autorizado. Ten en cuenta la siguiente documentación mínima requerida:
+      </view>
+      <claro-ol-list padding list="{{mobileList}}"></claro-ol-list>
+      <view class="h4 claro-red-text claro-small-padding-text">
+        Aplica para cesiones de Empresa a Empresa, Empresa a Persona Natural y de Persona Natural a Empresa.
+      </view>
+      <view class="claro-gray-300-text claro-small-padding-text">
+        Ten en cuenta que se hará un estudio en el centro de Atención y Ventas CAV, para determinar que se pueda realizar la cesión con estos documentos o se requieran anexar algunos soportes adicionales.
+      </view>
+      <view class="claro-gray-300-text claro-small-padding-text">
+        Para conocer el Centro de Atención y ventas más cercano, te invitamos a que consultes en el siguiente link:
+      </view>
+      <view
+        class="h4 claro-black-text claro-small-padding-text external-link"
+        onTap="goToExternalPage"
+      >
+        https://www.claro.com.co/personas/soporte/ cavs/
+      </view>
+      <view class="h4 claro-gray-300-text claro-small-padding-text">
+        Encuentra el punto más cercano en:
+      </view>
+      <view class="footer-tab-0">
+        <custom-button
+          text="Centros de Atención"
+          iconUrl="/assets/icons/home-pin.svg"
+          size="large"
+          onCustomButtonTap="handleCustomButtonTap"
+        >
+        </custom-button>
+      </view>
+    </block>
+    <block a:elif="{{tabIndex === 1}}">
+      <custom-header iconUrl="/assets/icons/request-page.svg" text="¿Cómo puedo realizar la cesión de contrato?">
+      </custom-header>
+      <view class="claro-gray-300-text header-text">
+        Si eres atendido por un consultor Comercial, por favor comunícate con él para realizar el trámite. Para todos los demás casos debes tener en cuenta lo siguiente:
+      </view>
+      <claro-ol-list padding list="{{fixedList}}"></claro-ol-list>
+      <view class="h4 claro-black-text claro-padding-text external-link" onTap="goToMailApp">
+        Contactopyme.co@claro.com.co
+      </view>
+      <view class="h3 claro-gray-text claro-padding-text">
+        Remitiendo la siguiente documentación básica requerida:
+      </view>
+      <claro-ol-list padding list="{{documentsList}}"></claro-ol-list>
+      <view class="h4 claro-red-text footer-tab-1">
+        Aplica para cesiones de Empresa a Empresa.
+      </view>
+    </block>
+  </view>
+</view>
+<web-view a:if="{{ showSoportePage }}" src="https://www.claro.com.co/personas/soporte/cavs/" />
+<web-view a:if="{{ showCentrosAtencionPage }}" src="https://www.claro.com.co/personas/soporte/cavs/" />
