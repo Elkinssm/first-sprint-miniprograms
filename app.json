@@ -20,7 +20,8 @@
     "pages/soluciones/soluciones",
     "pages/solucion/solucion",
     "pages/adquirir-producto/adquirir-producto",
-    "pages/guia-novedades/redirect-guia/redirect-guia"
+    "pages/guia-novedades/redirect-guia/redirect-guia",
+    "pages/activate-international-roaming/activate-international-roaming"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",
