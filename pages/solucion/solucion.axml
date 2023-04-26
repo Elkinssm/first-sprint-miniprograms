@@ -1,6 +1,6 @@
-<view class="container">
+<view class="container {{backgroundColor == true ? 'color-active': 'color-desactive'}}">
 
-  <view class="section-container">
+  <view class="section-container {{backgroundColor == true ? 'color-active': 'color-desactive'}}">
 
     <scroll-view class="scroll-view-h" scroll-x="{{true}}" scroll-into-view="{{positionData}}" scroll-with-animation="{{scrollAnimation}}">
 
@@ -8,8 +8,8 @@
         <view class="section-scroll" id="{{solution.idVideo}}">
           
             <video
-            style="width: 90%; height: 40%; border-radius: 10rpx;"
             id="myVideo"
+            class="item-video"
             src="{{video.src}}"
             controls="{{video.showAllControls}}"
             loop="{{video.isLooping}}"
@@ -27,7 +27,7 @@
             onEnded="onEnded"
           />
 
-          <view class="item-section">
+          <view class="item-section {{backgroundColor == false ? 'box-shadow': ''}}">
 
             <scroll-view class="scroll-view-v" scroll-y="{{true}}">
               <view class="section-description">
@@ -48,7 +48,7 @@
 
   </view>
 
-  <view class="btns-container">
+  <view class="btns-container {{backgroundColor == true ? 'color-active': 'color-desactive'}}">
     <view class="btns-central">
       <generic-button onTap="onRedirect" stateImg="{{false}}">Adquirir Servicio</generic-button>
     </view>

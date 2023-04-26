@@ -1,7 +1,7 @@
 Page({
   data: {
     video: {
-      src: 'https://youtu.be/4G2Nv_aUOvg',
+      src: '/assets/videos/Soluciones moviles Claro.mp4',
       showAllControls: true,
       showPlayButton: true,
       showCenterButton: true,
@@ -18,7 +18,8 @@ Page({
     positionData: 1,
     stateBefore: true,
     stateNext: true,
-    scrollAnimation: false
+    scrollAnimation: false,
+    backgroundColor: false
   },
   onLoad(query) {
     this.setInformation(query.data, query.id);
@@ -87,6 +88,22 @@ Page({
         stateBefore: true
       });
     }
+  },
+  onPlay(e){
+    this.setData({
+      backgroundColor: true
+    });
+    console.log('entro')
+  },
+  onPause(e){
+    this.setData({
+      backgroundColor: false
+    });
+  },
+  onEnded(e){
+    this.setData({
+      backgroundColor: false
+    });
   },
   onRedirect(e){
     my.navigateTo({
