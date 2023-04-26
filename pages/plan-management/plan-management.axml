@@ -51,4 +51,4 @@
 <web-view a:if="{{ showMiClaroPortalPage }}" src="https://miclaroempresas.claro.com.co/#/login" />
 <web-view a:if="{{ showECarePortalPage }}" src="http://e-services.telmexla.com.co/Pages/Default.aspx?ReturnUrl=%2f" />
 <web-view a:if="{{ showClaroCloudPage }}" src="http://www.clarocloud.com.co" />
-<web-view a:if="{{ showCentrosAtencionPage }}" src="https://www.claro.com.co/personas/soporte/cavs/" />
+<web-view a:if="{{ showCentrosAtencionPage }}" src="https://www.claro.com.co/personas/cavs/" />
