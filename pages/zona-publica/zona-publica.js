@@ -19,7 +19,7 @@ Page({
       {
         iconUrl: "/assets/icons/pagos.svg",
         text: "Pagos en línea",
-        pageUrl: "/pages/test/test"
+        pageUrl: "/pages/onlinePayments/onlinePayments"
       },
       {
         iconUrl: "/assets/icons/portafolio.svg",

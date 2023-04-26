@@ -27,7 +27,6 @@ Page({
   },
 
   redirectToLogin(){
-    console.log("Login access")
     my.navigateTo({
       url: '/pages/login-screen/login-screen'
     }) 
