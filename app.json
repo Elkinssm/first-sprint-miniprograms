@@ -1,6 +1,7 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
+    "pages/roaming-management/roaming-management",
     "pages/home/home",
     "pages/index/index",
     "pages/zona-publica/zona-publica",

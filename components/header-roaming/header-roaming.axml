@@ -1,0 +1,11 @@
+<view class="header">
+  <view class="header__text">
+    <icon type="success" />
+    <view class="header__text__title">
+      Administra tu Roaming
+    </view>
+  </view>
+  <view class="header__text__number">
+    {{cellphoneNumber}}
+  </view>
+</view>

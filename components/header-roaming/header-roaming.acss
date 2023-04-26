@@ -1,0 +1,34 @@
+.header {
+  width: auto;
+  height: 88rpx;
+  display: flex;
+  flex-direction: row;
+  padding: 22rpx 10rpx 26rpx 12rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__text {
+  display: flex;
+  flex-direction: row;
+}
+
+.header__text__title {
+  margin-left: 10rpx;
+}
+
+.header__text__number {
+  position: relative;
+}
+
+.header__text__number::before {
+  content: "";
+  position: absolute;
+  top: 3rpx;
+  left: -40rpx;
+  width: 0;
+  height: 0;
+  border-top: 10rpx solid transparent;
+  border-left: 14rpx solid #ef3829;
+  border-bottom: 10rpx solid transparent;
+}

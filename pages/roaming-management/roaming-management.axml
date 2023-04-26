@@ -1,0 +1,6 @@
+<view class="page">
+  <header-roaming cellphoneNumber={{cellphone}}></header-roaming>
+  <view class="page__body">
+    Body
+  </view>
+</view>
