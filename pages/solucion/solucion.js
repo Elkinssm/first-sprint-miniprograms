@@ -12,7 +12,7 @@ Page({
       objectFit: 'contains',
       autoPlay: false,
       directionWhenFullScreen: 90,
-      mobilenetHintType: 2,
+      mobilenetHintType: 2
     },
     dataSolutions: [],
     positionData: 1,

@@ -6,7 +6,6 @@
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  height: 100vh;
 }
 
 .container-btns {
@@ -21,24 +20,15 @@
 }
 
 .container-web-view {
-  width: 90%;
-  height: 80%;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20rpx 20rpx 20rpx;
-  transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
 
-.container-web-view:active {
-  transform: scale(1.1);
+.container-web-view:hover {
+  transform: translateY(-5px);
 }
 
-.image-clic {
-  height: 512rpx;
-  width: 512rpx;
+.container-web-view:active {
+  transform: scale(0.95);
 }
 
 /* Estilos */
@@ -47,7 +37,7 @@
   color: #9d9d9d;
 }
 
-.size {
+.size-text {
   font-weight: bold;
   font-size: 32rpx;
 }
