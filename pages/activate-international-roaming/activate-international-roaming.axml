@@ -1,3 +1,30 @@
-<view>
-  New Page
+<view class="container">
+  <view class="row">
+    <view class="col-1">
+      <image
+        class="image"
+        mode="widthFix"
+        style="width:25px; height: 25px;"
+        src="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/captive_portal/default/48px.svg"
+        alt="Descripción de la imagen"
+      />
+    </view>
+    <view class="col-7" style="font-size:14px">Administra tu Roaming</view>
+    <view class="col-4">
+      <view class="row">
+        <view class="col">
+          <image        
+            class="icon-red"
+            mode="widthFix"
+            style="width:30px; height: 30px;"
+            src="/assets/icons/arrow_right.svg"
+            alt="arrow-right-icon"
+          />
+        </view>
+        <view class="col-8" style="font-size:14px">
+          3172345182
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
