@@ -86,7 +86,7 @@ Page({
 
   onPayment: function () {
     my.navigateTo({
-      url: '/pages/payment/payment?url=https://portalpagos.claro.com.co/index.php?view=vistas/personal/claro/newclaro/inicio.php&id_objeto=#no-back-button'
+      url: '/pages/payment/payment?url=https://portalpagos.claro.com.co/index.php?view=vistas/personal/claro/newclaro/inicio.php'
     })
   }
 });
