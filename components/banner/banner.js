@@ -4,14 +4,13 @@ Component({
     "title":'',
     "url": ''
   },
-  data:{
-    "isActive":false,
-  },
   methods:{
     redirectBanner(){
-      this.setData({
-        isActive:true
-      })
+      const value = this.props.url;
+      const url=`/pages/guia-novedades/redirect-guia/redirect-guia?url=${value}`;
+      my.navigateTo({
+      url,
+     }) 
     },
     onImageLoaded() {
       this.setData({ imageLoaded: true });

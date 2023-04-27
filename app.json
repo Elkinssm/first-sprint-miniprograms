@@ -20,6 +20,7 @@
     "pages/soluciones/soluciones",
     "pages/solucion/solucion",
     "pages/adquirir-producto/adquirir-producto",
+    "pages/guia-novedades/redirect-guia/redirect-guia",
     "pages/solucion/solution-redirection/solution-redirection"
   ],
   "window": {
