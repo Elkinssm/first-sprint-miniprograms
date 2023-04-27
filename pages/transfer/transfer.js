@@ -1,6 +1,7 @@
 Page({
   data: {
-    showCentrosAtencionPage: false,
+    showWebView: false,
+    webViewUrl: "",
     transferList: [
       {
         text: "Debes confirmar la dirección completa y exacta del nuevo sitio."
@@ -38,6 +39,9 @@ Page({
     });
   },
   handleCustomButtonTap() {
-    this.setData({ showCentrosAtencionPage: true });
+    this.setData({
+      showWebView: true,
+      webViewUrl: "https://www.claro.com.co/personas/cavs/"
+    });
   }
 });

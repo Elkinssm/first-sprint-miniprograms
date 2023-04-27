@@ -1,54 +1,61 @@
 <view>
-  <custom-header text="¿Cómo puedo realizar un cambio de plan?" iconUrl="/assets/icons/change-plan.svg">
-  </custom-header>
-  <view class="h4 claro-gray-300-text header-text">
-    Para realizar cambio de plan de las líneas de tu Empresa o Negocio, lo podrás hacer a través de los siguientes medios:
-  </view>
-  <claro-ol-list list="{{[{text: 'A través de nuestro portal Mi Claro Empresas En la Ruta Transacciones en línea - Cambio de plan'}]}}">
-  </claro-ol-list>
-  <view class="redirect-container">
-    <view data-link="miClaroPortal" class="h4 external-link redirect-text" onTap="goToExternalPage">
-      Ingresa aqui
+  <web-view a:if="{{ showWebView }}" src="{{webViewUrl}}" />
+  <block a:else>
+    <custom-header text="¿Cómo puedo realizar un cambio de plan?" iconUrl="/assets/icons/change-plan.svg">
+    </custom-header>
+    <view class="h4 claro-gray-300-text header-text">
+      Para realizar cambio de plan de las líneas de tu Empresa o Negocio, lo podrás hacer a través de los siguientes medios:
     </view>
-  </view>
-  <view class="claro-gray-300-text claro-small-padding-text">
-    Recuerda debes estar registrado. Si no lo estás, te invitamos para que te registres a través de este mismo link.
-  </view>
-  <claro-ol-list isCustomNumber customNumber=2 list="{{[{text: 'A través del portal E-Care únicamente para Fibra óptica podrás hacer ampliaciones de ancho de banda por demanda, esto aplica solo para servicios de internet dedicado y Mpls.'}]}}">
-  </claro-ol-list>
-  <view class="redirect-container">
-    <view data-link="eCarePortal" class="h4 external-link redirect-text" onTap="goToExternalPage">
-      Ingresa aqui
+    <claro-ol-list list="{{[{text: 'A través de nuestro portal Mi Claro Empresas En la Ruta Transacciones en línea - Cambio de plan'}]}}">
+    </claro-ol-list>
+    <view class="redirect-container">
+      <view
+        data-link="miClaroPortal"
+        class="h4 external-link redirect-text"
+        onTap="goToExternalPage"
+      >
+        Ingresa aqui
+      </view>
     </view>
-  </view>
-  <view class="claro-gray-300-text claro-small-padding-text">
-    Recuerda debes estar registrado. Si no lo estás, te invitamos para que te registres a través de este mismo link.
-  </view>
-  <claro-ol-list isCustomNumber customNumber=3 list="{{[{text: 'Si tu empresa es atendida por un asesor de servicio te invitamos que te comuniques con él.'}]}}">
-  </claro-ol-list>
-  <claro-ol-list isCustomNumber customNumber=4 list="{{[{text: 'Si tus servicios son Cloud (Servicio en la nube), puedes realizar cambios sobre los servicios contratados a través de la página:'}]}}">
-  </claro-ol-list>
-  <view
-    class="h4 claro-black-text claro-small-padding-text external-link"
-    data-link="claroCloud"
-    onTap="goToExternalPage"
-  >
-    http://www.clarocloud.com.co
-  </view>
-  <view class="h4 claro-gray-text claro-small-padding-text">
-    Encuentra el punto más cercano en:
-  </view>
-  <view class="footer">
-    <custom-button
-      text="Centros de Atención"
-      iconUrl="/assets/icons/home-pin.svg"
-      size="large"
-      onCustomButtonTap="handleCustomButtonTap"
+    <view class="claro-gray-300-text claro-small-padding-text">
+      Recuerda debes estar registrado. Si no lo estás, te invitamos para que te registres a través de este mismo link.
+    </view>
+    <claro-ol-list isCustomNumber customNumber=2 list="{{[{text: 'A través del portal E-Care únicamente para Fibra óptica podrás hacer ampliaciones de ancho de banda por demanda, esto aplica solo para servicios de internet dedicado y Mpls.'}]}}">
+    </claro-ol-list>
+    <view class="redirect-container">
+      <view
+        data-link="eCarePortal"
+        class="h4 external-link redirect-text"
+        onTap="goToExternalPage"
+      >
+        Ingresa aqui
+      </view>
+    </view>
+    <view class="claro-gray-300-text claro-small-padding-text">
+      Recuerda debes estar registrado. Si no lo estás, te invitamos para que te registres a través de este mismo link.
+    </view>
+    <claro-ol-list isCustomNumber customNumber=3 list="{{[{text: 'Si tu empresa es atendida por un asesor de servicio te invitamos que te comuniques con él.'}]}}">
+    </claro-ol-list>
+    <claro-ol-list isCustomNumber customNumber=4 list="{{[{text: 'Si tus servicios son Cloud (Servicio en la nube), puedes realizar cambios sobre los servicios contratados a través de la página:'}]}}">
+    </claro-ol-list>
+    <view
+      class="h4 claro-black-text claro-small-padding-text external-link"
+      data-link="claroCloud"
+      onTap="goToExternalPage"
     >
-    </custom-button>
-  </view>
+      https://www.clarocloud.com.co
+    </view>
+    <view class="h4 claro-gray-text claro-small-padding-text">
+      Encuentra el punto más cercano en:
+    </view>
+    <view class="footer">
+      <custom-button
+        text="Centros de Atención"
+        iconUrl="/assets/icons/home-pin.svg"
+        size="large"
+        onCustomButtonTap="handleCustomButtonTap"
+      >
+      </custom-button>
+    </view>
+  </block>
 </view>
-<web-view a:if="{{ showMiClaroPortalPage }}" src="https://miclaroempresas.claro.com.co/#/login" />
-<web-view a:if="{{ showECarePortalPage }}" src="http://e-services.telmexla.com.co/Pages/Default.aspx?ReturnUrl=%2f" />
-<web-view a:if="{{ showClaroCloudPage }}" src="http://www.clarocloud.com.co" />
-<web-view a:if="{{ showCentrosAtencionPage }}" src="https://www.claro.com.co/personas/cavs/" />
