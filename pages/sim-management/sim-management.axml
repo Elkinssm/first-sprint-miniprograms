@@ -21,4 +21,4 @@
     </custom-button>
   </view>
 </view>
-<web-view a:if="{{ showCentrosAtencionPage }}" src="https://www.claro.com.co/personas/soporte/cavs/" />
+<web-view a:if="{{ showCentrosAtencionPage }}" src="https://www.claro.com.co/personas/cavs/" />

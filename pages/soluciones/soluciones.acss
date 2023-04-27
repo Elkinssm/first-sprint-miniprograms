@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+/*General container*/
+
+.container {
+  color: #474545;
+  display: flex;
+  flex-flow: column wrap;
+  height: 100vh;
+  padding: 30rpx;
+}
+
+/*Nested items*/
+
+.item {
+  margin-bottom: 20rpx;
+  font-weight: bold;
+}
+
+.item:first-child {
+  font-size: 45rpx;
+}
+
+.item:first-child text {
+  color: #cf0e00;
+}
+
+.item:first-child text::after {
+  content: ' ';
+}
+
+.item:last-child {
+  margin-top: auto;
+}
+
+/*Solution container*/
+
+.solution-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
