@@ -43,7 +43,7 @@ Page({
       {
         iconUrl: "/assets/icons/portafolio.svg",
         text: "Portafolio\n de Soluciones",
-        pageUrl: "/pages/test/test"
+        pageUrl: "/pages/soluciones/soluciones"
       },
       {
         iconUrl: "/assets/icons/chat-empresarial.svg",

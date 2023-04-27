@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "image-button": "/components/image-button/image-button",
+    "generic-button": "/components/generic-button/generic-button"
+  },
+  "styleIsolation": "apply-shared"
+}
