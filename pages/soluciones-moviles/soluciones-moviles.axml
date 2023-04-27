@@ -1,26 +1,21 @@
 <view class="container">
 
   <view class="header">
+    <image mode="aspectFill" src="/assets/buildings-vector.jpg" />
+
     <view class="info">
-      <text class="info-1">No.8.21725577</text>
-      <text class="info-2">Administrar Cuentra Maestra</text>
+      <text>No. 8.21725577</text>
+      <hyperlink-button>Administrar Cuentra Maestra</hyperlink-button>
     </view>
     <view class="settings">
       <image mode="aspectFit" src="/assets/icons/settings_white.svg" />
     </view>
+
   </view>
 
   <view class="body">
     <block>
-
-      <view class="item-custom">
-        <view class="info-custom">
-          <image mode="scaleToFill" src="/assets/icons/search_black.svg" />
-          <view>Consultar tus consumos</view>
-        </view>
-        <image mode="scaleToFill" src="/assets/icons/face-id.svg" />
-      </view>
-
+      
       <view class="item-custom">
         <view class="info-custom">
           <image mode="scaleToFill" src="/assets/icons/search_black.svg" />

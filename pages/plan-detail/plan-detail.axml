@@ -1,17 +1,3 @@
-<!--Navigate to back-->
-<!--<view class="back-container bg-dark">
-  <image
-    class="image"
-    mode="widthFix"
-    style="width:20px; height: 20px;"
-    src="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/arrow_back_ios/default/48px.svg"
-    alt="Descripción de la imagen"
-  />
-  <view class="text-container">
-    <text class="text">Detalle de tu plan</text>
-  </view>
-</view>-->
-
 <!--Contenedor de page-->
 <view class="container pb-8">
   <view class="row pt-3">
@@ -29,7 +15,7 @@
       Número de línea
     </view>
     <view class="col">
-      3118605877
+      {{lineNumber}}
     </view>
   </view>
 

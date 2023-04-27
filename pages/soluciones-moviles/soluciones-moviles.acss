@@ -20,13 +20,32 @@
 /*Header*/
 
 .header {
+  position: relative;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  align-items:center;
   width: 100%;
   height: 20%;
   padding: 20rpx;
   background-color: #4b4b4b;
+  z-index: 0;
+}
+
+.info, .settings, .settings image {
+  z-index: 2;
+}
+
+.header > image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
+  filter: saturate(0%);
+  filter: brightness(30%);
+  z-index: 1;
 }
 
 .header > .info {
@@ -54,7 +73,7 @@
 
 /* Header Textos */
 
-.info-1 {
+.info {
   font-size: 25rpx;
   font-weight: bold;
   color:white;

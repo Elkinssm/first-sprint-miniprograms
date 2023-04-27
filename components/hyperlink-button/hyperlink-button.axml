@@ -1,0 +1,5 @@
+<view onTap="onWebView" class="links">
+  <view><slot>Hiperlink Button</slot></view>
+  <image mode="scaleToFill" src="/assets/icons/navigateNext.svg"/>
+</view>
+<web-view a:if="{{ state }}" id="{{ linkIndex }}" src="{{ url }}"></web-view>

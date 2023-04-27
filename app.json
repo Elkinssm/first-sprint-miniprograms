@@ -18,11 +18,16 @@
     "pages/plan-detail/plan-detail",
     "pages/payment/payment",
     "pages/guia-novedades/redirect-guia/redirect-guia",
-    "pages/soluciones-moviles/soluciones-moviles"
+    "pages/soluciones-moviles/soluciones-moviles",
+    "pages/soluciones/soluciones",
+    "pages/solucion/solucion",
+    "pages/adquirir-producto/adquirir-producto",
+    "pages/solucion/solution-redirect/solution-redirect"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",
     "titleBarColor": "#121D24",
-    "gestureBack": "YES"
+    "gestureBack": "YES",
+    "showTitleLoading": "YES"
   }
 }

@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "hyperlink-button": "/components/hyperlink-button/hyperlink-button"
+  },
   "styleIsolation": "apply-shared"
 }
