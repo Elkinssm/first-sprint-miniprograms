@@ -1,0 +1,42 @@
+<view class="container">
+
+  <view class="header">
+    <view class="info">
+      <text class="info-1">No.8.21725577</text>
+      <text class="info-2">Administrar Cuentra Maestra</text>
+    </view>
+    <view class="settings">
+      <image mode="aspectFit" src="/assets/icons/settings_white.svg" />
+    </view>
+  </view>
+
+  <view class="body">
+    <block>
+
+      <view class="item-custom">
+        <view class="info-custom">
+          <image mode="scaleToFill" src="/assets/icons/search_black.svg" />
+          <view>Consultar tus consumos</view>
+        </view>
+        <image mode="scaleToFill" src="/assets/icons/face-id.svg" />
+      </view>
+
+      <view class="item-custom">
+        <view class="info-custom">
+          <image mode="scaleToFill" src="/assets/icons/search_black.svg" />
+          <view>Consultar tus consumos</view>
+        </view>
+        <image mode="scaleToFill" src="/assets/icons/face-id.svg" />
+      </view>
+
+    </block>
+  </view>
+
+  <view class="overlay">
+    <view class="btn-overlay">
+      <text class="text">3102659717</text>
+      <image mode="widthFix" src="/assets/icons/highlight_off.svg" />
+    </view>
+  </view>
+
+</view>
