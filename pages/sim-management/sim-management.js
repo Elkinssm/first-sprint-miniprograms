@@ -1,6 +1,7 @@
 Page({
   data: {
-    showCentrosAtencionPage: false,
+    showWebView: false,
+    webViewUrl: "",
     changeSimList: [
       {
         text:
@@ -25,6 +26,9 @@ Page({
     ]
   },
   handleCustomButtonTap() {
-    this.setData({ showCentrosAtencionPage: true });
+    this.setData({
+      showWebView: true,
+      webViewUrl: "https://www.claro.com.co/personas/cavs/"
+    });
   }
 });

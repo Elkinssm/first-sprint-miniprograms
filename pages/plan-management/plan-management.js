@@ -1,20 +1,34 @@
 Page({
   data: {
-    showMiClaroPortalPage: false,
-    showECarePortalPage: false,
-    showClaroCloudPage: false,
-    showCentrosAtencionPage: false
+    showWebView: false,
+    webViewUrl: ""
   },
   goToExternalPage(e) {
     const { link } = e.target.dataset;
     const externalPages = {
-      miClaroPortal: () => this.setData({ showMiClaroPortalPage: true }),
-      eCarePortal: () => this.setData({ showECarePortalPage: true }),
-      claroCloud: () => this.setData({ showClaroCloudPage: true })
+      miClaroPortal: () =>
+        this.setData({
+          showWebView: true,
+          webViewUrl: "https://miclaroempresas.claro.com.co/#/login"
+        }),
+      eCarePortal: () =>
+        this.setData({
+          showWebView: true,
+          webViewUrl:
+            "http://e-services.telmexla.com.co/Pages/Default.aspx?ReturnUrl=%2f"
+        }),
+      claroCloud: () =>
+        this.setData({
+          showWebView: true,
+          webViewUrl: "https://www.clarocloud.com.co"
+        })
     };
     return externalPages[link]();
   },
   handleCustomButtonTap() {
-    this.setData({ showCentrosAtencionPage: true });
+    return this.setData({
+      showWebView: true,
+      webViewUrl: "https://www.claro.com.co/personas/cavs/"
+    });
   }
 });
