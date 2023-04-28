@@ -1,7 +1,7 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
-    "pages/roaming-management/roaming-management",
+    "pages/roaming-activation/roaming-activation",
     "pages/home/home",
     "pages/index/index",
     "pages/zona-publica/zona-publica",

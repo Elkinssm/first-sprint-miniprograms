@@ -1,0 +1,16 @@
+.page__body {
+  height: calc(100% - 88rpx);
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+}
+
+.step__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100rpx;
+}
+
+.step__body {
+  height: calc(100% - 100rpx - 88rpx);
+}

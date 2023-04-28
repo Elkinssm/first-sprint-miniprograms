@@ -1,5 +1,0 @@
-.page__body {
-  height: calc(100% - 88rpx);
-  padding-left: 32rpx;
-  padding-right: 32rpx;
-}

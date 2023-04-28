@@ -1,0 +1,21 @@
+<view class="page">
+  <header-roaming cellphoneNumber={{cellphone}}></header-roaming>
+  <view class="page__body">
+    <view class="step__header">
+      <button size="mini" type="primary" data-step=1 onTap="handleButton">1</button>
+      <button size="mini" type="primary" data-step=2 onTap="handleButton">2</button>
+      <button size="mini" type="primary" data-step=3 onTap="handleButton">3</button>
+    </view>
+    <view class="step__body">
+      <block a:if="{{ stepIndex === 1 }}">
+        Bloque 1
+      </block>
+      <block a:elif="{{ stepIndex === 2 }}">
+        Bloque 2
+      </block>
+      <block a:elif="{{ stepIndex === 3 }}">
+        Bloque 3
+      </block>
+    </view>
+  </view>
+</view>
