@@ -1,4 +1,14 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "date-picker": "../../packages/node_modules/antd-mini/es/DatePicker/index",
+    "range-picker": "../../packages/node_modules/antd-mini/es/DatePicker/RangePicker/index",
+    "list-item": "../../packages/node_modules/antd-mini/es/List/ListItem/index",
+    "list": "../../packages/node_modules/antd-mini/es/List/index",
+    "generic-button": "/components/generic-button/generic-button",
+    "custom-button": "/components/custom-button/custom-button",
+    "checklist": "../../packages/node_modules/antd-mini/es/Checklist/index",
+    "icon": "../../packages/node_modules/antd-mini/es/Icon/index",
+    "container": "../../packages/node_modules/antd-mini/es/Container/index"
+  },
   "styleIsolation": "apply-shared"
 }

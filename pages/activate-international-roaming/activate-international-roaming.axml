@@ -1,3 +1,53 @@
-<view>
-  New Page
+
+
+<view class="advice-center">
+  <image class="advice-icon" mode="scaleToFill" src="/assets/icons/important.svg" />
+  <view style="margin-top:20rpx;margin-bottom:20rpx;">
+    Para realizar la activación de tu servicio de Roaming Internacional debes seleccionar una fecha de caducidad del servicio.
+  </view>
+  <view>
+    <radio-group onChange="onRadioChanged"class="advice-options" name="radio-group">
+      <block a:for="{{roamingActivationOptions}}">
+        <label class="advice-radio">
+          <radio color="#FF0000" value="{{item.index}}"  />
+          {{item.text}}
+        </label>
+      </block>
+    </radio-group>
+  </view>
+
+<block a:if="{{ isDatePickerShowed }}">  
+  
+  <button style="background-color:red;"type="primary">
+    <view class="advice-button">
+      <image style="width:50rpx; height:50rpx; margin:10px;" mode="scaleToFill" src="/assets/icons/calendar.svg" />
+      <date-picker
+        style="margin-right:25px; color:white;"
+        format="DD/MM/YYYY"
+        cancelText="Cancelar"
+        okText="Seleccionar"
+        min="{{min}}"
+        max="{{max}}"
+        placeholder="Seleccionar"
+        onPickerChange="handlePickerChange"
+        onVisibleChange="handleTriggerPicker"
+        onCancel="handleDismiss"
+        onOk="handleOk"
+        onFormatLabel="handleFormatLabel"
+        
+        >
+    </date-picker> 
+    </view>
+    
+  </button>
+
+</block>
+
 </view>
+
+
+
+
+
+
+ 

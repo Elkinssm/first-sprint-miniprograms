@@ -45,6 +45,11 @@ Page({
         iconUrl: "/assets/icons/devices.svg",
         text: "Devolución de equipos",
         pageUrl: "/pages/returnOfEquipment/returnOfEquipment"
+      },
+      {
+        iconUrl: "/assets/icons/devices.svg",
+        text: "Activar Roaming Internacional Prueba",
+        pageUrl: "/pages/activate-international-roaming/activate-international-roaming"
       }
     ]
   },
