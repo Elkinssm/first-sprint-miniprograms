@@ -2,7 +2,11 @@ Component({
   data: {},
   props: {
     url: '',
-    linkIndex: ''
+    color: '',
+    stateImg: '',
+    srcImg: '',
+    under_line: false,
+    id: ''
   },
   didMount() {
     this.$page.hiperlinkButton = this;
@@ -10,7 +14,7 @@ Component({
   methods: {
     onWebView(e){
       my.navigateTo({
-        url: `/pages/solucion/solution-redirect/solution-redirect?url=${this.props.url}`
+        url: `/pages/solucion/solution-redirection/solution-redirection?url=${this.props.url}?id=${this.props.id}`
       });
     }
   }

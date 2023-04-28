@@ -1,8 +1,8 @@
 Page({
   data: {
     tabIndex: 0,
-    showSoportePage: false,
-    showCentrosAtencionPage: false,
+    showWebView: false,
+    webViewUrl: "",
     mobileList: [
       {
         text: "Cámara de comercio original y vigente no mayor a 30 días."
@@ -58,10 +58,16 @@ Page({
     this.setData({ tabIndex: tab });
   },
   goToExternalPage() {
-    this.setData({ showSoportePage: true });
+    this.setData({
+      showWebView: true,
+      webViewUrl: "https://www.claro.com.co/personas/cavs/"
+    });
   },
   handleCustomButtonTap() {
-    this.setData({ showCentrosAtencionPage: true });
+    this.setData({
+      showWebView: true,
+      webViewUrl: "https://www.claro.com.co/personas/cavs/"
+    });
   },
   /**
    * ToDo: Question that! A method to open the default email app.

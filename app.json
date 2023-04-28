@@ -22,7 +22,8 @@
     "pages/soluciones/soluciones",
     "pages/solucion/solucion",
     "pages/adquirir-producto/adquirir-producto",
-    "pages/solucion/solution-redirect/solution-redirect"
+    "pages/guia-novedades/redirect-guia/redirect-guia",
+    "pages/solucion/solution-redirection/solution-redirection"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",

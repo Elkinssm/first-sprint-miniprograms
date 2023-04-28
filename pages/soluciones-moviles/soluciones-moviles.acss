@@ -20,7 +20,7 @@
 /*Header*/
 
 .header {
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -70,33 +70,36 @@
   width: 100%;
   height: 80%;
   padding-top: 40rpx;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  background-color: crimson;
-  gap: 20rpx;
 }
 
-.body .item-custom {
+.scroll-view-y {
+  white-space: normal;
+  display: flex;
+  height: 100%;
+}
+
+.item-account {
+  width: 90%;
+  height: 10%;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
   background-color: #ffffff;
   border-radius: 15rpx;
-  width: 90%;
-  height: 10%;
-  padding: 20rpx;
+  border: 1px solid #ccc;
+  padding: 20rpx 10rpx 20rpx 20rpx;
+  box-shadow: 3rpx 3rpx 3rpx 3rpx #ccc;
 }
 
-.item-custom > .info-custom {
+.info-account {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   gap: 10rpx;
 }
 
-.item-custom image {
+.item-account image {
   width: 70rpx;
   height: 70rpx;
 }

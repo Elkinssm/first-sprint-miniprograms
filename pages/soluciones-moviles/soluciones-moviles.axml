@@ -3,7 +3,14 @@
   <view class="header">
     <view class="info">
       <text>No. 8.21725577</text>
-      <hyperlink-button>Administrar Cuentra Maestra</hyperlink-button>
+      <hyperlink-button 
+        stateImg="{{true}}" 
+        srcImg="/assets/icons/navigate_next_black.svg"
+        color="white"
+        under_line="{{true}}"
+      >
+        Administrar Cuentra Maestra
+      </hyperlink-button>
     </view>
     <view class="settings">
       <image mode="aspectFit" src="/assets/icons/settings_white.svg" />
@@ -11,15 +18,17 @@
   </view>
 
   <view class="body">
-    <block>
-      <view class="item-custom">
-        <view class="info-custom">
-          <image mode="scaleToFill" src="/assets/icons/search_black.svg" />
-          <view>Consultar tus consumos</view>
+
+      <scroll-view style="scroll-view-y" scroll-y="{{true}}">
+        <view class="item-account">
+          <view class="info-account">
+            <image mode="scaleToFill" src="/assets/icons/search_black.svg"/>
+            <view>Consultar tus consumos</view>
+          </view>
+          <image mode="scaleToFill" src="/assets/icons/navigate_next_black.svg"/>
         </view>
-        <image mode="scaleToFill" src="/assets/icons/face-id.svg" />
-      </view>
-    </block>
+      </scroll-view>
+
   </view>
 
   <view class="overlay">
