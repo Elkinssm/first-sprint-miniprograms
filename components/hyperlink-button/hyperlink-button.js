@@ -1,7 +1,5 @@
 Component({
-  data: {
-    state: false
-  },
+  data: {},
   props: {
     url: '',
     linkIndex: ''
@@ -11,9 +9,9 @@ Component({
   },
   methods: {
     onWebView(e){
-      this.setData({
-        state: true
-      }); 
+      my.navigateTo({
+        url: `/pages/solucion/solution-redirection/solution-redirection?url=${this.props.url}`
+      });
     }
   }
 });

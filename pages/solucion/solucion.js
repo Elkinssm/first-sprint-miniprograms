@@ -1,7 +1,7 @@
 Page({
   data: {
     video: {
-      src: '/assets/videos/Soluciones moviles Claro.mp4',
+      src: '/assets/videos/Soluciones_moviles_Claro.mp4',
       showAllControls: true,
       showPlayButton: true,
       showCenterButton: true,
