@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "header-roaming": "/components/header-roaming/header-roaming"
+    "header-roaming": "/components/header-roaming/header-roaming",
+    "title-banner": "/components/title-banner/title-banner"
   },
   "styleIsolation": "apply-shared"
 }

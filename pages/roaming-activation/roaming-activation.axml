@@ -9,6 +9,8 @@
     <view class="step__body">
       <block a:if="{{ stepIndex === 1 }}">
         Bloque 1
+        <title-banner iconUrl="/assets/icons/change-plan.svg" textContent="Escoge tus países destino\n(Máximo 5)">
+        </title-banner>
       </block>
       <block a:elif="{{ stepIndex === 2 }}">
         Bloque 2
