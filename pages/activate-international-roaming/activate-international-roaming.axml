@@ -13,7 +13,7 @@
     <view class="col-4">
       <view class="row">
         <view class="col">
-          <image        
+          <image
             class="icon-red"
             mode="widthFix"
             style="width:30px; height: 30px;"
@@ -37,40 +37,55 @@
     Para realizar la activación de tu servicio de Roaming Internacional debes seleccionar una fecha de caducidad del servicio.
   </view>
   <view>
-    <radio-group onChange="onRadioChanged"class="advice-options" name="radio-group">
+    <radio-group onChange="onRadioChanged" class="advice-options" name="radio-group">
       <block a:for="{{roamingActivationOptions}}">
         <label class="advice-radio">
-          <radio color="#FF0000" value="{{item.index}}"  />
+          <radio color="#FF0000" value="{{item.index}}" />
           {{item.text}}
         </label>
       </block>
     </radio-group>
   </view>
 
-<block a:if="{{ isDatePickerShowed }}">  
-  
-  <button style="background-color:red;"type="primary">
-    <view class="advice-button">
-      <image style="width:50rpx; height:50rpx; margin:10px;" mode="scaleToFill" src="/assets/icons/calendar.svg" />
-      <date-picker
-        style="margin-right:25px; color:white;"
-        format="DD/MM/YYYY"
-        cancelText="Cancelar"
-        okText="Seleccionar"
-        min="{{min}}"
-        max="{{max}}"
-        placeholder="Seleccionar"
-        onPickerChange="handlePickerChange"
-        onVisibleChange="handleTriggerPicker"
-        onCancel="handleDismiss"
-        onOk="handleOk"
-        onFormatLabel="handleFormatLabel"
+  <block a:if="{{ isDatePickerShowed }}">
+    <button style="background-color:red;" type="primary">
+      <view class="advice-button">
+        <image
+          style="width:50rpx; height:50rpx; margin:10px;"
+          mode="scaleToFill"
+          src="/assets/icons/calendar.svg"
+        />
+        <date-picker
+          style="margin-right:25px; color:white;"
+          format="DD/MM/YYYY"
+          cancelText="Cancelar"
+          okText="Seleccionar"
+          min="{{min}}"
+          max="{{max}}"
+          placeholder="Seleccionar"
+          onPickerChange="handlePickerChange"
+          onFormatLabel="handleFormatLabel"
         >
-    </date-picker> 
-    </view>
-    
-  </button>
+        </date-picker>
+      </view>
 
-</block>
+    </button>
+
+  </block>
 
 </view>
+
+
+
+<button data-field="customVisible" onTap="handleOpen">Activar</button>
+
+<modal
+  title="¿Estás seguro que deseas modificar tu servicio de Roaming internacional?"
+  content="3125374871 con fecha de caducidad {{fechaLimite}}"
+  visible="{{customVisible}}"
+  primaryButtonText="Aceptar"
+  primaryButtonStyle="color:red;"
+  secondaryButtonText="Cancelar"
+  onPrimaryButtonTap="handlePrimaryButtonTap"
+  onSecondaryButtonTap="handleSecondaryButtonTap"
+/>

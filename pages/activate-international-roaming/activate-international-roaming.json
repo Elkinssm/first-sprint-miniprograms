@@ -8,7 +8,8 @@
     "custom-button": "/components/custom-button/custom-button",
     "checklist": "../../packages/node_modules/antd-mini/es/Checklist/index",
     "icon": "../../packages/node_modules/antd-mini/es/Icon/index",
-    "container": "../../packages/node_modules/antd-mini/es/Container/index"
+    "container": "../../packages/node_modules/antd-mini/es/Container/index",
+    "modal": "../../packages/node_modules/antd-mini/es/Modal/index"
   },
   "styleIsolation": "apply-shared"
 }

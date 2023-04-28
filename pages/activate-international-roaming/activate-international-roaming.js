@@ -1,70 +1,42 @@
 Page({
   data: {
-
-    roamingActivationOptions:[
-      {
+    roamingActivationOptions: [{
         index: 1,
-        text:"Activar indefinidamente",
+        text: "Activar indefinidamente",
       },
       {
         index: 2,
-        text:"Activar con fecha limite"
+        text: "Activar con fecha limite"
       }
     ],
     isDatePickerShowed: false,
-    fechaLimite: new Date(),
-
+    fechaLimite: "indefinida",
+    customVisible: false,
     min: new Date(),
-    max: new Date('2050/12/31'),
-    defaultDate: new Date('2019/02/02'),
-    defaultDateRange: [new Date('2022/03/21'), new Date('2022/05/20')],
-    
-  },
-  onLoad() {
-    this.setData(
-      {
-        fechaLimite: this.formatDate(new Date())
-      })
-  },
-  handlePickerChange(date, dateStr, e) {
-    console.log('onPickerChange', date, dateStr, e);
-  },
-  handleOk(date, format, e) {
-    console.log('onOk', date, format, e);
-  },
-  handlePickerRangeChange(type, date, dateStr, e) {
-    console.log('onPickerRangeChange', type, date, dateStr, e);
-  },
-  handleRangeOk(date, format, e) {
-    console.log('onRangeOk', date, format, e);
-  },
-  handleChangeDate() {
-    this.setData({ defaultDate: new Date('2019/05/02') });
-  },
-  handleTriggerPicker(visible, e) {
-    console.log('onVisibleChange', visible, e);
+    max: new Date('2025/12/31'),
   },
 
-  handleDismiss(e) {
-    console.log('e', e);
-  },
-  handleFormatLabel(type, value) {
-   
-    if(type === 'month') type = "Mes";
-    if(type === 'year') type = "Año";
-    if(type === 'day') type = "Dia";
-
-   return String(type + " " +value);
-  },
-  onChangeControlled(value) {
-    this.setData({ value });
-  },
   onRadioChanged(value) {
-    if(value.detail.value === 2){
-      this.setData({ isDatePickerShowed: true })
-    }else{
-      this.setData({ isDatePickerShowed: false })
+    this.setData({
+      fechaLimite: "indefinida"
+    })
+    if (value.detail.value === 2) {
+      this.setData({
+        isDatePickerShowed: true
+      })
+    } else {
+      this.setData({
+        isDatePickerShowed: false
+      })
     }
+  },
+
+  //#region DatePicker
+  handleFormatLabel(type, value) {
+    if (type === 'month') type = "Mes";
+    if (type === 'year') type = "Año";
+    if (type === 'day') type = "Dia";
+    return String(type + " " + value);
   },
   formatDate(date) {
     console.log(date);
@@ -74,7 +46,49 @@ Page({
       date.getFullYear(),
     ].join('/');
   },
+  handlePickerChange(date, dateStr, e) {
+    this.setData({
+      fechaLimite: this.formatDate(date)
+    })
+  },
   padTo2Digits(num) {
     return num.toString().padStart(2, '0');
   },
+  //#endregion
+
+
+  //#region Modal
+  handleOpen(e) {
+    const {
+      field
+    } = e.target.dataset;
+    this.setData({
+      [field]: true
+    });
+  },
+  handleClose() {
+    this.setData({
+      basicVisible: false,
+      withTitleVisible: false,
+      basicTwoVisible: false,
+      basicThreeVisible: false,
+      focusOneVisible: false,
+      focusTwoVisible: false,
+      focusThreeVisible: false,
+      customVisible: false,
+      customBodyVisible: false,
+    });
+  },
+  handlePrimaryButtonTap() {
+    this.handleClose();
+    my.showToast({
+      content: 'Envio de request (en construcción)',
+      duration: 4000
+    });
+  },
+  handleSecondaryButtonTap() {
+    this.handleClose();
+  },
+  //#endregion
+
 });
