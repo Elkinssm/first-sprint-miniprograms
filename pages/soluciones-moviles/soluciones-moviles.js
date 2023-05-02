@@ -24,7 +24,7 @@ Page({
       {
         name: "Roaming Internacional",
         img: '/assets/icons/roaming_black.svg',
-        url: '/pages/test/test'
+        url: '/pages/soluciones-moviles/roaming-international/roaming-international'
       },
       {
         name: "Inicio",
