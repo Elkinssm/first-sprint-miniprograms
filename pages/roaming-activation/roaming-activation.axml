@@ -1,11 +1,20 @@
 <view class="page">
   <header-roaming cellphoneNumber={{cellphone}}></header-roaming>
-  <view class="page__body">
-    <view class="step__header">
-      <button size="mini" type="primary" data-step=1 onTap="handleButton">1</button>
-      <button size="mini" type="primary" data-step=2 onTap="handleButton">2</button>
-      <button size="mini" type="primary" data-step=3 onTap="handleButton">3</button>
+  <view class="stepper">
+    <view class="stepper-item {{stepIndex === 1 ? 'stepper-item--active' : 'stepper-item--completed'}}">
+      <view class="stepper-item__index">1</view>
+      <view class="stepper-item__title">Países Destino</view>
     </view>
+    <view class="stepper-item {{stepIndex === 2 ? 'stepper-item--active' : stepIndex === 3 ? 'stepper-item--completed':''}}">
+      <view class="stepper-item__index">2</view>
+      <view class="stepper-item__title">Paquetes</view>
+    </view>
+    <view class="stepper-item {{stepIndex === 3 ? 'stepper-item--active' : ''}}">
+      <view class="stepper-item__index">3</view>
+      <view class="stepper-item__title">Ofertas para ti</view>
+    </view>
+  </view>
+  <view class="page__body">
     <view class="step__body">
       <block a:if="{{ stepIndex === 1 }}">
         <title-banner iconUrl="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/pin_drop/default/48px.svg" textContent="Escoge tus países destino  (Máximo 5)">

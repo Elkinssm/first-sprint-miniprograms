@@ -1,6 +1,6 @@
 <view class="titleBanner">
   <image mode="scaleToFill" src="{{iconUrl}}" class="titleBanner__icon" />
-  <view class="titleBanner__text">
+  <text class="titleBanner__text">
     {{textContent}}
-  </view>
+  </text>
 </view>
