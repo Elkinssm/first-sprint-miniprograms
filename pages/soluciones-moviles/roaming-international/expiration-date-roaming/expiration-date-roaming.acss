@@ -83,6 +83,10 @@
   .icon-red {
     filter: invert(20%) sepia(100%) saturate(4000%);
   }
+
+  .icon-black-red {
+    filter: invert(0%) sepia(100%) saturate(40%);
+  }
 }
 
 
@@ -106,14 +110,43 @@
   margin: 40rpx;
   width: 80rpx;
   height: 80rpx;
+  transform: rotate(180deg);
 }
 
 .advice-radio {
- margin: 20rpx;
+  margin: 20rpx;
 }
 
 .advice-button {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.text-muted {
+  font-size: 14px;
+  color: rgba(128, 128, 128, 0.692)
+}
+
+.btn-calendar {
+  border-color: rgb(255, 0, 0);
+  border-radius: 5px;
+}
+
+.ant-picker-placeholder {
+  color: #000 !important;
+}
+
+.btn-activate {
+  margin: 60px;
+  border-radius: 5px;
+  background: rgb(255, 0, 0);
+  color: #FFF;
+}
+
+.text-section {
+  margin: 20px;
+  padding: 10px;
+  background-color: #03839d54;
+  border-radius: 5px;
 }

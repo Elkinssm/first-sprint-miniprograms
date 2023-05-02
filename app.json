@@ -24,7 +24,7 @@
     "pages/solucion/solution-redirection/solution-redirection",
     "pages/soluciones-moviles/soluciones-moviles",
     "pages/soluciones-moviles/roaming-international/roaming-international",
-    "pages/activate-international-roaming/activate-international-roaming"
+    "pages/soluciones-moviles/roaming-international/expiration-date-roaming/expiration-date-roaming"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",

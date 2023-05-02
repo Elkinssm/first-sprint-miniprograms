@@ -1,5 +1,11 @@
 Page({
+  onLoad(query) {
+    this.setData({
+      lineNumber: '3172345182'
+    })
+  },
   data: {
+    lineNumber: '',
     roamingActivationOptions: [{
         index: 1,
         text: "Activar indefinidamente",

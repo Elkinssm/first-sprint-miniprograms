@@ -79,7 +79,7 @@ Page({
 
   onPencil(){
     my.navigateTo({
-      url: '/pages/activate-international-roaming/activate-international-roaming'
+      url: '/pages/soluciones-moviles/roaming-international/expiration-date-roaming/expiration-date-roaming'
     })
   }
 });

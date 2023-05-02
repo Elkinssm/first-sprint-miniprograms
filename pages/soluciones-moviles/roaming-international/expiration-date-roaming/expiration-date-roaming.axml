@@ -22,7 +22,7 @@
           />
         </view>
         <view class="col-8" style="font-size:14px">
-          3172345182
+          {{lineNumber}}
         </view>
       </view>
     </view>
@@ -33,7 +33,7 @@
 
 <view class="advice-center">
   <image class="advice-icon" mode="scaleToFill" src="/assets/icons/important.svg" />
-  <view style="margin-top:20rpx;margin-bottom:20rpx;">
+  <view class="text-muted" style="margin-top:20rpx;margin-bottom:20rpx;">
     Para realizar la activación de tu servicio de Roaming Internacional debes seleccionar una fecha de caducidad del servicio.
   </view>
   <view>
@@ -48,7 +48,7 @@
   </view>
 
   <block a:if="{{ isDatePickerShowed }}">
-    <button style="background-color:red;" type="primary">
+    <button class="btn-calendar" style="" type="default">
       <view class="advice-button">
         <image
           style="width:50rpx; height:50rpx; margin:10px;"
@@ -56,7 +56,7 @@
           src="/assets/icons/calendar.svg"
         />
         <date-picker
-          style="margin-right:25px; color:white;"
+          style="margin-right:25px; color:black;"
           format="DD/MM/YYYY"
           cancelText="Cancelar"
           okText="Seleccionar"
@@ -75,9 +75,12 @@
 
 </view>
 
+<view class="text-section">
+  <text>
+    Si activas el servicio de Roaming Internacional por demanda, los datos (KB), minutos y SMS que consumas durante tus viajes serán cobrados a la tarifa vigente para el país que visites, las cuales puedes consultar en</text>
+</view>
 
-
-<button data-field="customVisible" onTap="handleOpen">Activar</button>
+<button type="default" class="btn-activate" data-field="customVisible" onTap="handleOpen">Activar</button>
 
 <modal
   title="¿Estás seguro que deseas modificar tu servicio de Roaming internacional?"
