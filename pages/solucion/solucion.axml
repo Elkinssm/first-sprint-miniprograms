@@ -41,10 +41,12 @@
                 <block a:for="{{ solution.link }}" a:for-item="link">
                   <hiperlink-button
                     id="{{index}}"
-                    color="#16b6c9"
-                    url="{{link.valor}}"
                     stateImg="{{true}}"
                     srcImg="/assets/icons/navigateNext.svg"
+                    colorImg="#16b6c9"
+                    sizeImg="25rpx"
+                    styles="color: #16b6c9;"
+                    url="{{link.valor}}"
                   >
                     {{link.nombre}}
                   </hiperlink-button>

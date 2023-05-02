@@ -1,8 +1,10 @@
 Component({
   data: {},
-  props: {
+  props:{
     url: '',
-    color: '',
+    styles: '',
+    sizeImg: '',
+    colorImg: '',
     stateImg: '',
     srcImg: '',
     under_line: false,

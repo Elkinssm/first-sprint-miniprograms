@@ -6,7 +6,9 @@
       <hyperlink-button 
         stateImg="{{true}}" 
         srcImg="/assets/icons/navigate_next_black.svg"
-        color="white"
+        colorImg="white"
+        sizeImg="25rpx"
+        styles="color:white;"
         under_line="{{true}}"
       >
         Administrar Cuentra Maestra
