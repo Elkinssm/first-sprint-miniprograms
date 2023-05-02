@@ -9,8 +9,86 @@
   flex-direction: row;
   justify-content: space-between;
   height: 100rpx;
+  padding-top: 50rpx;
 }
 
 .step__body {
   height: calc(100% - 100rpx - 88rpx);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 30rpx;
+
+}
+
+
+.picker-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.picker {
+  padding: 10rpx 200rpx 10rpx 140rpx;
+  border-radius: 15rpx;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  text-align: center;
+
+}
+
+.text{
+display: flex;
+color: #ccc;
+text-align: justify;
+width: 73%;
+font-size: 10.2px;
+padding-left: 100rpx;
+}
+
+.continueBtn{
+  padding-top: 60rpx;
+  width: 73%;
+  align-items: center;
+  padding-left: 100rpx;
+}
+.continueBtn button{
+  border-radius: 15rpx;
+  align-items: center;
+}
+
+
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  background-color: #fff;
+  z-index: 999;
+}
+
+.item {
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #f1f1f1;
 }

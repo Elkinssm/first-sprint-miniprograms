@@ -10,8 +10,8 @@
 }
 
 .titleBanner__icon {
-    width: 60rpx;
-    height: 60rpx;
+    width: 90rpx;
+    height: 90rpx;
 }
 
 .titleBanner__text {

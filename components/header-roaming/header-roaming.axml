@@ -1,10 +1,20 @@
 <view class="header">
+  
+  <view class="header__image">
+    <image
+    mode="widthFix"
+    style="width:30px; height: 30px;"
+    src="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/language/default/48px.svg"
+    alt="Descripción de la imagen"
+  />
+  </view>
+
   <view class="header__text">
-    <icon type="success" />
     <view class="header__text__title">
       Administra tu Roaming
     </view>
   </view>
+  
   <view class="header__text__number">
     {{cellphoneNumber}}
   </view>

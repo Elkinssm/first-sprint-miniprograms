@@ -8,9 +8,62 @@
     </view>
     <view class="step__body">
       <block a:if="{{ stepIndex === 1 }}">
-        Bloque 1
-        <title-banner iconUrl="/assets/icons/change-plan.svg" textContent="Escoge tus países destino\n(Máximo 5)">
+        <title-banner iconUrl="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/pin_drop/default/48px.svg" textContent="Escoge tus países destino  (Máximo 5)">
         </title-banner>
+      <!--Inputs-->
+      <view class="input-container">
+        <view class="picker-item">
+          <picker id="pais1" mode="selector" range="{{paises}}" onChange="onPickerChange">
+            <view class="picker">
+            <input class="input" type="text" placeholder="Ingresa país" value="{{pais1}}"/>
+            </view>
+          </picker>
+        </view>
+        <view class="picker-item">
+          <picker id="pais2" mode="selector" range="{{paises}}" onChange="onPickerChange">
+            <view class="picker"> 
+            <input class="input" type="text" placeholder="Ingresa país" value="{{pais2}}"/>
+            </view>          
+          </picker>
+        </view>
+        <view class="picker-item">
+          <picker id="pais3" mode="selector" range="{{paises}}" onChange="onPickerChange">
+            <view class="picker">
+              <input class="input" type="text" placeholder="Ingresa país" value="{{pais3}}"/>
+            </view>
+          </picker>
+        </view>
+        <view class="picker-item">
+          <picker id="pais4" mode="selector" range="{{paises}}" onChange="onPickerChange">
+            <view class="picker">
+            <input class="input" type="text" placeholder="Ingresa país" value="{{pais4}}"/>
+            </view>
+          </picker>
+        </view>
+        <view class="picker-item">
+          <picker id="pais5" mode="selector" range="{{paises}}" onChange="onPickerChange">
+            <view class="picker">
+              <input class="input" type="text" placeholder="Ingresa país" value="{{pais5}}"/>
+            </view>
+          </picker>
+        </view>
+      </view>
+      
+      <view class="text">
+        <text>
+        {{textNotFindCountry}}
+        </text>
+      </view>
+
+      <view class="continueBtn">
+        <button type="primary" onTap="continue">Continuar</button>
+      </view>
+
+
+
+
+
+
       </block>
       <block a:elif="{{ stepIndex === 2 }}">
         Bloque 2

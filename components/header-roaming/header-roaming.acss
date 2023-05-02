@@ -13,8 +13,14 @@
   flex-direction: row;
 }
 
+.header__image{
+  display: flex;
+  float: left;
+  padding-bottom: 20rpx;
+}
+
 .header__text__title {
-  margin-left: 10rpx;
+  margin-left: -180rpx;
 }
 
 .header__text__number {
