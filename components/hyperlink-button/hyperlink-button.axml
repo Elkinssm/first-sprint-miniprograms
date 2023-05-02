@@ -1,0 +1,4 @@
+<view onTap="onWebView" class="links">
+  <view><slot>Hiperlink Button</slot></view>
+  <image mode="scaleToFill" src="/assets/icons/navigateNext.svg"/>
+</view>
