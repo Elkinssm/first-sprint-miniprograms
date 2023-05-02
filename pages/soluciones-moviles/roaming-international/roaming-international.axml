@@ -56,7 +56,7 @@
         <view>
           Fecha de expiración:
         </view>
-        <view class="test-numero-linea">
+        <view class="test-numero-linea" onTap="onPencil">
           <view>
             {{expirationDate}}
           </view>

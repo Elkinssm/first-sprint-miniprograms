@@ -75,5 +75,11 @@ Page({
     my.navigateTo({
       url: '/pages/payment/payment?url=https://portalpagos.claro.com.co/index.php?view=vistas/personal/claro/newclaro/inicio.php'
     })
+  },
+
+  onPencil(){
+    my.navigateTo({
+      url: '/pages/activate-international-roaming/activate-international-roaming'
+    })
   }
 });

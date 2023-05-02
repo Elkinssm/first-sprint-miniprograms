@@ -53,7 +53,7 @@ Page({
       {
         iconUrl: "/assets/icons/ver-mas.svg",
         text: "Ver\n más",
-        pageUrl: "/pages/activate-international-roaming/activate-international-roaming"/*"/pages/zona-publica/zona-publica"*/
+        pageUrl: "/pages/zona-publica/zona-publica"
       }
     ]
   },
