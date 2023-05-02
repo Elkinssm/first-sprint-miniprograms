@@ -19,15 +19,19 @@
 
   <view class="body">
 
-      <scroll-view style="scroll-view-y" scroll-y="{{true}}">
-        <view class="item-account">
-          <view class="info-account">
-            <image mode="scaleToFill" src="/assets/icons/search_black.svg"/>
-            <view>Consultar tus consumos</view>
-          </view>
-          <image mode="scaleToFill" src="/assets/icons/navigate_next_black.svg"/>
-        </view>
-      </scroll-view>
+    <view class="scroll-y">
+
+      <view class="container-items-y">
+        
+        <block a:for="{{ roamingService }}" a:for-item="data" a:key="*this">
+
+          <arrow-button onTap="onNavigate" imgSrc="{{ data.img }}" url="{{ url }}" dataInfo="{{ data }}">{{data.name}}</arrow-button>
+
+        </block>
+
+      </view>
+
+    </view>
 
   </view>
 

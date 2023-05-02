@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "hyperlink-button": "/components/hyperlink-button/hyperlink-button"
+    "hyperlink-button": "/components/hyperlink-button/hyperlink-button",
+    "arrow-button": "/components/arrow-button/arrow-button"
   },
   "styleIsolation": "apply-shared"
 }

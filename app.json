@@ -17,13 +17,12 @@
     "pages/sim-management/sim-management",
     "pages/plan-detail/plan-detail",
     "pages/payment/payment",
-    "pages/guia-novedades/redirect-guia/redirect-guia",
-    "pages/soluciones-moviles/soluciones-moviles",
     "pages/soluciones/soluciones",
     "pages/solucion/solucion",
     "pages/adquirir-producto/adquirir-producto",
     "pages/guia-novedades/redirect-guia/redirect-guia",
-    "pages/solucion/solution-redirection/solution-redirection"
+    "pages/solucion/solution-redirection/solution-redirection",
+    "pages/soluciones-moviles/soluciones-moviles"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",
