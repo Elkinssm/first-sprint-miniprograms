@@ -22,6 +22,8 @@
     "pages/adquirir-producto/adquirir-producto",
     "pages/guia-novedades/redirect-guia/redirect-guia",
     "pages/solucion/solution-redirection/solution-redirection",
+    "pages/soluciones-moviles/soluciones-moviles",
+    "pages/soluciones-moviles/roaming-international/roaming-international"
     "pages/activate-international-roaming/activate-international-roaming"
   ],
   "window": {

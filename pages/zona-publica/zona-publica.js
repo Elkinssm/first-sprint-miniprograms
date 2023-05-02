@@ -48,8 +48,8 @@ Page({
       },
       {
         iconUrl: "/assets/icons/devices.svg",
-        text: "Activar Roaming Internacional Prueba",
-        pageUrl: "/pages/activate-international-roaming/activate-international-roaming"
+        text: "Soluciones Moviles",
+        pageUrl: "/pages/soluciones-moviles/soluciones-moviles"
       }
     ]
   },
