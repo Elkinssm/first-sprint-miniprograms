@@ -112,9 +112,7 @@
   align-items: center;
   width: 100%;
   padding-top: 30rpx;
-
 }
-
 
 .picker-item {
   display: flex;
@@ -132,31 +130,28 @@
   color: #333;
   cursor: pointer;
   text-align: center;
-
 }
 
-.text{
-display: flex;
-color: #ccc;
-text-align: justify;
-width: 73%;
-font-size: 10.2px;
-padding-left: 100rpx;
+.text {
+  display: flex;
+  color: #ccc;
+  text-align: justify;
+  width: 73%;
+  font-size: 10.2px;
+  padding-left: 100rpx;
 }
 
-.continueBtn{
+.continueBtn {
   padding-top: 60rpx;
   width: 73%;
   align-items: center;
   padding-left: 100rpx;
 }
-.continueBtn button{
+.continueBtn button {
   border-radius: 15rpx;
   align-items: center;
   background-color: var(--claro-color);
 }
-
-
 
 .dropdown {
   position: absolute;
@@ -181,4 +176,63 @@ padding-left: 100rpx;
 
 .item:hover {
   background-color: #f1f1f1;
+}
+
+.countries-title {
+  margin: 60rpx 0px 50rpx 0px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.packages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.packages__package-button {
+  width: 500rpx;
+  height: 80rpx;
+  border: 6rpx solid #e6e6e6;
+  border-radius: 14rpx;
+  padding: 20rpx 0rpx 24rpx 22rpx;
+  margin: 20rpx 0rpx;
+  box-shadow: 0rpx 10rpx 12rpx 0rpx #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  cursor: pointer;
+}
+
+.packages__icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.packages__text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+
+.packages__title {
+  font-size: 30rpx;
+}
+
+.packages__subtitle {
+  font-size: 26rpx;
+}
+
+.packages__package-button::before {
+  content: "";
+  position: relative;
+  width: 10rpx;
+  height: 10rpx;
+  border-style: solid;
+  border-width: 8rpx 8rpx 0 0;
+  top: 40%;
+  left: calc(100% - 40rpx);
+  transform: rotate(45deg);
 }

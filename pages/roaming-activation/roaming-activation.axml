@@ -17,56 +17,84 @@
   <view class="page__body">
     <view class="step__body">
       <block a:if="{{ stepIndex === 1 }}">
-        <title-banner iconUrl="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/pin_drop/default/48px.svg" textContent="Escoge tus países destino  (Máximo 5)">
+        <title-banner
+          iconUrl="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/pin_drop/default/48px.svg"
+          textContent="Escoge tus países destino  (Máximo 5)"
+        >
         </title-banner>
-      <!--Inputs-->
-      <view class="input-container">
-        <view class="picker-item">
-          <picker id="pais1" mode="selector" range="{{paises}}" onChange="onPickerChange">
-            <view class="picker">
-            <input class="input" type="text" placeholder="Ingresa país" value="{{pais1}}"/>
-            </view>
-          </picker>
+        <!--Inputs-->
+        <view class="input-container">
+          <view class="picker-item">
+            <picker id="pais1" mode="selector" range="{{paises}}" onChange="onPickerChange">
+              <view class="picker">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Ingresa país"
+                  value="{{pais1}}"
+                />
+              </view>
+            </picker>
+          </view>
+          <view class="picker-item">
+            <picker id="pais2" mode="selector" range="{{paises}}" onChange="onPickerChange">
+              <view class="picker">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Ingresa país"
+                  value="{{pais2}}"
+                />
+              </view>
+            </picker>
+          </view>
+          <view class="picker-item">
+            <picker id="pais3" mode="selector" range="{{paises}}" onChange="onPickerChange">
+              <view class="picker">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Ingresa país"
+                  value="{{pais3}}"
+                />
+              </view>
+            </picker>
+          </view>
+          <view class="picker-item">
+            <picker id="pais4" mode="selector" range="{{paises}}" onChange="onPickerChange">
+              <view class="picker">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Ingresa país"
+                  value="{{pais4}}"
+                />
+              </view>
+            </picker>
+          </view>
+          <view class="picker-item">
+            <picker id="pais5" mode="selector" range="{{paises}}" onChange="onPickerChange">
+              <view class="picker">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Ingresa país"
+                  value="{{pais5}}"
+                />
+              </view>
+            </picker>
+          </view>
         </view>
-        <view class="picker-item">
-          <picker id="pais2" mode="selector" range="{{paises}}" onChange="onPickerChange">
-            <view class="picker"> 
-            <input class="input" type="text" placeholder="Ingresa país" value="{{pais2}}"/>
-            </view>          
-          </picker>
-        </view>
-        <view class="picker-item">
-          <picker id="pais3" mode="selector" range="{{paises}}" onChange="onPickerChange">
-            <view class="picker">
-              <input class="input" type="text" placeholder="Ingresa país" value="{{pais3}}"/>
-            </view>
-          </picker>
-        </view>
-        <view class="picker-item">
-          <picker id="pais4" mode="selector" range="{{paises}}" onChange="onPickerChange">
-            <view class="picker">
-            <input class="input" type="text" placeholder="Ingresa país" value="{{pais4}}"/>
-            </view>
-          </picker>
-        </view>
-        <view class="picker-item">
-          <picker id="pais5" mode="selector" range="{{paises}}" onChange="onPickerChange">
-            <view class="picker">
-              <input class="input" type="text" placeholder="Ingresa país" value="{{pais5}}"/>
-            </view>
-          </picker>
-        </view>
-      </view>
-      
-      <view class="text">
-        <text>
-        {{textNotFindCountry}}
-        </text>
-      </view>
 
-      <view class="continueBtn">
-        <button type="primary" onTap="continue">Continuar</button>
-      </view>
+        <view class="text">
+          <text>
+            {{textNotFindCountry}}
+          </text>
+        </view>
+
+        <view class="continueBtn">
+          <button type="primary" onTap="continue">Continuar</button>
+        </view>
 
 
 
@@ -75,7 +103,29 @@
 
       </block>
       <block a:elif="{{ stepIndex === 2 }}">
-        Bloque 2
+        <title-banner
+          textContent="Escoge tipo de paquete se\n adapta a tus necesidades"
+          iconUrl="/assets/icons/paquetes.svg"
+        >
+        </title-banner>
+        <view class="packages">
+          <view class="countries-title">
+            Ecuador
+          </view>
+          <block a:for="{{ packageTypes }}" a:key="*item">
+            <view
+              class="packages__package-button"
+              data-packageType="{{item.packageType}}"
+              onTap="handlePackageButton"
+            >
+              <image mode="scaleToFill" src="{{item.iconUrl}}" class="packages__icon" />
+              <view class="packages__text">
+                <text class="packages__title">{{item.title}}</text>
+                <text class="packages__subtitle">{{item.subtitle}}</text>
+              </view>
+            </view>
+          </block>
+        </view>
       </block>
       <block a:elif="{{ stepIndex === 3 }}">
         Bloque 3
