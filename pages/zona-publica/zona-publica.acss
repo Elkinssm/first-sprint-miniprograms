@@ -107,6 +107,6 @@
 }
 
 .text-access {
-  font-size: medium;
+  font-size: small;
   text-align: center;
 }
