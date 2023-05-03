@@ -1,6 +1,6 @@
 <view 
   onTap="onWebView" 
-  class="links {{under_line == true ? 'under-line': ''}}" 
+  class="links {{underLine == true ? 'under-line': ''}}" 
   style="{{styles}}">
   <view>
     <slot>Hiperlink Button</slot></view>

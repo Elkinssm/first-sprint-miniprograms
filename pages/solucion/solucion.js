@@ -1,7 +1,7 @@
 Page({
   data: {
     video: {
-      src: '/assets/videos/Soluciones_moviles_Claro.mp4',
+      src: 'https://youtu.be/-QAFwCiLu44',
       showAllControls: true,
       showPlayButton: true,
       showCenterButton: true,
@@ -22,6 +22,8 @@ Page({
     backgroundColor: false
   },
   onLoad(query) {
+    // src: '/assets/videos/Soluciones_moviles_Claro.mp4',
+    this.videoContext = my.createVideoContext('myVideo');
     this.setInformation(query.data, query.id);
     this.onButtonStatusChange();
   },

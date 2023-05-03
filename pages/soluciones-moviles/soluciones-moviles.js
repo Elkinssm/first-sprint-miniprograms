@@ -35,9 +35,10 @@ Page({
 
   },
   onLoad(query) {
-    my.setNavigationBar({
-      title: 'Mi Claro'
-    });
+    my.setNavigationBar({ title: 'Mi Claro' });
+  },
+  onReady(){
+    enableDragSort('drag-sort-enable');
   },
   onNavigate(e) {
     const url = e.currentTarget.dataset.item.url;
