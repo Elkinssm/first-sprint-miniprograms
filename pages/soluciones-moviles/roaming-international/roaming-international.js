@@ -12,7 +12,8 @@ Page({
     packagedInstalled: [],
     urlChekingInstalled:"https://apiselfservice.co/M3/Empresas/Postpago/checkInstalledPackages/",
     urlRetrieveRoaming:
-      "https://apiselfservice.co/api/index.php/v1/soap/retrieveRoamingService.json"
+      "https://apiselfservice.co/api/index.php/v1/soap/retrieveRoamingService.json",
+      lineNumber:getApp().globalData.lineNumber
   },
 
   onReady() {

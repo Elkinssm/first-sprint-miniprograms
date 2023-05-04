@@ -1,5 +1,6 @@
 Page({
   data: {
+    lineNumber:getApp().globalData.lineNumber,
     roamingService: [
       {
         name: "Consulta tus consumos",
