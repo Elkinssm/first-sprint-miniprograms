@@ -92,16 +92,12 @@
                 </view>
                 <!-- Micodigo -->
                 <view class="icon-dele-bundle">
-                  <view style="display:flex;width:100%;justify-content:center;">
+                  <view onTap="handleOpenModal" style="display:flex;width:100%;justify-content:center;cursor:pointer">
                     <image
                       id="icon-delete"
                       mode="scaleToFill"
                       src="/assets/icons/roaming/delete-icon.svg"
                     />
-                  </view>
-
-                  <view class="container-modal" slot="header">
-                    <icon class="icon" type="InformationCircleOutline" />
                   </view>
 
                   <modal-accept-cancel
@@ -237,4 +233,3 @@
   </view>
 </view>
 
-<button onTap="handleOpenModal" style="margin-top:20px">Mostrar modal</button>

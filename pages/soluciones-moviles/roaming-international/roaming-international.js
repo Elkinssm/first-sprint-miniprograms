@@ -91,8 +91,8 @@ Page({
     // const jsonObject = JSON.parse(jsonString);
 
     const packageInstallList = res.data.response.map(item => {
-      const { name, description } = item;
-      return { name, description };
+      const { name, description, codServ } = item;
+      return { name, description, codServ };
     });
     console.log(packageInstallList);
     this.setData({
@@ -102,9 +102,12 @@ Page({
     my.hideLoading();
   },
 
-
   packageDisableRoaming() {
-    requestApiDisableRoamingPackage(this.data.urlDisableRoamingPacket, this)
+    const disableData = {    
+      min: "3103815747",
+      codePackage: ""
+    };    
+    requestApiDisableRoamingPackage(this.data.urlDisableRoamingPacket, disableData, this)
       .then(res => {
         // this.packageDisableRoaming(res); 
         console.log(res) 
@@ -120,16 +123,13 @@ Page({
       });
   },
 
-
-
-
-  
-
   switchChange(e) {
     this.setData({
       switchServiceState: e.detail.value
     });
   },
+
+
   handleOpenModal() {
     console.log("Entrando");
     this.setData({
