@@ -14,6 +14,7 @@ Page({
     expirationDate: "Indefinido",
     switchServiceState: false,
     packagedInstalled: [],
+    condServ : "",
     urlChekingInstalled:
       "https://apiselfservice.co/M3/Empresas/Postpago/checkInstalledPackages/",
     urlRetrieveRoaming:
@@ -97,7 +98,8 @@ Page({
     console.log(packageInstallList);
     this.setData({
       packagedInstalled: packageInstallList,
-      loaded: true
+      loaded: true,
+      codServ: "test"
     });
     my.hideLoading();
   },
@@ -105,7 +107,7 @@ Page({
   packageDisableRoaming() {
     const disableData = {    
       min: "3103815747",
-      codePackage: ""
+      codePackage: this.data.codServ
     };    
     requestApiDisableRoamingPackage(this.data.urlDisableRoamingPacket, disableData, this)
       .then(res => {
@@ -130,15 +132,19 @@ Page({
   },
 
 
-  handleOpenModal() {
-    console.log("Entrando");
+  handleOpenModal(e) {
+    console.log(e)
+    console.log("Entrando");   
     this.setData({
-      modalVisible: true
+      modalVisible: true,
+       codServ:e.target.dataset.code
     });
+    console.log(this.data.codServ)
   },
   handleClose() {
     this.setData({
       modalVisible: false
+     
     });
   },
   onAcceptButtonTap() {

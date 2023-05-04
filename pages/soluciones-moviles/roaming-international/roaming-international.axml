@@ -74,7 +74,7 @@
               <view class="item-internal-bundle">
                 <view class="container-info-datos-min">
                   <view class="text-info-datos-min">
-                    {{item.name}}
+                    {{item.name}}               
                   </view>
                   <view class="hiper-des-info-blue-icon">
                     <view class="text-mas-informacion-blue">
@@ -92,7 +92,7 @@
                 </view>
                 <!-- Micodigo -->
                 <view class="icon-dele-bundle">
-                  <view onTap="handleOpenModal" style="display:flex;width:100%;justify-content:center;cursor:pointer">
+                  <view onTap="handleOpenModal" data-code="{{item.codServ}}" style="display:flex;width:100%;justify-content:center;cursor:pointer">
                     <image
                       id="icon-delete"
                       mode="scaleToFill"
