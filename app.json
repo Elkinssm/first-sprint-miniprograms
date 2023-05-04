@@ -1,6 +1,7 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
+    "pages/soluciones-moviles/soluciones-moviles",
     "pages/home/home",
     "pages/index/index",
     "pages/zona-publica/zona-publica",
@@ -21,8 +22,7 @@
     "pages/solucion/solucion",
     "pages/adquirir-producto/adquirir-producto",
     "pages/guia-novedades/redirect-guia/redirect-guia",
-    "pages/solucion/solution-redirection/solution-redirection",
-    "pages/soluciones-moviles/soluciones-moviles",
+    "pages/solucion/solution-redirection/solution-redirection", 
     "pages/soluciones-moviles/roaming-international/roaming-international"
   ],
   "window": {

@@ -67,46 +67,60 @@
         </view>
       </view>
       <view a:if="{{ packagedInstalled.length>1 || switchServiceState }}" class="container-image-scroll">
-        
-          <scroll-view class="image-scroll-view" scroll-x={{true}}>
-            <block
-              a:for="{{packagedInstalled}}"
-              a:for-index="index"
-              a:for-item="item"
-            >
-              <view class="container-item-image-top">
-                <view class="item-internal-bundle">
-                  <view class="container-info-datos-min">
-                    <view class="text-info-datos-min">
-                      {{item.name}}
-                    </view>
-                    <view class="hiper-des-info-blue-icon">
-                      <view class="text-mas-informacion-blue">
-                        descripción del paquete
-                      </view>
-                      <view>
-                        <image
-                          id="icon-arrowcircle"
-                          mode="scaleToFill"
-                          src="/assets/icons/roaming/chevron_right_FILL.svg"
-                        />
-                      </view>
-                    </view>
 
+        <scroll-view class="image-scroll-view" scroll-x={{true}}>
+          <block a:for="{{packagedInstalled}}" a:for-index="index" a:for-item="item">
+            <view class="container-item-image-top">
+              <view class="item-internal-bundle">
+                <view class="container-info-datos-min">
+                  <view class="text-info-datos-min">
+                    {{item.name}}
                   </view>
-                  <view class="icon-dele-bundle">
-                    <view style="display:flex;width:100%;justify-content:center;">
+                  <view class="hiper-des-info-blue-icon">
+                    <view class="text-mas-informacion-blue">
+                      descripción del paquete
+                    </view>
+                    <view>
                       <image
-                        id="icon-delete"
+                        id="icon-arrowcircle"
                         mode="scaleToFill"
-                        src="/assets/icons/roaming/delete-icon.svg"
+                        src="/assets/icons/roaming/chevron_right_FILL.svg"
                       />
                     </view>
                   </view>
+
                 </view>
+                <!-- Micodigo -->
+                <view class="icon-dele-bundle">
+                  <view style="display:flex;width:100%;justify-content:center;">
+                    <image
+                      id="icon-delete"
+                      mode="scaleToFill"
+                      src="/assets/icons/roaming/delete-icon.svg"
+                    />
+                  </view>
+
+                  <view class="container-modal" slot="header">
+                    <icon class="icon" type="InformationCircleOutline" />
+                  </view>
+
+                  <modal-accept-cancel
+                    title="Señor usuario:"
+                    content="¿Está seguro de desactivar el paquete escogido?"
+                    visible="{{modalVisible}}"
+                    onClose="handleClose"
+                    primaryButtonText="Aceptar"
+                    secondaryButtonText="Cerrar"
+                    onPrimaryButtonTap="onAcceptButtonTap"
+                    onSecondaryButtonTap="onCancelButtonTap"
+                  />
+
+                </view>
+                <!-- Termina -->
               </view>
-            </block>
-          </scroll-view>
+            </view>
+          </block>
+        </scroll-view>
       </view>
       <view a:if="{{ packagedInstalled.length<1 || !switchServiceState}}" class="item-inactive-symbol">
         <image id="icon-claro-adv" mode="scaleToFill" src="/assets/icons/roaming/claro-adv.png" />
@@ -121,7 +135,11 @@
           Te invitamos a revisar nuestra oferta de paquetes de Roaming Internacional para que permanezcas en tus viajes a un menor precio.
         </text>
       </view>
-      <view a:if="{{switchServiceState}}"class="btn-compra-paquetes-roaming" style="padding-top:10px">
+      <view
+        a:if="{{switchServiceState}}"
+        class="btn-compra-paquetes-roaming"
+        style="padding-top:10px"
+      >
         <view style="width:90%">
           <button class="btn-btn-compra-paquetes-roaming">
             <view class="btn-icon-roaming" style="font-size:14px">
@@ -174,7 +192,7 @@
       <view class="info-paquete-activo">
         <text >PAQUETES ACTIVOS</text>
       </view>
-      <view  class="item-inactive-symbol">
+      <view class="item-inactive-symbol">
         <image id="icon-claro-adv" mode="scaleToFill" src="/assets/icons/roaming/claro-adv.png" />
       </view>
       <view class="text-demo-text text-center">
@@ -187,7 +205,7 @@
           Te invitamos a revisar nuestra oferta de paquetes de Roaming Internacional para que permanezcas en tus viajes a un menor precio.
         </text>
       </view>
-      
+
       <view class="container-btn-disclaimer-desactivado">
         <view >
           <text >
@@ -218,3 +236,5 @@
     </view>
   </view>
 </view>
+
+<button onTap="handleOpenModal" style="margin-top:20px">Mostrar modal</button>

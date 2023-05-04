@@ -3,16 +3,19 @@ import { requestApiCheckInstalled } from "/services/checkInstalledPackagesServic
 
 Page({
   data: {
+    modalVisible: false,
     loaded: false,
     response: {},
-    lineNumber:getApp().globalData.lineNumber,
+    lineNumber: getApp().globalData.lineNumber,
     nit: "900999998",
     isActive: false,
     expirationDate: "Indefinido",
     switchServiceState: false,
     packagedInstalled: [],
-    urlChekingInstalled:"https://apiselfservice.co/M3/Empresas/Postpago/checkInstalledPackages/",
-    urlRetrieveRoaming:"https://apiselfservice.co/api/index.php/v1/soap/retrieveRoamingService.json"
+    urlChekingInstalled:
+      "https://apiselfservice.co/M3/Empresas/Postpago/checkInstalledPackages/",
+    urlRetrieveRoaming:
+      "https://apiselfservice.co/api/index.php/v1/soap/retrieveRoamingService.json"
   },
 
   onReady() {
@@ -62,19 +65,18 @@ Page({
 
   packageInstalledService() {
     requestApiCheckInstalled(this.data.urlChekingInstalled, this)
-    .then(res => {
-      this.packageInstalledValidation(res);
-    })
-    .catch(error => {
-      my.hideLoading({
-        page: this
+      .then(res => {
+        this.packageInstalledValidation(res);
+      })
+      .catch(error => {
+        my.hideLoading({
+          page: this
+        });
+        my.alert({
+          content: error,
+          buttonText: "Cerrar"
+        });
       });
-      my.alert({
-        content:
-          error,
-        buttonText: "Cerrar"
-      });
-    });
   },
 
   packageInstalledValidation(res) {
@@ -86,9 +88,9 @@ Page({
       const { name, description } = item;
       return { name, description };
     });
-    console.log(packageInstallList)
+    console.log(packageInstallList);
     this.setData({
-      packagedInstalled: packageInstallList, 
+      packagedInstalled: packageInstallList,
       loaded: true
     });
     my.hideLoading();
@@ -97,6 +99,29 @@ Page({
   switchChange(e) {
     this.setData({
       switchServiceState: e.detail.value
+    });
+  },
+  handleOpenModal() {
+    console.log("Entrando");
+    this.setData({
+      modalVisible: true
+    });
+  },
+  handleClose() {
+    this.setData({
+      modalVisible: false
+    });
+  },
+  onAcceptButtonTap() {
+    console.log("Aceptar");
+    this.setData({
+      modalVisible: false
+    });
+  },
+  onCancelButtonTap() {
+    console.log("Cancelar");
+    this.setData({
+      modalVisible: false
     });
   }
 });

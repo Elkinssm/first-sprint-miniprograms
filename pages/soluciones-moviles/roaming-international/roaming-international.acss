@@ -271,3 +271,9 @@ font-size: 24px;
   height: 100%;
   align-items: center;
 }
+
+.ant-modal-body-content{
+  font-size: medium;
+  color: #000000;
+  font-weight:inherit;
+}
