@@ -80,7 +80,14 @@
         </view>
       </block>
       <block a:elif="{{ stepIndex === 3 }}">
-        Bloque 3
+        <title-banner
+          textContent="Te presentamos la mejor\n oferta en los países elegidos"
+          iconUrl="/assets/icons/home-ping.svg"
+        >
+        </title-banner>
+        <view class="countries-title">
+          {{selectedCountries}}
+        </view>
       </block>
     </view>
   </view>
