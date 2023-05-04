@@ -6,8 +6,10 @@ export function requestApiDisableRoamingPackage(url, that) {
       url: url,
       method: 'POST',
       dataType: 'json',
-      data:{data:{
+      data:{
+        data:{
        min: requestParameter.globalData.lineNumber,
+       codePackage: ""
       }},
       headers: {
         'X-SESSION-ID':requestParameter.globalData.sessionId,
