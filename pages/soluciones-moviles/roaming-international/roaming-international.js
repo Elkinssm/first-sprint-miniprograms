@@ -98,5 +98,19 @@ Page({
     this.setData({
       switchServiceState: e.detail.value
     });
-  }
+  },
+
+  redirectOfertaServicios() {
+    console.log("prueba");
+    my.navigateTo({
+      url: '/pages/soluciones-moviles/roaming-international/redirectToOfers/redirectToOfers'
+    })
+  },
+
+  redirectHomeServices() {
+    console.log("prueba");
+    my.navigateTo({
+      url: '/pages/soluciones-moviles/soluciones-moviles'
+    })
+  },
 });

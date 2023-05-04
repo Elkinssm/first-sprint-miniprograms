@@ -29,8 +29,8 @@
         Si activas el servicio de Roaming Internacional por demanda, los datos (KB), minutos y SMS que consumas durante tus viajes serán cobrados a la tarifa vigente para el país que visites, las cuales puedes consultar en:
       </text>
     </view>
-    <view >
-      Más información
+    <view>
+      <text>Más información</text>
     </view>
   </view>
   <view class="container-item">
@@ -144,7 +144,7 @@
             Si activas el servicio de Roaming Internacional por demanda, los datos (KB), minutos y SMS que consumas durante tus viajes serán cobrados a la tarifa vigente para el país que visites, las cuales puedes consultar en:
           </text>
         </view>
-        <view class="text-mas-informacion-blue">
+        <view onTap="redirectOfertaServicios" class="text-mas-informacion-blue">
           Más información
         </view>
         <view class="btn-compra-paquetes-roaming" style="padding-top:10px">
@@ -154,7 +154,7 @@
                 <view class="icon-icon-world">
                   <image id="icon-world" mode="scaleToFill" src="/assets/icons/roaming/world-icon.svg" />
                 </view>
-                <view class="btn-text-salir-continurar">
+                <view onTap="redirectHomeServices" class="btn-text-salir-continurar">
                   Salir y continuar con roaming por demanda
                 </view>
                 <view class="icon-icon-world">
@@ -194,7 +194,7 @@
             Si activas el servicio de Roaming Internacional por demanda, los datos (KB), minutos y SMS que consumas durante tus viajes serán cobrados a la tarifa vigente para el país que visites, las cuales puedes consultar en:
           </text>
         </view>
-        <view class="text-mas-informacion-blue">
+        <view onTap="redirectOfertaServicios" class="text-mas-informacion-blue">
           Más información
         </view>
         <view class="btn-compra-paquetes-roaming" style="padding-top:10px">
@@ -204,7 +204,7 @@
                 <view class="icon-icon-world">
                   <image id="icon-world" mode="scaleToFill" src="/assets/icons/roaming/world-icon.svg" />
                 </view>
-                <view class="btn-text-salir-continurar">
+                <view onTap="redirectHomeServices" class="btn-text-salir-continurar">
                   Salir y continuar con roaming por demanda
                 </view>
                 <view class="icon-icon-world">
