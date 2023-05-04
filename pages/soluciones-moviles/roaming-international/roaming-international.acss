@@ -192,7 +192,7 @@
 }
 .container-item-image-top{
   width: 320px;
-  height: 150px;
+  height: 120px;
   padding-right: 15rpx;
   padding-left: 15rpx;
 }
@@ -206,6 +206,9 @@
   box-shadow: 1px 2px 3px 1px rgba(0.2,0.2, 0.2, 0.35);
   background-color: rgb(255, 255, 255);
   margin: 0 auto;
+}
+.container-image-scroll{
+  width: 350px;
 }
 .image-scroll-view {
   margin-top: 10px;
