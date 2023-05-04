@@ -5,15 +5,14 @@ Page({
   data: {
     loaded: false,
     response: {},
+    lineNumber:getApp().globalData.lineNumber,
     nit: "900999998",
     isActive: false,
     expirationDate: "Indefinido",
     switchServiceState: false,
     packagedInstalled: [],
     urlChekingInstalled:"https://apiselfservice.co/M3/Empresas/Postpago/checkInstalledPackages/",
-    urlRetrieveRoaming:
-      "https://apiselfservice.co/api/index.php/v1/soap/retrieveRoamingService.json",
-      lineNumber:getApp().globalData.lineNumber
+    urlRetrieveRoaming:"https://apiselfservice.co/api/index.php/v1/soap/retrieveRoamingService.json"
   },
 
   onReady() {
@@ -72,7 +71,7 @@ Page({
       });
       my.alert({
         content:
-          "tiempo de sesión agotado",
+          error,
         buttonText: "Cerrar"
       });
     });
