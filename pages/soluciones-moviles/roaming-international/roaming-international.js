@@ -5,7 +5,9 @@ import { requestApiDisableRoamingPackage } from "/services/disableRoamingPacket"
 Page({
   data: {
     modalVisible: false,
+    descriptionModal:"",
     loaded: false,
+    modalVisibleDescription: false,
     response: {},
     lineNumber: getApp().globalData.lineNumber,
     nit: "900999998",
@@ -83,10 +85,6 @@ Page({
       });
   },
   packageInstalledValidation(res) {
-    // const jsonString =
-    //   '{"secs":"00:00:00.6431","tiempo":0.6431,"error":0,"response":[{"typeServ":"B","descriptionServ":"BUNDLE","codServ":"959","name":"PassAmericaE4D","description":"PaquetePasaporteAmericade4diasqueaplicadesdesuusopor$23.900.Permiteutilizardesdelospaises:Argentina,Brasil,Bolivia,Chile,Canada,CostaRica,Ecuador,ElSalvador,EstadosUnidos,Guatemala,Honduras,Mexico,Nicaragua,Panama,Paraguay,Peru,PuertoRico,Rep.DominicanayUruguay,lacapacidaddisponiblededatosdetuplanenRoamingInt.(planescondatosilimitadospuedenutilizarhasta40Gigas)y59minutosparallamadasaColombia,entrantesysalientesenelpaisvisitado.Losminutosaotrospaises(llamadassalientesdelargadistanciaaundestinodistintoalpaisvisitadooColombia)tienenunvalorde$275.MinutoadicionalaColombia,entranteysalientealpaisenelqueseencuentra$275.UnavezconsumidaslasGigasdisponiblespodraseguirutilizandoelserviciodedatospormediodeunpaquetededatos.DatosenRoamingInt.tieneImpoconsumodel4%,delosconsumosquesuperen1.5UVTs.","scale":"B","rate":"PREFERENCIAL","dateIni":"2023-05-02T16:01:58.000-05:00","dateEnd":"2050-12-31T00:00:00.000-05:00","classification":"C","convertible":"S"},{"typeServ":"B","descriptionServ":"BUNDLE","codServ":"744","name":"PassAmericaEYN","description":"CargoDiario6.900IVA19porcientoincl.Permiteutilizardesdelospaises:Argentina,Brasil,Bolivia,Canada,Chile,CostaRica,Ecuador,ElSalvador,Guatemala,Honduras,Mexico,Nicaragua,Panama,Paraguay,Peru,PtoRico,RepDominicana,UruguayyUSA,lacapacidaddisponiblededatosdetuplanenRoamingInt.(planescondatosilimitadospuedenutilizarhasta40Gigas)y\\/o500minutosparallamadasaColombia,entrantesysalientesenelpaisqueseencuentra.LlamadassalientesaundestinodistintoalpaisvisitadooColombiatienenunvalorde275imptosincl.Valorminutoadicional275imptosincl.UnavezconsumidaslasGigasdisponiblespodraseguirutilizandoelserviciodedatospormediodeunpaquetededatos.VigenciaIndefinida.DatosenRoamingInt.tieneImpoconsumodel4porciento,delosconsumosquesuperenelmontode1.5UVTs","scale":"B","rate":"PREFERENCIAL","dateIni":"2023-05-02T16:00:12.000-05:00","dateEnd":"","classification":"C","convertible":"S"}]}';
-    // const jsonObject = JSON.parse(jsonString);
-
     const packageInstallList = res.data.response.map(item => {
       const { name, description, codServ } = item;
       return { name, description, codServ };
@@ -137,12 +135,6 @@ Page({
     console.log(this.data.selectedPackageCode);
   },
 
-  handleClose() {
-    this.setData({
-      modalVisible: false
-    });
-  },
-
   onAcceptButtonTap() {
     console.log("Aceptar");
     this.setData({
@@ -173,5 +165,34 @@ Page({
     this.setData({
       modalVisible: false
     });
-  }
+  },
+  handleOpenModalDescriptionPlan(e) {
+    this.setData({
+      modalVisibleDescription: true,
+      descriptionModal: e.currentTarget.dataset.item
+    });
+  },
+  
+  handleClose() {
+    this.setData({
+      modalVisible: false,
+      modalVisibleDescription: false
+    });
+  },
+  redirectToRoamingWeb(){
+        my.navigateTo({
+          url: '/pages/soluciones-moviles/roaming-international/redirectToRoamingWeb/redirectToRoamingWeb'
+        })
+  },
+  redirectOfertaServicios() {
+    my.navigateTo({
+      url: '/pages/soluciones-moviles/roaming-international/redirectToOfers/redirectToOfers'
+    })
+  },
+
+  redirectHomeServices() {
+    my.navigateTo({
+      url: '/pages/soluciones-moviles/soluciones-moviles'
+    })
+  },
 });

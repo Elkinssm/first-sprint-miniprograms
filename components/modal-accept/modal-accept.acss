@@ -13,7 +13,6 @@
   width: 370px;
 }
 
-
 .ant-modal-body-footer-vertical-primary {
   background-color: #F6392C;
   border-radius: 5pX;
