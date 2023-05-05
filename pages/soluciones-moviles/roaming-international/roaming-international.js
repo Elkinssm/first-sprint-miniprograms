@@ -101,7 +101,7 @@ Page({
   },
 
   packageDisableRoaming(disableData) {
-    console.log(disableData);
+    // console.log(disableData);
     requestApiDisableRoamingPackage(
       this.data.urlDisableRoamingPacket,
       disableData,
