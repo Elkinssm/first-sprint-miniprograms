@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "styleIsolation": "apply-shared",
+  "usingComponents": {
+    "collapse": "antd-mini/es/Collapse/index",
+    "icon": "antd-mini/es/Icon/index",
+    "input": "antd-mini/es/Input/index"
+  }
+}

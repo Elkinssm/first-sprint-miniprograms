@@ -1,0 +1,119 @@
+.ant-collapse {
+  border-radius: 30rpx;
+  box-shadow: 0px 3px 7px #efefef;
+}
+
+.ant-collapse-item-title {
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+  background-color: #efefef !important;
+}
+
+.ant-collapse-item-content-wrap {
+  border-bottom-right-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+}
+
+.collapse__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collapse__title-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0rpx 30rpx 0rpx 20rpx;
+}
+
+.collapse__title {
+  font-weight: bold;
+  padding-bottom: 10rpx;
+}
+
+.collapse__icon {
+  color: #000000;
+  font-weight: bold;
+  font-size: 30rpx !important;
+}
+
+.collapse__content {
+  padding: 50rpx 20rpx 30rpx 30rpx;
+}
+
+.collapse__input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+  border-radius: 30rpx;
+}
+
+.collapse__input {
+  height: 60rpx;
+  background-color: #efefef;
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+  flex: 1;
+}
+
+.ant-input-content {
+  background-color: #efefef !important;
+}
+
+.collapse__input--placeholder {
+  background-color: #efefef;
+  color: #000000;
+  opacity: 0.3;
+  font-weight: bold;
+}
+
+.collapse__go {
+  width: 80rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #afafaf;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  font-weight: bold;
+}
+
+.collapse__go--enabled {
+  background-color: var(--claro-color);
+  color: #ffffff;
+}
+
+.footer {
+  margin-top: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.footer__text {
+  color: var(--claro-color);
+  text-decoration: underline;
+}
+
+.footer__icon {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15rpx !important;
+  padding: 6rpx;
+  margin-left: 8rpx;
+  background-color: var(--claro-color);
+  border-radius: 50%;
+}
+
+.footer__number {
+  color: var(--claro-color);
+  font-weight: bold;
+}

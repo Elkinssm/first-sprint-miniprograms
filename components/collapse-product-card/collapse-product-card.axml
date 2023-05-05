@@ -1,0 +1,66 @@
+<view class="collapse-product-card {{className ? className : ''}}" style="{{style}}">
+  <collapse items="{{[{}]}}" onChange="onCollapseChange">
+    <view
+      slot="title"
+      slot-scope="item"
+      class="collapse__header {{headerClassName ? headerClassName : ''}}"
+      style="{{headerStyle}}"
+    >
+      <slot name="title">
+        <image mode="scaleToFill" src="{{iconTitleUrl}}" class="collapse__title-icon" />
+        <text class="collapse__title">{{title}}</text>
+      </slot>
+    </view>
+    <view slot="icon" slot-scope="item">
+      <block a:if="{{ item.current.indexOf(item.index) >= 0 }}">
+        <icon type="DownOutline" class="collapse__icon" />
+      </block>
+      <block a:else>
+        <icon type="RightOutline" class="collapse__icon" />
+      </block>
+    </view>
+    <view
+      slot="content"
+      slot-scope="item"
+      class="collapse__content {{contentClassName ? contentClassName : ''}}"
+      style="{{contentStyle}}"
+    >
+      <slot name="content">
+        {{contentTitle}}
+        <view class="collapse__input-container">
+          <input
+            placeholder="{{placeholder}}"
+            onChange="onChange"
+            className="collapse__input"
+            placeholderClassName="collapse__input--placeholder"
+            focusClassName="collapse__input--focus"
+            confirm-type="search"
+            focus
+            onConfirm="onConfirm"
+          >
+            <icon slot="prefix" type="SearchOutline" />
+          </input>
+          <view
+            class="collapse__go {{value ? 'collapse__go--enabled' : ''}}"
+            onTap="onConfirm"
+          >
+            IR
+          </view>
+        </view>
+        <view class="footer {{footerClassName ? footerClassName : ''}}" style="{{footerStyle}}">
+          <slot name="footer">
+            <view class="footer__link" onTap="onTapLink">
+              <view class="footer__text">
+                {{contentLinkText}}
+              </view>
+              <icon type="RightOutline" class="footer__icon" />
+            </view>
+            <view class="footer__number">
+              {{contentLinkTotal}}
+            </view>
+          </slot>
+        </view>
+      </slot>
+    </view>
+  </collapse>
+</view>
