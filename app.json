@@ -1,6 +1,7 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
+    "pages/accountLinesFixed/accountLinesFixed",
     "pages/home/home",
     "pages/index/index",
     "pages/zona-publica/zona-publica",
@@ -21,7 +22,7 @@
     "pages/solucion/solucion",
     "pages/adquirir-producto/adquirir-producto",
     "pages/guia-novedades/redirect-guia/redirect-guia",
-    "pages/solucion/solution-redirection/solution-redirection"
+    "pages/solucion/solution-redirection/solution-redirection"    
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",

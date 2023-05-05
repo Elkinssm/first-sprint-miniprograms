@@ -1,0 +1,38 @@
+<view class="container">
+
+  <view class="container-header">
+    <view class="container-info">
+      <text class="header-text h2 gray-text-500 font-weight-bold">
+        Compensar
+      </text>
+      <text class="header-nit h2 red-text-500 font-weight-bold">
+        Nit. 860066942
+      </text>
+    </view>
+  </view>
+  
+  <hr/>
+
+  <view class="container-body">
+    <text class="h3 gray-text-300 font-weight-bold">Selecciona una cuenta</text>
+    <block a:if="{{ response.length == 0 }}">
+      <view class="h1">
+        No hay cuentas en este servicio
+      </view>
+    </block> 
+    <block a:else> 
+      <block a:for="{{ response }}" a:key="*this" a:for-item="account">            
+        <arrow-button stateSrc={{true}} imgSrc="/assets/icons/description_black.svg" iconArrowSrc="/assets/icons/navigate_next_black.svg">
+          <view class="font-weight-bold">{{account.account}}</view>
+          <view class="font-weight-bold">{{account.adress}}</view>
+          <view class="font-weight-bold">Carrera 56 # 48 - 12</view>
+        </arrow-button>
+     </block>
+      <view>
+        <text class="header-nit h2 red-text-500 font-weight-bold title">
+         Cargar más cuentas
+        </text>
+      </view>
+    </block>   
+  </view>
+</view>
