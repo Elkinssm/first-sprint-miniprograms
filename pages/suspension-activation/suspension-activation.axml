@@ -1,0 +1,47 @@
+<view>
+  <view class="enterprise__info">
+    <view>
+      {{enterpriseName}}
+    </view>
+    <view class="enterprise__number">
+      {{enterpriseNumber}}
+    </view>
+  </view>
+  <divider lineHeight="3" lineColor="#D2D2D2" />
+  <view class="enterprise__info">
+    <view>
+      Número de Cuenta
+    </view>
+    <view>
+      {{accountNumber}}
+    </view>
+  </view>
+  <view class="text">
+    O selecciona el producto al cual deseas consultar información
+  </view>
+  <collapse-product-card
+    className="collapse-card"
+    iconTitleUrl="/assets/icons/computer.svg"
+    title="Internet"
+    contentTitle="Enlace"
+    contentLinkText="Total enlaces internet"
+    contentLinkTotal={{numberLinksInternet}}
+    placeholder="No. Enlace"
+    onCollapseChange="handleInternetCollapseChange"
+    onInputConfirm="handleInputConfirm"
+    onTapLink="handleInternetTapLink"
+  >
+  </collapse-product-card>
+  <collapse-product-card
+    iconTitleUrl="/assets/icons/computer.svg"
+    title="Telefonía"
+    contentTitle="Enlace"
+    contentLinkText="Total enlaces telefonía"
+    contentLinkTotal={{numberLinksTelephone}}
+    placeholder="No. Enlace"
+    onCollapseChange="handleTelephoneCollapseChange"
+    onInputConfirm="handleInputConfirm"
+    onTapLink="handleTelephoneTapLink"
+  >
+  </collapse-product-card>
+</view>

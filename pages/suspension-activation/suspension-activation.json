@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "collapse-product-card": "/components/collapse-product-card/collapse-product-card",
+    "divider": "antd-mini/es/Divider/index"
+  },
+  "styleIsolation": "apply-shared"
+}

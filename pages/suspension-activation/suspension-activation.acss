@@ -1,0 +1,26 @@
+page {
+  padding: 30rpx;
+}
+
+.enterprise__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  margin: 10rpx 0rpx;
+}
+
+.enterprise__number {
+  color: var(--claro-color);
+}
+
+.text {
+  margin-top: 60rpx;
+  font-size: 28rpx;
+  color: #848484;
+  text-align: center;
+}
+
+.collapse-card {
+  margin: 30rpx 0rpx;
+}
