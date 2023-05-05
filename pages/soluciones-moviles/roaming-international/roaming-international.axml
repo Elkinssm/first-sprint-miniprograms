@@ -1,5 +1,5 @@
 <view class="container" hidden="{{!loaded}}">
-  <view class="container-item">
+  <view class="container-item border-botton-container">
     <view style="font-weight: bold;">
       <text number-of-lines="1">Pruebas de direccion de servicio adicional</text>
     </view>
@@ -7,7 +7,7 @@
       {{nit}}
     </view>
   </view>
-  <view class="container-item container-text-bold">
+  <view class="container-item container-text-bold border-botton-container">
     <view class="item2">
       <view class="test-numero-linea">
         <image id="icon-phone" mode="scaleToFill" src="/assets/icons/roaming/phone-roaming.svg" />
@@ -31,9 +31,9 @@
     </view>
     <view onTap="redirectToRoamingWeb" style="color:var(--claro-color);text-decoration: underline;">
       Mas información
+    </view>
   </view>
-  </view>
-  <view class="container-item">
+  <view class="container-item border-botton-container">
     <view class="item-text-estado-servicio">
       Estado de tu servicio
     </view>
@@ -48,27 +48,31 @@
     </view>
   </view>
 
-  <view  hidden="{{!loaded}}">
-    <view class="container-item container-text-bold paquetes-module">
-      
-      <view a:if="{{switchServiceState}}" class="item-fecha-expiracion">
-        <view a:if="{{switchServiceState}}">
-          Fecha de expiración:
-        </view>
-        <view class="test-numero-linea">
-          <view>
-            {{expirationDate}}
-          </view>
-          <view>
-            <image id="icon-pencil" mode="scaleToFill" src="/assets/icons/roaming/pencil-edit.svg" />
-          </view>
-        </view>
-      </view>
-      <view class="info-paquete-activo">
-        <text >PAQUETES ACTIVOS</text>
-      </view>
-      <view a:if="{{packagedInstalled.length>=1 }}" class="container-image-scroll">
+  <view class="container-item  paquetes-module" hidden="{{!loaded}}">
 
+    <view a:if="{{switchServiceState}}" class="item-fecha-expiracion">
+      <view a:if="{{switchServiceState}}">
+        Fecha de expiración:
+      </view>
+      <view class="test-numero-linea">
+        <view>
+          {{expirationDate}}
+        </view>
+        <view>
+          <image id="icon-pencil" mode="scaleToFill" src="/assets/icons/roaming/pencil-edit.svg" />
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="container-item-center">
+    <view class="info-paquete-activo">
+      <text >PAQUETES ACTIVOS</text>
+    </view>
+  </view>
+
+  <view class="container-item">
+      <view a:if="{{packagedInstalled.length>=1 }}" class="container-image-scroll">
         <scroll-view class="image-scroll-view" scroll-x={{true}}>
           <block a:for="{{packagedInstalled}}" a:for-index="index" a:for-item="item">
             <view class="container-item-image-top">
@@ -77,7 +81,11 @@
                   <view class="text-info-datos-min">
                     {{item.name}}
                   </view>
-                  <view onTap="handleOpenModalDescriptionPlan" data-item="{{item.description}}" class="hiper-des-info-blue-icon">
+                  <view
+                    onTap="handleOpenModalDescriptionPlan"
+                    data-item="{{item.description}}"
+                    class="hiper-des-info-blue-icon"
+                  >
                     <view class="text-mas-informacion-blue">
                       descripción del paquete
                     </view>
@@ -89,7 +97,7 @@
                       />
                     </view>
                   </view>
-                  
+
                 </view>
                 <view class="icon-dele-bundle">
                   <view style="display:flex;width:100%;justify-content:center;">
@@ -105,74 +113,79 @@
           </block>
         </scroll-view>
       </view>
-      <view a:if="{{ packagedInstalled.length<1 }}" class="item-inactive-symbol">
-        <image id="icon-claro-adv" mode="scaleToFill" src="/assets/icons/roaming/claro-adv.png" />
-      </view>
-      <view a:if="{{ packagedInstalled.length<1 }}" class="text-demo-text text-center">
-        <text >
-          En este momento no cuentas con paquetes activos
-        </text>
-      </view>
-      <view a:if="{{ packagedInstalled.length<1 }}" class="text-demo-text text-center ">
-        <text >
-          Te invitamos a revisar nuestra oferta de paquetes de Roaming Internacional para que permanezcas en tus viajes a un menor precio.
-        </text>
-      </view>
-      <view
-        a:if="{{switchServiceState && packagedInstalled.length>=1}}"
-        class="btn-compra-paquetes-roaming"
-        style="padding-top:10px"
-      >
-        <view  style="width:90%">
-          <button class="btn-btn-compra-paquetes-roaming">
-            <view class="btn-icon-roaming" style="font-size:14px">
-              <view class="icon-icon-world">
-                <image id="icon-world" mode="scaleToFill" src="/assets/icons/roaming/phone-roaming.svg" />
-              </view>
-              <view class="btn-text-salir-continurar">
-                Activacion paquetes Roaming
-              </view>
-              <view class="icon-icon-world">
-                <image id="icon-world" mode="scaleToFill" src="/assets/icons/roaming/chevron_right_FILL.svg" />
-              </view>
+    
+  </view>
+
+
+  <view a:if="{{ packagedInstalled.length<1 }}" class="item-inactive-symbol">
+    <image id="icon-claro-adv" mode="scaleToFill" src="/assets/icons/roaming/claro-adv.png" />
+  </view>
+  <view a:if="{{ packagedInstalled.length<1 }}" class="text-demo-text text-center">
+    <text >
+      En este momento no cuentas con paquetes activos
+    </text>
+  </view>
+  <view a:if="{{ packagedInstalled.length<1 }}" class="text-demo-text text-center ">
+    <text >
+      Te invitamos a revisar nuestra oferta de paquetes de Roaming Internacional para que permanezcas en tus viajes a un menor precio.
+    </text>
+  </view>
+  <view class="container-item-center">
+    <view
+      a:if="{{switchServiceState}}"
+      class="btn-compra-paquetes-roaming"
+      style="padding-top:10px"
+    >
+      <view style="width:90%">
+        <button class="btn-btn-compra-paquetes-roaming">
+          <view class="btn-icon-roaming" style="font-size:14px">
+            <view class="icon-icon-world">
+              <image id="icon-world" mode="scaleToFill" src="/assets/icons/roaming/phone-roaming.svg" />
             </view>
-          </button>
-        </view>
-      </view>
-      <view class="container-btn-disclaimer-desactivado">
-        <view >
-          <text >
-            Si activas el servicio de Roaming Internacional por demanda, los datos (KB), minutos y SMS que consumas durante tus viajes serán cobrados a la tarifa vigente para el país que visites, las cuales puedes consultar en:
-          </text>
-        </view>
-        <view onTap="redirectOfertaServicios" class="text-mas-informacion-blue">
-          Más información
-        </view>
-        <view class="btn-compra-paquetes-roaming" style="padding-top:10px">
-          <view style="width:90%">
-            <button class="btn-btn-compra-paquetes-roaming">
-              <view class="btn-icon-roaming" style="font-size:14px">
-                <view class="icon-icon-world">
-                  <image id="icon-world" mode="scaleToFill" src="/assets/icons/roaming/world-icon.svg" />
-                </view>
-                <view onTap="redirectHomeServices" class="btn-text-salir-continurar">
-                  Salir y continuar con roaming por demanda
-                </view>
-                <view class="icon-icon-world">
-                  <image id="icon-world" mode="scaleToFill" src="/assets/icon/chevron_right_FILL.svg" />
-                </view>
-              </view>
-            </button>
+            <view class="btn-text-salir-continurar">
+              Activacion paquetes Roaming
+            </view>
+            <view class="icon-icon-world">
+              <image id="icon-world" mode="scaleToFill" src="/assets/icons/roaming/chevron_right_FILL.svg" />
+            </view>
           </view>
-        </view>
+        </button>
       </view>
     </view>
-    <modal-accept
+  </view>
+  <view class="container-btn-disclaimer-desactivado">
+    <view >
+      <text >
+        Si activas el servicio de Roaming Internacional por demanda, los datos (KB), minutos y SMS que consumas durante tus viajes serán cobrados a la tarifa vigente para el país que visites, las cuales puedes consultar en:
+      </text>
+    </view>
+    <view onTap="redirectOfertaServicios" class="text-mas-informacion-blue">
+      Más información
+    </view>
+    <view class="btn-compra-paquetes-roaming" style="padding-top:10px">
+      <view style="width:90%">
+        <button class="btn-btn-compra-paquetes-roaming">
+          <view class="btn-icon-roaming" style="font-size:14px">
+            <view class="icon-icon-world">
+              <image id="icon-world" mode="scaleToFill" src="/assets/icons/roaming/world-icon.svg" />
+            </view>
+            <view onTap="redirectHomeServices" class="btn-text-salir-continurar">
+              Salir y continuar con roaming por demanda
+            </view>
+            <view class="icon-icon-world">
+              <image id="icon-world" mode="scaleToFill" src="/assets/icon/chevron_right_FILL.svg" />
+            </view>
+          </view>
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <modal-accept
     content="{{descriptionModal}}"
     visible="{{modalVisibleDescription}}"
     onClose="handleClose"
     primaryButtonText="Aceptar"
     onPrimaryButtonTap="handleOpenModalDescriptionPlan"
   />
-  </view>
 </view>
