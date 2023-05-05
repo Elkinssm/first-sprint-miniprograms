@@ -8,7 +8,7 @@
   </view>
 
   <view class="acquire-products">
-    <view class="products-card">
+    <view class="products-card" onTap="onProductsClick">
       <image class="products-icon" src="../../assets/icons/productos.svg" />
       <text class="product-text">Adquirir productos</text>
     </view>

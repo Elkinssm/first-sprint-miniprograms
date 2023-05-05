@@ -58,5 +58,10 @@ Page({
     const index = e.target.dataset.index;
     const pageUrl = this.data.access[index].pageUrl;
     my.navigateTo({ url: pageUrl });
+  },
+
+   onProductsClick(e) {
+    const pageUrl = "/pages/test/test";
+    my.navigateTo({ url: pageUrl });
   }
 });
