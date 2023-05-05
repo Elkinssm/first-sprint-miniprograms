@@ -2,6 +2,7 @@
   "subPackageBuildType": "shared",
   "pages": [
     "pages/roaming-activation/roaming-activation",
+    "pages/roaming-activation/roaming-webview",
     "pages/home/home",
     "pages/index/index",
     "pages/zona-publica/zona-publica",

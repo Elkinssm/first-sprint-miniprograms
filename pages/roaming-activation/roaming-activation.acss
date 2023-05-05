@@ -241,3 +241,10 @@
   text-align: center;
   color: #9A9A9A;
 }
+
+.roamingText {
+  text-align: center;
+  color: #388696;
+  font-weight: bold;
+  margin-top: 10px;
+}

@@ -93,6 +93,7 @@
           aparece en ella, ingresa en el siguiente link en donde podrás conocer las tarifas de los 
           consumos por demanda en
         </view>
+        <navigator url="./roaming-webview" class="roamingText">Roaming para voz, datos, sms y demás servicios”</navigator>
       </block>
     </view>
   </view>
