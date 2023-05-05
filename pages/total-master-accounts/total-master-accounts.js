@@ -38,7 +38,7 @@ Page({
   onNavigatePage(e){
     const numberAccount = e.target.dataset.item.numberAccount;
     my.navigateTo({
-      url: `/pages/manageYourInvoice/manageYourInvoice?numberAccount=${numberAccount}`
+      url: `/pages/total-master-accounts/manage-your-invoice/manage-your-invoice?numberAccount=${numberAccount}`
     });
   }
 });
