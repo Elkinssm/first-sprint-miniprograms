@@ -1,0 +1,45 @@
+.btn-arrow {
+  width: 100%;
+  min-height: 120rpx;
+  padding: 10rpx;
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 15rpx;
+  border: 1px solid #ECECEC;
+  box-shadow: 0rpx 3rpx 10rpx #ccc;
+}
+
+.container-btn-arrow {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-arrow {
+  width: 85%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.info-arrow .description-arrow {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.description-arrow text {
+ font-size: 90%;
+}
+
+.btn-arrow image {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.image-arrow {
+  width: 10%;
+}

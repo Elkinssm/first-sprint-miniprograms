@@ -51,7 +51,6 @@
   padding: 15rpx;
   border-radius: 10rpx;
   background-color: white;
-  
 }
 
 .box-shadow {

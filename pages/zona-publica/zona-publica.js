@@ -45,6 +45,11 @@ Page({
         iconUrl: "/assets/icons/devices.svg",
         text: "Devolución de equipos",
         pageUrl: "/pages/returnOfEquipment/returnOfEquipment"
+      },
+      {
+        iconUrl: "/assets/icons/devices.svg",
+        text: "Total Cuentas Maestras",
+        pageUrl: "/pages/total-master-accounts/total-master-accounts"
       }
     ]
   },

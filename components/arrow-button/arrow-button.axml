@@ -1,0 +1,20 @@
+<view style="{{style}}" class="btn-arrow" onTap="onNav" data-item="{{ dataInfo }}">
+
+  <view class="container-btn-arrow">
+
+    <view class="info-arrow">
+      <image a:if="{{ stateImg }}" class="" mode="scaleToFill" src="{{ imgSrc }}"/>
+      <view class="description-arrow">
+        <text>
+          <slot>
+            Arrow Button
+          </slot>
+        </text>
+      </view>
+    </view>
+  
+    <image class="image-arrow" mode="scaleToFill" src="{{ iconArrowSrc }}"/>
+
+  </view>
+
+</view>
