@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "modal-accept" :"/components/modal-accept/modal-accept",
+    "hyperlink-button":"/components/hyperlink-button/hyperlink-button"
+  },
+  "styleIsolation": "apply-shared"
+}

@@ -1,10 +1,12 @@
 Page({
   data: {
-    url: ''
+    url: '',
+    id: ''
   },
   onLoad(query) {
     this.setData({
-      url: query.url
+      url: query.url,
+      linkIndex: query.id
     });
   },
 });
