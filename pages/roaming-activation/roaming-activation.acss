@@ -236,3 +236,8 @@
   left: calc(100% - 40rpx);
   transform: rotate(45deg);
 }
+
+.invitationText {
+  text-align: center;
+  color: #9A9A9A;
+}

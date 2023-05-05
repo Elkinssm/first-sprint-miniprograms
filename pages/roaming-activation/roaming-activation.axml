@@ -88,6 +88,11 @@
         <view class="countries-title">
           {{selectedCountries}}
         </view>
+        <view class="invitationText">
+          Te invitamos a revisar la descripción de la oferta, si alguno de los países seleccionados no 
+          aparece en ella, ingresa en el siguiente link en donde podrás conocer las tarifas de los 
+          consumos por demanda en
+        </view>
       </block>
     </view>
   </view>
