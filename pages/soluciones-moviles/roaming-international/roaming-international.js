@@ -100,31 +100,6 @@ Page({
     my.hideLoading();
   },
 
-  // packageDisableRoaming() {
-  //   const disableData = {
-  //     min: "3103815747",
-  //     codePackage: this.data.codServ
-  //   };
-  //   requestApiDisableRoamingPackage(
-  //     this.data.urlDisableRoamingPacket,
-  //     disableData,
-  //     this
-  //   )
-  //     .then(res => {
-  //       // this.packageDisableRoaming(res);
-  //       console.log(res);
-  //     })
-  //     .catch(error => {
-  //       my.hideLoading({
-  //         page: this
-  //       });
-  //       my.alert({
-  //         content: error,
-  //         buttonText: "Cerrar"
-  //       });
-  //     });
-  // },
-
   packageDisableRoaming(disableData) {
     console.log(disableData);
     requestApiDisableRoamingPackage(
@@ -152,15 +127,6 @@ Page({
     });
   },
 
-  // handleOpenModal(e) {
-  //   console.log(e)
-  //   console.log("Entrando");
-  //   this.setData({
-  //     modalVisible: true,
-  //      codServ:e.target.dataset.code
-  //   });
-  //   console.log(this.data.codServ)
-  // },
   handleOpenModal(e) {
     console.log(e);
     console.log("Entrando");
@@ -177,13 +143,6 @@ Page({
     });
   },
 
-  // onAcceptButtonTap() {
-  //   console.log("Aceptar");
-  //   this.setData({
-  //     modalVisible: false
-  //   });
-  // },
-
   onAcceptButtonTap() {
     console.log("Aceptar");
     this.setData({
@@ -194,7 +153,19 @@ Page({
       codePackage: this.data.selectedPackageCode
     };
     this.packageDisableRoaming(disableData);
-   
+
+    my.showLoading({
+      content: "Cargando..."
+    });
+
+    // Llamar a my.reLaunch para recargar la página
+    my.reLaunch({
+      url:
+        "/pages/soluciones-moviles/roaming-international/roaming-international",
+      success: function() {
+        my.hideLoading();
+      }
+    });
   },
 
   onCancelButtonTap() {

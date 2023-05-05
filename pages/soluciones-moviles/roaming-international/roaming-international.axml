@@ -99,18 +99,6 @@
                       src="/assets/icons/roaming/delete-icon.svg"
                     />
                   </view>
-
-                  <modal-accept-cancel
-                    title="Señor usuario:"
-                    content="¿Está seguro de desactivar el paquete escogido?"
-                    visible="{{modalVisible}}"
-                    onClose="handleClose"
-                    primaryButtonText="Aceptar"
-                    secondaryButtonText="Cerrar"
-                    onPrimaryButtonTap="onAcceptButtonTap"
-                    onSecondaryButtonTap="onCancelButtonTap"
-                  />
-
                 </view>
                 <!-- Termina -->
               </view>
@@ -231,5 +219,15 @@
       </view>
     </view>
   </view>
+  <modal-accept-cancel
+  title="Señor usuario:"
+  content="¿Está seguro de desactivar el paquete escogido?"
+  visible="{{modalVisible}}"
+  onClose="handleClose"
+  primaryButtonText="Aceptar"
+  secondaryButtonText="Cerrar"
+  onPrimaryButtonTap="onAcceptButtonTap"
+  onSecondaryButtonTap="onCancelButtonTap"
+/>
 </view>
 
