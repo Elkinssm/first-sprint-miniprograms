@@ -1,3 +1,15 @@
-<view>
-  Ejemplo de redireccionamiento dinamico
+<view style="font-size:30px">
+ Redireccionamientos en desarollo, estamos trabajando para mejorar tu experiencia.
 </view>
+<button onTap="handleOpenModal" style="margin-top:20px">Mostrar modal</button>
+<button onTap="handleOpenModalOne" style="margin-top:20px">Mostrar modal 2</button>
+<modal-accept-cancel
+  title="¿Titulo"
+  content="Contenido"
+  visible="{{modalVisible}}"
+  onClose="handleClose"
+  primaryButtonText="Aceptar"
+  secondaryButtonText="Cancelar"
+  onPrimaryButtonTap="onAcceptButtonTap"
+  onSecondaryButtonTap="onCancelButtonTap"
+/>

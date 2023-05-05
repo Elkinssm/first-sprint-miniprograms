@@ -31,11 +31,10 @@ export function requestApiCheckInstalled(url, that) {
           'eyJpcCI6IjE5Mi4xNjguMS4xMDEiLCJ1c2VyQWdlbnQiOiJNaUNsYXJvQXBwLzAuMC4xIChYaWFvbWk7IE0yMTAxSzdCTDsgXHUwMDNjYW5kcm9pZC8xMVx1MDAzZSkifQ==',
        },
       success: res => {
-        console.log("check", res);
         resolve(res);
       },
       fail: res => {
-        reject(res);
+        reject(res.data.response);
       }
     });
   });

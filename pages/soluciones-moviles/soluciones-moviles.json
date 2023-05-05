@@ -1,7 +1,9 @@
 {
   "usingComponents": {
     "hyperlink-button": "/components/hyperlink-button/hyperlink-button",
-    "arrow-button": "/components/arrow-button/arrow-button"
+    "arrow-button": "/components/arrow-button/arrow-button",
+    "modal-accept-cancel" :"/components/modal-accept-cancel/modal-accept-cancel",
+    "modal-accept" :"/components/modal-accept/modal-accept"
   },
   "styleIsolation": "apply-shared"
 }

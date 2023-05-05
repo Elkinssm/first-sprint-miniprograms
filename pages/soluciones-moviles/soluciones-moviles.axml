@@ -39,7 +39,7 @@
 
   <view class="overlay">
     <view class="btn-overlay">
-      <text class="text">3102659717</text>
+      <text class="text">{{lineNumber}}</text>
       <image mode="widthFix" src="/assets/icons/highlight_off.svg" />
     </view>
   </view>
