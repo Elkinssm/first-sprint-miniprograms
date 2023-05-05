@@ -100,7 +100,7 @@
 
                 </view>
                 <view class="icon-dele-bundle">
-                  <view style="display:flex;width:100%;justify-content:center;">
+                  <view onTap="handleOpenModal" data-code={{item.codServ}}  style="display:flex;width:100%;justify-content:center;">
                     <image
                       id="icon-delete"
                       mode="scaleToFill"
@@ -181,11 +181,22 @@
     </view>
   </view>
 
+  <modal-accept-cancel
+  title="Señor usuario:"
+  content="¿Está seguro de desactivar el paquete escogido?"
+  visible="{{modalVisible}}"
+  onClose="handleClose"
+  primaryButtonText="Aceptar"
+  secondaryButtonText="Cerrar"
+  onPrimaryButtonTap="onAcceptButtonTap"
+  onSecondaryButtonTap="onCancelButtonTap"
+/>
+
   <modal-accept
     content="{{descriptionModal}}"
     visible="{{modalVisibleDescription}}"
     onClose="handleClose"
     primaryButtonText="Aceptar"
-    onPrimaryButtonTap="handleOpenModalDescriptionPlan"
+    onPrimaryButtonTap="handleClose"
   />
 </view>

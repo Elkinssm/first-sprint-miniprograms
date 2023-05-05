@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "modal-accept-cancel": "/components/modal-accept-cancel/modal-accept-cancel"
+  },
   "styleIsolation": "apply-shared"
 }
