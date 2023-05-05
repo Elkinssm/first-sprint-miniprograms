@@ -2,7 +2,6 @@ import { requestApiretrieve } from "/services/retrieveRoamingService";
 import { requestApiCheckInstalled } from "/services/checkInstalledPackagesService";
 import { requestApiDisableRoamingPackage } from "/services/disableRoamingPacket";
 
-
 Page({
   data: {
     modalVisible: false,
@@ -14,13 +13,13 @@ Page({
     expirationDate: "Indefinido",
     switchServiceState: false,
     packagedInstalled: [],
-    condServ : "",
+    condServ: "",
     urlChekingInstalled:
       "https://apiselfservice.co/M3/Empresas/Postpago/checkInstalledPackages/",
     urlRetrieveRoaming:
       "https://apiselfservice.co/api/index.php/v1/soap/retrieveRoamingService.json",
     urlDisableRoamingPacket:
-       "https://apiselfservice.co/M3/Empresas/Postpago/DisableRoamingPacket/"
+      "https://apiselfservice.co/M3/Empresas/Postpago/DisableRoamingPacket/"
   },
 
   onReady() {
@@ -35,8 +34,6 @@ Page({
     my.showLoading({
       content: "Cargando..."
     });
-    this.packageDisableRoaming();
-
     requestApiretrieve(this.data.urlRetrieveRoaming, this)
       .then(res => {
         this.retrieveServiceValidation(res);
@@ -73,8 +70,7 @@ Page({
   packageInstalledService() {
     requestApiCheckInstalled(this.data.urlChekingInstalled, this)
       .then(res => {
-      this.packageInstalledValidation(res);
-      
+        this.packageInstalledValidation(res);
       })
       .catch(error => {
         my.hideLoading({
@@ -104,15 +100,40 @@ Page({
     my.hideLoading();
   },
 
-  packageDisableRoaming() {
-    const disableData = {    
-      min: "3103815747",
-      codePackage: this.data.codServ
-    };    
-    requestApiDisableRoamingPackage(this.data.urlDisableRoamingPacket, disableData, this)
+  // packageDisableRoaming() {
+  //   const disableData = {
+  //     min: "3103815747",
+  //     codePackage: this.data.codServ
+  //   };
+  //   requestApiDisableRoamingPackage(
+  //     this.data.urlDisableRoamingPacket,
+  //     disableData,
+  //     this
+  //   )
+  //     .then(res => {
+  //       // this.packageDisableRoaming(res);
+  //       console.log(res);
+  //     })
+  //     .catch(error => {
+  //       my.hideLoading({
+  //         page: this
+  //       });
+  //       my.alert({
+  //         content: error,
+  //         buttonText: "Cerrar"
+  //       });
+  //     });
+  // },
+
+  packageDisableRoaming(disableData) {
+    console.log(disableData);
+    requestApiDisableRoamingPackage(
+      this.data.urlDisableRoamingPacket,
+      disableData,
+      this
+    )
       .then(res => {
-        // this.packageDisableRoaming(res); 
-        console.log(res) 
+        console.log(res);
       })
       .catch(error => {
         my.hideLoading({
@@ -131,28 +152,51 @@ Page({
     });
   },
 
-
+  // handleOpenModal(e) {
+  //   console.log(e)
+  //   console.log("Entrando");
+  //   this.setData({
+  //     modalVisible: true,
+  //      codServ:e.target.dataset.code
+  //   });
+  //   console.log(this.data.codServ)
+  // },
   handleOpenModal(e) {
-    console.log(e)
-    console.log("Entrando");   
+    console.log(e);
+    console.log("Entrando");
     this.setData({
       modalVisible: true,
-       codServ:e.target.dataset.code
+      selectedPackageCode: e.target.dataset.code
     });
-    console.log(this.data.codServ)
+    console.log(this.data.selectedPackageCode);
   },
+
   handleClose() {
     this.setData({
       modalVisible: false
-     
     });
   },
+
+  // onAcceptButtonTap() {
+  //   console.log("Aceptar");
+  //   this.setData({
+  //     modalVisible: false
+  //   });
+  // },
+
   onAcceptButtonTap() {
     console.log("Aceptar");
     this.setData({
       modalVisible: false
     });
+    const disableData = {
+      min: "3103815747",
+      codePackage: this.data.selectedPackageCode
+    };
+    this.packageDisableRoaming(disableData);
+   
   },
+
   onCancelButtonTap() {
     console.log("Cancelar");
     this.setData({
