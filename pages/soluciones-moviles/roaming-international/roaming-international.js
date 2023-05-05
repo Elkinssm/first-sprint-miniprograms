@@ -5,7 +5,7 @@ import { requestApiDisableRoamingPackage } from "/services/disableRoamingPacket"
 Page({
   data: {
     modalVisible: false,
-    descriptionModal:"",
+    descriptionModal: "",
     loaded: false,
     modalVisibleDescription: false,
     response: {},
@@ -166,33 +166,37 @@ Page({
       modalVisible: false
     });
   },
-  handleOpenModalDescriptionPlan(e) {
-    this.setData({
-      modalVisibleDescription: true,
-      descriptionModal: e.currentTarget.dataset.item
-    });
+  handleOpenModalDescriptionPlan(e) {   
+    if (e.currentTarget.dataset.item) {
+      this.setData({
+        modalVisibleDescription: true,
+        descriptionModal: e.currentTarget.dataset.item
+      });
+    }
   },
-  
+
   handleClose() {
     this.setData({
       modalVisible: false,
       modalVisibleDescription: false
     });
   },
-  redirectToRoamingWeb(){
-        my.navigateTo({
-          url: '/pages/soluciones-moviles/roaming-international/redirectToRoamingWeb/redirectToRoamingWeb'
-        })
+  redirectToRoamingWeb() {
+    my.navigateTo({
+      url:
+        "/pages/soluciones-moviles/roaming-international/redirectToRoamingWeb/redirectToRoamingWeb"
+    });
   },
   redirectOfertaServicios() {
-    my.navigateTo({
-      url: '/pages/soluciones-moviles/roaming-international/redirectToOfers/redirectToOfers'
-    })
+    my.navigateTo({
+      url:
+        "/pages/soluciones-moviles/roaming-international/redirectToOfers/redirectToOfers"
+    });
   },
 
   redirectHomeServices() {
-    my.navigateTo({
-      url: '/pages/soluciones-moviles/soluciones-moviles'
-    })
-  },
+    my.navigateTo({
+      url: "/pages/soluciones-moviles/soluciones-moviles"
+    });
+  }
 });
