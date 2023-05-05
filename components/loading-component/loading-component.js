@@ -8,7 +8,7 @@ Component({
       const that = this;
       my.createSelectorQuery()
         .select("#loading-img")
-        .exec(res => {
+        .exec((res) => {
           that.setData({
             loadingImg: res[0]
           });
