@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "hr": "/components/hr/hr",
+    "arrow-button": "/components/arrow-button/arrow-button",
+    "input-item": "../../packages/node_modules/antd-mini/es/Input/index",
+    "icon": "../../packages/node_modules/antd-mini/es/Icon/index"
+  }
+}

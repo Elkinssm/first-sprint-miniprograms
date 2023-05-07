@@ -1,0 +1,10 @@
+<view style="{{style}}" class="btn-arrow" onTap="onNav" data-item="{{ dataInfo }}">
+
+  <view class="container-btn-arrow">
+
+    <view class="info-arrow">
+      
+     
+    </view>
+  </view>
+</view>

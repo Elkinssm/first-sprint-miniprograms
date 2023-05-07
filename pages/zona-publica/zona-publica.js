@@ -50,6 +50,11 @@ Page({
         iconUrl: "/assets/icons/devices.svg",
         text: "Total Cuentas Maestras",
         pageUrl: "/pages/total-master-accounts/total-master-accounts"
+      },
+      {
+        iconUrl: "/assets/icons/devices.svg",
+        text: "Personalizar Servicios",
+        pageUrl: "/pages/personalize-your-services/personalize-your-services"
       }
     ]
   },
