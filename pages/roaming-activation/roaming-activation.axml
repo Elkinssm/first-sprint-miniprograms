@@ -89,11 +89,19 @@
           {{selectedCountries}}
         </view>
         <view class="invitationText">
-          Te invitamos a revisar la descripción de la oferta, si alguno de los países seleccionados no 
-          aparece en ella, ingresa en el siguiente link en donde podrás conocer las tarifas de los 
+          Te invitamos a revisar la descripción de la oferta, si alguno de los países seleccionados no
+          aparece en ella, ingresa en el siguiente link en donde podrás conocer las tarifas de los
           consumos por demanda en
         </view>
-        <navigator url="./roaming-webview" class="roamingText">Roaming para voz, datos, sms y demás servicios”</navigator>
+        <navigator url="./roaming-webview" class="roamingText">
+          Roaming para voz, datos, sms y demás servicios”
+        </navigator>
+        <view class="featuredPackageContainer">
+          <view class="featuredPackage">
+            <image src="/assets/icons/paquetes.svg" class="imageFeaturedPackage" />
+            <text class="textFeaturedPackage">Paquete destacado</text>
+          </view>
+        </view>
       </block>
     </view>
   </view>

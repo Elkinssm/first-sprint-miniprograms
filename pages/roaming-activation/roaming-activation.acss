@@ -248,3 +248,34 @@
   font-weight: bold;
   margin-top: 10px;
 }
+
+.featuredPackageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.featuredPackage {
+  margin-top: 58rpx;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ef3829;
+  border-radius: 15px;
+  width: 131px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+}
+
+.textFeaturedPackage {
+  color: #ef3829;
+  font-weight: bold;
+  font-size: 10px;
+  margin-right: 8px;
+}
+
+.imageFeaturedPackage {
+  width: 13px;
+  height: 17px;
+  margin-left: 11px;
+  margin-right: 6px;
+}
