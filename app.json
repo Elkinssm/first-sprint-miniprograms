@@ -22,7 +22,10 @@
     "pages/adquirir-producto/adquirir-producto",
     "pages/guia-novedades/redirect-guia/redirect-guia",
     "pages/solucion/solution-redirection/solution-redirection",
-    "pages/total-master-accounts/total-master-accounts"
+    "pages/soluciones-moviles/soluciones-moviles",
+    "pages/soluciones-moviles/roaming-international/roaming-international",
+    "pages/soluciones-moviles/roaming-international/redirectToOfers/redirectToOfers",
+    "pages/soluciones-moviles/roaming-international/redirectToRoamingWeb/redirectToRoamingWeb"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",

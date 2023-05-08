@@ -48,8 +48,8 @@ Page({
       },
       {
         iconUrl: "/assets/icons/devices.svg",
-        text: "Total Cuentas Maestras",
-        pageUrl: "/pages/total-master-accounts/total-master-accounts"
+        text: "Soluciones Moviles",
+        pageUrl: "/pages/soluciones-moviles/soluciones-moviles"
       }
     ]
   },
