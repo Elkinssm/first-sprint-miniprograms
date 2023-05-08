@@ -1,6 +1,7 @@
 let requestParameter = getApp();
 
 export function requestApiCheckInstalled(url, that) {
+  console.log("servicio config",getApp().globalData.sessionId)
   return new Promise((resolve, reject) => {
     my.request({
       url: url,

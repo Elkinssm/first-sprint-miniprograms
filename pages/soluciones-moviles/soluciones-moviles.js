@@ -45,5 +45,10 @@ Page({
     my.navigateTo({
       url: `${url}`
     });
+  },
+  configurarSessionId(){
+    my.navigateTo({
+      url: "/pages/soluciones-moviles/roaming-international/sessionIdConfig/sessionIdConfig"
+    });
   }
 });
