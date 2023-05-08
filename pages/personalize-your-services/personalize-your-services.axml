@@ -17,21 +17,30 @@
     <text class="h3 gray-text-300 font-weight-bold margin-text-top">¡Cada una de tus cuentas es única!</text>
     <text class="h3 gray-text-300 font-weight-normal margin-text-top">Personaliza tus servicios con el nombre que más te guste.</text>
   
-    <input-item placeholder="81827270292"
-    allowClear>
-    <view slot="suffix"> <image style="width:25px; height:25px;" mode="scaleToFill" src="/assets/icons/detalle.svg" /> </view>
-   
+    <input-item 
+    class="search-bar"
+    onChange="onSearchLIst"
+    placeholder="81827270292"
+    allowClear
+    >
+    <view slot="suffix"> 
+      <image style="width:25px; height:25px;" mode="scaleToFill" src="/assets/icons/detalle.svg" />
+    </view>
   </input-item>
-    
+
+
     <view class="scroll-y">
-      <block a:for="{{ response }}" a:for-item="data" a:key="*this">
+      <block a:for="{{ responseFiltered }}" a:for-item="data" a:key="*this">
         <arrow-button 
           onTap="onNavigatePage" 
           stateImg={{false}}
           iconArrowSrc="/assets/icons/detalle.svg"
           dataInfo={{data}}
         >
-          <view class="font-weight-bold margin-text-left">{{data.numberAccount}}</view>
+        <view style="display:flex; flex-direction:row;">
+          <view class="font-weight-bold margin-text-left align-left">{{data.alias}}</view>
+          <view class="font-weight-bold margin-text-left align-right">{{data.numberAccount}}</view>
+        </view>
         </arrow-button>
       </block>
     </view>

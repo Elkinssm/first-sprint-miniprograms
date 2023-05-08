@@ -64,7 +64,6 @@
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
-  text-align: left;
   gap: 20rpx;
   overflow: auto;
 }
@@ -98,6 +97,14 @@
   color: #808080;
 }
 
+.align-left {
+float: left;
+}
+
+.align-right {
+  float: right;
+}
+
 
 /* Clases Tamaños de letra */
 
@@ -125,6 +132,17 @@
   font-size: 16rpx;
 }
 
+
+.search-bar {
+  width: 70%;
+  height: 70px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 0 0 0 20px;
+}
 
 
 

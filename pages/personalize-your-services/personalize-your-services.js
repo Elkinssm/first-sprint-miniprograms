@@ -2,7 +2,9 @@ import {getAnyMAccList} from "/services/GetAnyMAccList.js"
 
 Page({
   data: {
+    searchValue: '',
     response: [],
+    responseFiltered: [],
     datos: {
       data: null
     },
@@ -21,11 +23,13 @@ Page({
             numberAccount: account.masterAccountNumber,
             payDate: account.payDate,
             lineOfBussiness: account.cuenta.LineOfBusiness,
-            token: account.cuenta.token
+            token: account.cuenta.token,
+            alias: account.cuenta.alias
           };
         });
         this.setData({
-          response: mapper
+          response: mapper,
+          responseFiltered: mapper
         });
         my.hideLoading({});
       })
@@ -38,6 +42,14 @@ Page({
     const numberAccount = e.target.dataset.item.numberAccount;
     my.navigateTo({
       url: `/pages/manageYourInvoice/manageYourInvoice?numberAccount=${numberAccount}`
+    });
+  },
+  onSearchLIst(e){
+    console.log(e);
+    var results = this.data.response.filter(element => element.numberAccount.startsWith(e));
+    console.log(results);
+    this.setData({
+      responseFiltered: results
     });
   }
 });
