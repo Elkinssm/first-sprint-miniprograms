@@ -1,5 +1,6 @@
 Page({
   data: {
+    lineNumber:getApp().globalData.lineNumber,
     roamingService: [
       {
         name: "Consulta tus consumos",
@@ -43,6 +44,11 @@ Page({
     const url = e.currentTarget.dataset.item.url;
     my.navigateTo({
       url: `${url}`
+    });
+  },
+  configurarSessionId(){
+    my.navigateTo({
+      url: "/pages/soluciones-moviles/roaming-international/sessionIdConfig/sessionIdConfig"
     });
   }
 });

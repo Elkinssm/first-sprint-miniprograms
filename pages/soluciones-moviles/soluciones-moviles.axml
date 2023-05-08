@@ -6,13 +6,15 @@
       <hyperlink-button 
         stateImg="{{true}}" 
         srcImg="/assets/icons/navigate_next_black.svg"
-        color="white"
+        colorImg="white"
+        sizeImg="25rpx"
+        styles="color:white;"
         under_line="{{true}}"
       >
         Administrar Cuentra Maestra
       </hyperlink-button>
     </view>
-    <view class="settings">
+    <view onTap="configurarSessionId" class="settings">
       <image mode="aspectFit" src="/assets/icons/settings_white.svg" />
     </view>
   </view>
@@ -37,7 +39,7 @@
 
   <view class="overlay">
     <view class="btn-overlay">
-      <text class="text">3102659717</text>
+      <text class="text">{{lineNumber}}</text>
       <image mode="widthFix" src="/assets/icons/highlight_off.svg" />
     </view>
   </view>
