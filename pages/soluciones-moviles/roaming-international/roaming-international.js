@@ -19,6 +19,7 @@ Page({
     switchServiceState: false,
     packagedInstalled: [],
     condServ: "",
+    showLoading: false,
     urlChekingInstalled:
       "https://apiselfservice.co/M3/Empresas/Postpago/checkInstalledPackages/",
     urlRetrieveRoaming:
@@ -39,6 +40,7 @@ Page({
   },
 
   onLoad() {
+    
     my.showLoading({
       content: "Cargando..."
     });
@@ -70,10 +72,11 @@ Page({
     }
     if (isActiveService === "1") {
       this.setData({
-        switchServiceState: isActiveService,
+        switchServiceState: true,
         isActive: isActiveService
       });
     }
+    console.log("test",this.data.switchServiceState)
   },
 
   packageInstalledService() {
@@ -107,7 +110,6 @@ Page({
 
   packageDisableRoaming(disableData) {
     
-    // console.log(disableData);
     requestApiDisableRoamingPackage(
       this.data.urlDisableRoamingPacket,
       disableData,
@@ -127,22 +129,35 @@ Page({
       });
   },
 
-  // Disable Roaming Service
   disableRoamingService(disableDataService) {
-    const that = this
-    // console.log(disableData);
     requestApiDisableRoamingService(
       this.data.urlDisableRoamingService,
       disableDataService,
       this
     )
       .then(res => {
+        if(res.data.error == 0) {
+          this.setData({
+            switchServiceState: false,
+          });
+          this.openModalConfirmDisableService();
+        } else {
+          this.hideLoading({
+            page: this
+          });
+          my.alert({
+            content: res.data.response,
+            buttonText: "Cerrar"
+          });
+          this.setData({
+            switchServiceState: true
+          })
+        }
         console.log(res);
-        that.openModalConfirmDisableService();
-        //openModalConfirmDisableService();
+        
       })
       .catch(error => {
-        my.hideLoading({
+        this.hideLoading({
           page: this
         });
         my.alert({
@@ -153,7 +168,6 @@ Page({
   },
 
   switchChange(e) {
-    console.log('switchChange: ', e.detail.value);
     console.log(e);
 
     this.setData({
@@ -165,13 +179,18 @@ Page({
         modalServiceVisible: true
       })
     }
+    
   },
 
   openModalConfirmDisableService() {
     console.log("confirm disable");
+    
     this.setData({
-      modalConfirmDisableService: true
-    })
+      modalConfirmDisableService: true,
+    });
+
+    this.hideLoading();
+   
   },
 
   handleOpenModal(e) {
@@ -204,7 +223,7 @@ Page({
       url:
         "/pages/soluciones-moviles/roaming-international/roaming-international",
       success: function() {
-        my.hideLoading();
+        this.hideLoading();
       }
     });
   },
@@ -220,20 +239,11 @@ Page({
         activar: "0",
         ExpirationDate: ""
       };
-      this.disableRoamingService(disableData);
 
-      my.showLoading({
+      this.showLoading({
         content: "Cargando..."
       });
-
-       // Llamar a my.reLaunch para recargar la página
-      my.reLaunch({
-      url:
-        "/pages/soluciones-moviles/roaming-international/roaming-international",
-      success: function() {
-        my.hideLoading();
-      }
-    });
+      this.disableRoamingService(disableData);
   },
 
   onCancelButtonTap() {
@@ -242,6 +252,7 @@ Page({
       modalVisible: false
     });
   },
+  
   handleOpenModalDescriptionPlan(e) {   
     if (e.currentTarget.dataset.item) {
       this.setData({
@@ -260,9 +271,9 @@ Page({
 
   // Disbabling roaming service
   handleCloseRoaming() {
-    
     this.setData({
-      modalConfirmDisableService: false
+      modalConfirmDisableService: false,
+      switchServiceState: false
     });
   },
 
@@ -285,13 +296,23 @@ Page({
     });
   },
 
-  
-
   onCancelButtonRoamingTap() {
     console.log("Cancelar");
     this.setData({
       modalServiceVisible: false,
       switchServiceState: true
+    });
+  },
+
+  showLoading() {
+    this.setData({
+      showLoading: true
+    });
+  },
+  //Metodo necesario para ocultar el loading
+  hideLoading() {
+    this.setData({
+      showLoading: false
     });
   }
 });

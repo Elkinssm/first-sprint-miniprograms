@@ -211,11 +211,13 @@
     onSecondaryButtonTap="onCancelButtonRoamingTap"  
   />
 
-  <modal-accept
+  <modal-check
     content="Datos borrados con exito"
     visible="{{modalConfirmDisableService}}"
     onClose="handleCloseRoaming"
     primaryButtonText="Aceptar"
     onPrimaryButtonTap="handleCloseRoaming"
   />
+
+  <loading-component a:if="{{showLoading}}" />
 </view>
