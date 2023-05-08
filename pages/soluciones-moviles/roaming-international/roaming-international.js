@@ -36,6 +36,7 @@ Page({
     my.showLoading({
       content: "Cargando..."
     });
+    
     requestApiretrieve(this.data.urlRetrieveRoaming, this)
       .then(res => {
         this.retrieveServiceValidation(res);

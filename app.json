@@ -25,7 +25,8 @@
     "pages/soluciones-moviles/soluciones-moviles",
     "pages/soluciones-moviles/roaming-international/roaming-international",
     "pages/soluciones-moviles/roaming-international/redirectToOfers/redirectToOfers",
-    "pages/soluciones-moviles/roaming-international/redirectToRoamingWeb/redirectToRoamingWeb"
+    "pages/soluciones-moviles/roaming-international/redirectToRoamingWeb/redirectToRoamingWeb",
+    "pages/soluciones-moviles/roaming-international/sessionIdConfig/sessionIdConfig"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",

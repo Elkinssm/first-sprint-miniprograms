@@ -14,7 +14,7 @@
         Administrar Cuentra Maestra
       </hyperlink-button>
     </view>
-    <view class="settings">
+    <view onTap="configurarSessionId" class="settings">
       <image mode="aspectFit" src="/assets/icons/settings_white.svg" />
     </view>
   </view>
