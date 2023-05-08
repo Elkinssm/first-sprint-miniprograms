@@ -1,8 +1,19 @@
+import {
+  requestApi
+} from "/services/retrieveRoamingService"
+
 Page({
   onLoad(query) {
+    /*console.log("query", query);
     this.setData({
-      lineNumber: '3172345182'
-    })
+      lineNumber: '3103815747'
+    });
+    requestApi('https://apiselfservice.co/api/index.php/v1/soap/retrieveRoamingService.json', this)
+      .then((response) => {
+        console.log(response);
+      })*/
+
+
   },
   data: {
     lineNumber: '',
