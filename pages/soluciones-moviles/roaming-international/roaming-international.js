@@ -1,10 +1,13 @@
 import { requestApiretrieve } from "/services/retrieveRoamingService";
 import { requestApiCheckInstalled } from "/services/checkInstalledPackagesService";
 import { requestApiDisableRoamingPackage } from "/services/disableRoamingPacket";
+import { requestApiDisableRoamingService } from "/services/disableRoamingService";
 
 Page({
   data: {
+    modalServiceVisible: false,
     modalVisible: false,
+    modalConfirmDisableService: false,
     descriptionModal: "",
     loaded: false,
     modalVisibleDescription: false,
@@ -16,13 +19,17 @@ Page({
     switchServiceState: false,
     packagedInstalled: [],
     condServ: "",
+    showLoading: false,
     urlChekingInstalled:
       "https://apiselfservice.co/M3/Empresas/Postpago/checkInstalledPackages/",
     urlRetrieveRoaming:
       "https://apiselfservice.co/api/index.php/v1/soap/retrieveRoamingService.json",
     urlDisableRoamingPacket:
-      "https://apiselfservice.co/M3/Empresas/Postpago/DisableRoamingPacket/"
+      "https://apiselfservice.co/M3/Empresas/Postpago/DisableRoamingPacket/",
+    urlDisableRoamingService:
+      "https://apiselfservice.co/api/index.php/v1/soap/activateRoamingService.json",
   },
+
 
   onReady() {
     my.setNavigationBar({
@@ -33,6 +40,7 @@ Page({
   },
 
   onLoad() {
+    
     my.showLoading({
       content: "Cargando..."
     });
@@ -64,10 +72,11 @@ Page({
     }
     if (isActiveService === "1") {
       this.setData({
-        switchServiceState: isActiveService,
+        switchServiceState: true,
         isActive: isActiveService
       });
     }
+    console.log("test",this.data.switchServiceState)
   },
 
   packageInstalledService() {
@@ -100,7 +109,7 @@ Page({
   },
 
   packageDisableRoaming(disableData) {
-    // console.log(disableData);
+    
     requestApiDisableRoamingPackage(
       this.data.urlDisableRoamingPacket,
       disableData,
@@ -120,10 +129,68 @@ Page({
       });
   },
 
+  disableRoamingService(disableDataService) {
+    requestApiDisableRoamingService(
+      this.data.urlDisableRoamingService,
+      disableDataService,
+      this
+    )
+      .then(res => {
+        if(res.data.error == 0) {
+          this.setData({
+            switchServiceState: false,
+          });
+          this.openModalConfirmDisableService();
+        } else {
+          this.hideLoading({
+            page: this
+          });
+          my.alert({
+            content: res.data.response,
+            buttonText: "Cerrar"
+          });
+          this.setData({
+            switchServiceState: true
+          })
+        }
+        console.log(res);
+        
+      })
+      .catch(error => {
+        this.hideLoading({
+          page: this
+        });
+        my.alert({
+          content: error,
+          buttonText: "Cerrar"
+        });
+      });
+  },
+
   switchChange(e) {
+    console.log(e);
+
     this.setData({
       switchServiceState: e.detail.value
     });
+
+    if(!(e.detail.value)) {
+      this.setData({
+        modalServiceVisible: true
+      })
+    }
+    
+  },
+
+  openModalConfirmDisableService() {
+    console.log("confirm disable");
+    
+    this.setData({
+      modalConfirmDisableService: true,
+    });
+
+    this.hideLoading();
+   
   },
 
   handleOpenModal(e) {
@@ -156,9 +223,27 @@ Page({
       url:
         "/pages/soluciones-moviles/roaming-international/roaming-international",
       success: function() {
-        my.hideLoading();
+        this.hideLoading();
       }
     });
+  },
+
+  // Disabling roaming service
+  onAcceptButtonRoamingTap() {
+      console.log("Disable");
+      this.setData({
+        modalServiceVisible: false
+      });
+
+      const disableData = {
+        activar: "0",
+        ExpirationDate: ""
+      };
+
+      this.showLoading({
+        content: "Cargando..."
+      });
+      this.disableRoamingService(disableData);
   },
 
   onCancelButtonTap() {
@@ -167,6 +252,7 @@ Page({
       modalVisible: false
     });
   },
+  
   handleOpenModalDescriptionPlan(e) {   
     if (e.currentTarget.dataset.item) {
       this.setData({
@@ -182,6 +268,15 @@ Page({
       modalVisibleDescription: false
     });
   },
+
+  // Disbabling roaming service
+  handleCloseRoaming() {
+    this.setData({
+      modalConfirmDisableService: false,
+      switchServiceState: false
+    });
+  },
+
   redirectToRoamingWeb() {
     my.navigateTo({
       url:
@@ -198,6 +293,26 @@ Page({
   redirectHomeServices() {
     my.navigateTo({
       url: "/pages/soluciones-moviles/soluciones-moviles"
+    });
+  },
+
+  onCancelButtonRoamingTap() {
+    console.log("Cancelar");
+    this.setData({
+      modalServiceVisible: false,
+      switchServiceState: true
+    });
+  },
+
+  showLoading() {
+    this.setData({
+      showLoading: true
+    });
+  },
+  //Metodo necesario para ocultar el loading
+  hideLoading() {
+    this.setData({
+      showLoading: false
     });
   }
 });
