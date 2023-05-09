@@ -1,14 +1,18 @@
 import {getAnyMAccList} from "/services/GetAnyMAccList.js"
+import {asociarCuenta} from "/services/AsociarCuentaCliente.js"
 
 Page({
   data: {
+    customBodyVisible: false,
+    primaryButtonText: "Aceptar",
     searchValue: '',
     response: [],
     responseFiltered: [],
     datos: {
       data: null
     },
-    url: 'https://apiselfservice.co/M3/Empresas/Postpago/GetAnyMAccList/'
+    url: 'https://apiselfservice.co/M3/Empresas/Postpago/GetAnyMAccList/',
+    url2: 'https://apiselfservice.co/M3/Empresas/Postpago/AsociarCuentaCliente/'
   },
   onLoad(query) {
     this.getTotalAccounts();
@@ -51,5 +55,53 @@ Page({
     this.setData({
       responseFiltered: results
     });
+  },
+  onPencilEdit(e){
+    this.setData({ customBodyVisible: true });
+  },
+  onHandleClose(){
+    this.setData({ customBodyVisible: false });
+  },
+  onCambiarNombreServicio(){
+    console.log("cambiando nombre");
+  },
+  formSubmit: function(e) {
+    console.log('form has a submit event, carrying data ', e.detail.value);
+
+    let body = {
+      "data": {
+        "AccountId" : "8.22343403",
+        "DocumentNumber" : "860066942",
+        "DocumentType" : "5",
+        "UserProfileID" : "evoluciondecanales@gmail.com",
+        "alias": "test",
+        "tipoAsociacionID": "2",
+        "tipoCuentaID": "1"
+      }
+    };
+    
+    my.showLoading({ content: 'Loading Data...' });
+
+    asociarCuenta(this.data.url2, body)
+    .then(res => {
+      console.log(res);
+
+      my.hideLoading({});
+
+      my.showLoading({ content: res.data.response });
+
+
+
+
+    })
+    .catch(error => {
+      console.log(error);
+      my.hideLoading({});
+    })
+
+
+  },
+  formReset: function() {
+    this.onHandleClose();
   }
 });

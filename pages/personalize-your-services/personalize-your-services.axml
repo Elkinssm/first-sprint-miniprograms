@@ -21,10 +21,9 @@
     class="search-bar"
     onChange="onSearchLIst"
     placeholder="81827270292"
-    allowClear
     >
-    <view slot="suffix"> 
-      <image style="width:25px; height:25px;" mode="scaleToFill" src="/assets/icons/detalle.svg" />
+    <view slot="prefix">
+      <icon style=" margin-right: 20px; margin-left: 20px;" type="SearchOutline"  />
     </view>
   </input-item>
 
@@ -32,17 +31,42 @@
     <view class="scroll-y">
       <block a:for="{{ responseFiltered }}" a:for-item="data" a:key="*this">
         <arrow-button 
-          onTap="onNavigatePage" 
+          onTap="onPencilEdit" 
           stateImg={{false}}
-          iconArrowSrc="/assets/icons/detalle.svg"
+          iconArrowSrc="/assets/icons/pencil-edit.svg"
           dataInfo={{data}}
         >
         <view style="display:flex; flex-direction:row;">
-          <view class="font-weight-bold margin-text-left align-left">{{data.alias}}</view>
-          <view class="font-weight-bold margin-text-left align-right">{{data.numberAccount}}</view>
+          <view class="font-weight-bold margin-text-left">{{data.alias}}</view>
+          <view style="margin-left:70%;" class="font-weight-bold margin-text-left">{{data.numberAccount}}</view>
         </view>
         </arrow-button>
       </block>
     </view>
+  </view>
+
+
+
+  <view style="height:40%;">
+    <modal
+      content="Escribe el nombre con el que deseas personalizar esta cuenta"
+      visible="{{customBodyVisible}}"
+      onClose="onHandleClose"
+      primaryButtonText="{{primaryButtonText}}"
+      onPrimaryButtonTap="onAcceptButtonTapOne"
+
+    >
+    
+      <view class="container-modal-one" slot="header">
+        <icon class="icon-one" type="InformationCircleOutline" />
+      </view>
+      <view class="modal-footer" slot="footer">
+        <form class="modal-footer" onSubmit="formSubmit" onReset="formReset">
+          <input name="" class="container-input" placeholder="Escribe el nombre" />
+          <button formType="submit" class="modal-button button-accept">Aceptar</button>
+          <button formType="reset" class="modal-button button-cancel" onTap="onHandleClose">Cancelar</button>
+        </form>
+      </view>
+    </modal>
   </view>
 </view>

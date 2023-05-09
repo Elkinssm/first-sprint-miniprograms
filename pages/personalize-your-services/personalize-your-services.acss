@@ -134,15 +134,74 @@ float: left;
 
 
 .search-bar {
-  width: 70%;
-  height: 70px;
-  border-radius: 10px;
+  width: 90%;
+  height: 100px;
+  border-radius: 50px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;
   margin-bottom: 40px;
-  padding: 0 0 0 20px;
+  box-shadow: 0 10px 6px -6px #777;
 }
+
+/*Modal*/
+
+
+.container-modal-one {
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container-input {
+  display: flex;
+  justify-content: center;
+  margin-top:20px;
+  margin-bottom:20px;
+  text-align:center;
+  width: 100%;
+}
+
+.icon-one {
+  font-size: 40px;
+  color: #F6392C;
+}
+
+.ant-modal-body {
+  width: 370px;
+  height: 300px;
+}
+
+
+.modal-footer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.modal-button {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;  
+  border-radius: 5pX;
+  color: #ffffff;
+  width:35%;
+  height: 50px;
+  margin: 0 10px;
+}
+
+.button-accept{
+  background-color: #F6392C;
+}
+
+.button-cancel{
+  background-color: black;
+}
+
+
+
 
 
 
