@@ -167,10 +167,10 @@ float: left;
   color: #F6392C;
 }
 
-.ant-modal-body {
+/* .ant-modal-body {
   width: 370px;
   height: 300px;
-}
+} */
 
 
 .modal-footer{
@@ -189,7 +189,7 @@ float: left;
   color: #ffffff;
   width:35%;
   height: 50px;
-  margin: 0 10px;
+  margin: 10px;
 }
 
 .button-accept{

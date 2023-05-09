@@ -1,10 +1,10 @@
 Component({
-  data: {
-    iconArrow: '/assets/icons/navigate_next_black.svg'
-  },
+  data: {},
   props: {
+    stateImg: 'false',
     imgSrc: '',
-    url: '',
+    iconArrowSrc: '',
+    style: '',
     dataInfo: '',
     onTap: () => {}
   },

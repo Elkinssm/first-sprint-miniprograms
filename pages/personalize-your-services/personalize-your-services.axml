@@ -69,4 +69,15 @@
       </view>
     </modal>
   </view>
+
+  
+    <modal-accept
+      title="Información"
+      content="{{mensajeInfo}}"
+      visible="{{infoModelVisible}}"
+      onClose="handleCloseInfo"
+      primaryButtonText="{{primaryButtonTextInfo}}"
+  >
+  </modal-accept>
+  
 </view>

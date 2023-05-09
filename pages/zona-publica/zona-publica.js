@@ -50,6 +50,11 @@ Page({
         iconUrl: "/assets/icons/devices.svg",
         text: "Soluciones Moviles",
         pageUrl: "/pages/soluciones-moviles/soluciones-moviles"
+      },
+      {
+        iconUrl: "/assets/icons/devices.svg",
+        text: "Personalizar",
+        pageUrl: "/pages/personalize-your-services/personalize-your-services"
       }
     ]
   },

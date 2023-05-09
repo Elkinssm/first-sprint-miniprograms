@@ -4,7 +4,10 @@ import {asociarCuenta} from "/services/AsociarCuentaCliente.js"
 Page({
   data: {
     customBodyVisible: false,
+    infoModelVisible: false,
+    mensajeInfo: "",
     primaryButtonText: "Aceptar",
+    primaryButtonTextInfo: "Aceptar",
     searchValue: '',
     response: [],
     responseFiltered: [],
@@ -21,14 +24,23 @@ Page({
     my.showLoading({ content: 'Loading Data...' });
     getAnyMAccList(this.data.url, this)
       .then(res => {
-        console.log(res);
+        console.log(res)
+        
+        
+        if(res.data.error == 1){
+          this.setData({
+            mensajeInfo: res.data.response,
+            infoModelVisible: true,
+          });
+        }
+
         let mapper = res.data.response.masterAccountElement.map(account => {
           return {
             numberAccount: account.masterAccountNumber,
             payDate: account.payDate,
             lineOfBussiness: account.cuenta.LineOfBusiness,
             token: account.cuenta.token,
-            alias: account.cuenta.alias
+            alias: account.aliasAccount == "" ? "Sin nombre" : account.aliasAccount
           };
         });
         this.setData({
@@ -61,6 +73,9 @@ Page({
   },
   onHandleClose(){
     this.setData({ customBodyVisible: false });
+  },
+  handleCloseInfo(){
+    this.setData({ infoModelVisible: false });
   },
   onCambiarNombreServicio(){
     console.log("cambiando nombre");

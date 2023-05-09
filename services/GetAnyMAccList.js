@@ -7,7 +7,7 @@ export function getAnyMAccList(url, data){
       method: 'POST',
       data: data.datos,
       headers: {
-        "X-MC-MAIL": "angie.copete@neoris.com",
+        "X-MC-MAIL": "evoluciondecanales@gmail.com",
         "X-MC-SO": "android",
         "X-Carrier": "Tigo",
         "X-Wifi": true,
