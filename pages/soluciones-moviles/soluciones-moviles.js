@@ -72,16 +72,18 @@ Page({
 
     if (isNaN(inputValue)) {
       console.log("error")
-      this.setData({ error: "ingrese un numero valido", inputVal: "" });
+      this.setData({ error: "Linea invalida", inputVal: "" });
+      this.hideLoading();
     }
     else if (inputValue.length != 10) {
       console.log("error")
-      this.setData({ error: "ingrese un numero valido aqui" , inputVal: ""});
-
+      this.setData({ error: "Linea invalida" , inputVal: ""});
+      this.hideLoading();
     } else {
       this.showLoading();
       this.ValidateLineOrAccDocService(inputValue);
     }
+    
   },
   ValidateLineOrAccDocService(inputValue) {
     const errorGlobalSession=getApp().globalData.sessionError;
@@ -93,7 +95,9 @@ Page({
           this.GetMACCByMinService(inputValue);
         }
         else{
-          this.setData({ error: "ingrese un numero valido serv", inputVal: "" });
+          console()
+          this.setData({ error: "Linea invalida", inputVal: "" });
+          this.hideLoading();
         }
       })
       .catch(error => {
@@ -104,24 +108,29 @@ Page({
             buttonText: "Cerrar"
           });
         } else {
-          this.setData({ error: "ingrese un numero valido serv", inputVal: "" });
+          this.setData({ error: "Linea invalida", inputVal: "" });
         }
       }
    );
   },
   GetMACCByMinService(inputValue) {
-    const errorGlobalSession=getApp().globalData.sessionError;
+    
     requestApiGetMACCByMin(this.data.urlGetMACCByMin, this)
       .then(res => {
         if(res.data.error==0){
-          this.setData({ inputVal: inputValue});
+          getApp().globalData.lineNumber=inputValue;
+          console.log("exitoso--->",inputValue)
+          this.setData({ 
+            inputVal: inputValue,
+            lineNumber: inputValue
+          });
           this.setData({
             isVisibleSearch :false
           })
         }
         else{
           
-          this.setData({ error: "ingrese un numero valido serv", inputVal: "" });
+          this.setData({ error: "Linea invalida", inputVal: "" });
         }
         this.hideLoading();
       })
@@ -133,7 +142,7 @@ Page({
             buttonText: "Cerrar"
           });
         } else {
-          this.setData({ error: "ingrese un numero valido serv", inputVal: "" });
+          this.setData({ error: "Linea invalida", inputVal: "" });
         }
       });
   },

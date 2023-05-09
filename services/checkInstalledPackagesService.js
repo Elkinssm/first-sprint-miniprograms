@@ -11,7 +11,7 @@ export function requestApiCheckInstalled(url, that) {
       }},
       headers: {
         'X-SESSION-ID':requestParameter.globalData.sessionId,
-        'X-MC-LINE': requestParameter.globalData.lineNumberR,
+        'X-MC-LINE': requestParameter.globalData.lineNumber,
         'X-MC-LOB': '3',
         'Content-Type': 'application/json; charset=UTF-8',
         'X-MC-MAIL': 'angie.copete@neoris.com',
