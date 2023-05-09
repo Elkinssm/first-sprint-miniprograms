@@ -37,14 +37,12 @@ Page({
       }
     }
   },
-  handleInputConfirm(e) {
-    console.log(e);
-  },
+  handleInputConfirm(e) {},
   async handleInternetTapLink() {
     try {
       const response = await listLinksInternetByAccount(this.data);
       const data = response.data.response;
-      this.setListLinksAndNavigate(data);
+      this.setListLinksAndNavigate(data, "modem");
     } catch (error) {
       console.log(error);
     }
@@ -53,18 +51,18 @@ Page({
     try {
       const response = await listLinksTelephoneByAccount(this.data);
       const data = response.data.response;
-      this.setListLinksAndNavigate(data);
+      this.setListLinksAndNavigate(data, "telephone");
     } catch (error) {
       console.log(error);
     }
   },
-  setListLinksAndNavigate(data) {
+  setListLinksAndNavigate(data, dispositiveType) {
     my.setStorageSync({
       key: "listLinks",
       data: data,
     });
     my.navigateTo({
-      url: "/pages/suspension-activation/list-links/list-links",
+      url: `/pages/suspension-reactivation/list-links/list-links?dispositiveType=${dispositiveType}`,
     });
   },
 });

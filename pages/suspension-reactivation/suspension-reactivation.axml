@@ -7,7 +7,7 @@
       {{enterpriseNumber}}
     </view>
   </view>
-  <divider lineHeight="3" lineColor="#D2D2D2" />
+  <divider lineHeight="1" lineColor="#383838" />
   <view class="enterprise__info">
     <view>
       Número de Cuenta
