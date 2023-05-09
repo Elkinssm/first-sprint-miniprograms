@@ -1,0 +1,72 @@
+page {
+  padding: 30rpx;
+}
+
+.enterprise__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  margin: 10rpx 0rpx;
+}
+
+.enterprise__number {
+  color: var(--claro-color);
+}
+
+.link-card {
+  margin-top: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.link-card__title {
+  color: #383838;
+  margin-bottom: 12rpx;
+}
+
+.link-card__subtitle {
+  color: var(--claro-color);
+  font-weight: bold;
+}
+
+.link-card__code {
+  color: #383838;
+  font-weight: bold;
+  font-size: 32rpx;
+  margin-bottom: 50rpx;
+  margin-left: 14rpx;
+}
+
+.link__button {
+  min-height: 70rpx;
+  max-height: 100rpx;
+  padding: 30rpx 0rpx 20rpx 20rpx;
+  margin: 40rpx 0rpx;
+  background-color: #e6e6e6;
+  border-radius: 25rpx;
+  box-shadow: 0px 3px 3px #d4d4d4;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.link__button::before {
+  content: "";
+  position: relative;
+  width: 14rpx;
+  height: 14rpx;
+  border-style: solid;
+  border-width: 3rpx 3rpx 0 0;
+  top: 0%;
+  left: calc(100% - 40rpx);
+  transform: rotate(45deg);
+}
+
+.link__button text {
+  width: 90%;
+}

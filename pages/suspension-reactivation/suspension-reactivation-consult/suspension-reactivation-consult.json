@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "divider": "antd-mini/es/Divider/index"
+  },
+  "styleIsolation": "apply-shared"
+}
