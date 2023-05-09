@@ -25,7 +25,9 @@
   height: 100vh;
   background-color: rgba(189, 191, 192, 0.8);
 }
-
+.loading-container{
+  height: 150px;
+}
 /*Header*/
 
 .header {

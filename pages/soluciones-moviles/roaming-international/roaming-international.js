@@ -9,7 +9,7 @@ Page({
     modalVisible: false,
     modalConfirmDisableService: false,
     descriptionModal: "",
-    loaded: false,
+    loaded: true,
     modalVisibleDescription: false,
     response: {},
     lineNumber: "",
@@ -27,9 +27,8 @@ Page({
     urlDisableRoamingPacket:
       "https://apiselfservice.co/M3/Empresas/Postpago/DisableRoamingPacket/",
     urlDisableRoamingService:
-      "https://apiselfservice.co/api/index.php/v1/soap/activateRoamingService.json",
+      "https://apiselfservice.co/api/index.php/v1/soap/activateRoamingService.json"
   },
-
 
   onReady() {
     my.setNavigationBar({
@@ -40,33 +39,30 @@ Page({
   },
 
   onLoad() {
-    const numberLinerSearch=getApp().globalData.lineNumber;
+    const numberLinerSearch = getApp().globalData.lineNumber;
     this.setData({
-      lineNumber:numberLinerSearch
-    })
-    
-    console.log(this.data.lineNumber)
-    my.showLoading({
-      content: "Cargando..."
+      lineNumber: numberLinerSearch
     });
-    console.log(getApp().globalData.lineNumber)
+    this.showLoading();
     requestApiretrieve(this.data.urlRetrieveRoaming, this)
       .then(res => {
         this.retrieveServiceValidation(res);
         this.packageInstalledService();
       })
       .catch(error => {
-        my.hideLoading({
-          page: this
-        });
+        this.hideLoading();
         my.alert({
           title: "Error",
           content:
             "En este momento no podemos atender esta solicitud, intenta nuevamente",
-          buttonText: "Cerrar"
+          buttonText: "Cerrar",
+          success: () => {
+            my.reLaunch({
+              url: "/pages/soluciones-moviles/soluciones-moviles"
+            });
+          }
         });
       });
-      
   },
   retrieveServiceValidation(res) {
     var expritationDateStr = res.data.response.estado.fechaExpiracion;
@@ -82,28 +78,60 @@ Page({
         isActive: isActiveService
       });
     }
-    console.log("test",this.data.switchServiceState)
   },
   packageInstalledService() {
-    const errorGlobalSession=getApp().globalData.sessionError;
+    const errorGlobalSession = getApp().globalData.sessionError;
     requestApiCheckInstalled(this.data.urlChekingInstalled, this)
       .then(res => {
-        this.packageInstalledValidation(res);
+        console.log("succes---->", res);
+        if (res.data.error == 1) {
+          console.log("fallo");
+        } else {
+          this.packageInstalledValidation(res);
+        }
       })
       .catch(error => {
-        my.hideLoading();
-        if (error.status === 401 && error.data && error.data.response === 'Error de acceso, tiempo de sesion agotado') {
+        console.log("error--->", error);
+        this.hideLoading();
+        if (
+          error.status === 401 &&
+          error.data &&
+          error.data.response === "Error de acceso, tiempo de sesion agotado"
+        ) {
           my.alert({
-            content: 'Su sesión ha expirado. Por favor, inicie sesión de nuevo.',
+            content:
+              "Su sesión ha expirado. Por favor, inicie sesión de nuevo.",
             buttonText: "Cerrar",
             success: () => {
               my.reLaunch({
-                url: '/pages/login-screen/login-screen'
-              }) 
-          },
-        })
+                url: "/pages/login-screen/login-screen"
+              });
+            }
+          });
+        }
+        else if (error.error == 13) {
+          my.alert({
+            content:"No es posible obtener información",
+            buttonText: "Cerrar",
+            success: () => {
+              my.reLaunch({
+                url: "/pages/soluciones-moviles/soluciones-moviles"
+              });
+            }
+          });
         } else {
-          my.alert({ content: error.data.response === undefined || error.data.response === null ? errorGlobalSession : error.data.response, buttonText: "Cerrar" });
+          my.alert({
+            content:
+              error.data.response === undefined || error.data.response === null
+                ? errorGlobalSession
+                : error.data.response,
+            buttonText: "Cerrar",
+            success: () => {
+              my.reLaunch({
+                url: "/pages/login-screen/login-screen"
+              });
+            }
+          });
         }
       });
   },
@@ -117,10 +145,11 @@ Page({
       loaded: true,
       codServ: "test"
     });
-    my.hideLoading();
+    console.log("request roaming success");
+    // my.hideLoading();
+    this.hideLoading();
   },
   packageDisableRoaming(disableData) {
-    
     requestApiDisableRoamingPackage(
       this.data.urlDisableRoamingPacket,
       disableData,
@@ -147,9 +176,9 @@ Page({
       this
     )
       .then(res => {
-        if(res.data.error == 0) {
+        if (res.data.error == 0) {
           this.setData({
-            switchServiceState: false,
+            switchServiceState: false
           });
           this.openModalConfirmDisableService();
         } else {
@@ -162,10 +191,9 @@ Page({
           });
           this.setData({
             switchServiceState: true
-          })
+          });
         }
         console.log(res);
-        
       })
       .catch(error => {
         this.hideLoading({
@@ -185,23 +213,21 @@ Page({
       switchServiceState: e.detail.value
     });
 
-    if(!(e.detail.value)) {
+    if (!e.detail.value) {
       this.setData({
         modalServiceVisible: true
-      })
+      });
     }
-    
   },
 
   openModalConfirmDisableService() {
     console.log("confirm disable");
-    
+
     this.setData({
-      modalConfirmDisableService: true,
+      modalConfirmDisableService: true
     });
 
     this.hideLoading();
-   
   },
 
   handleOpenModal(e) {
@@ -241,20 +267,20 @@ Page({
 
   // Disabling roaming service
   onAcceptButtonRoamingTap() {
-      console.log("Disable");
-      this.setData({
-        modalServiceVisible: false
-      });
+    console.log("Disable");
+    this.setData({
+      modalServiceVisible: false
+    });
 
-      const disableData = {
-        activar: "0",
-        ExpirationDate: ""
-      };
+    const disableData = {
+      activar: "0",
+      ExpirationDate: ""
+    };
 
-      this.showLoading({
-        content: "Cargando..."
-      });
-      this.disableRoamingService(disableData);
+    this.showLoading({
+      content: "Cargando..."
+    });
+    this.disableRoamingService(disableData);
   },
 
   onCancelButtonTap() {
@@ -263,8 +289,8 @@ Page({
       modalVisible: false
     });
   },
-  
-  handleOpenModalDescriptionPlan(e) {   
+
+  handleOpenModalDescriptionPlan(e) {
     if (e.currentTarget.dataset.item) {
       this.setData({
         modalVisibleDescription: true,

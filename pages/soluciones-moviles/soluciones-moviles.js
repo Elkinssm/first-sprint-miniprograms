@@ -2,6 +2,7 @@ import { requestApiGetMACCByMin} from "/services/GetMACCByMin";
 import{ requestApiValidateLineOrAccDoc} from"/services/ValidateLineOrAccDoc"
 Page({
   data: {
+    showLoading: false,
     isVisibleSearch :false,
     inputVal: getApp().globalData.lineNumber,
     error: "", 
@@ -67,23 +68,19 @@ Page({
     this.setData({ inputVal: inputVal });
   },
   handleImageTap: function() {
-    // obtener el valor actual del input
     const inputValue = this.data.inputVal;
 
     if (isNaN(inputValue)) {
       console.log("error")
       this.setData({ error: "ingrese un numero valido", inputVal: "" });
     }
-    if (inputValue.length != 10) {
+    else if (inputValue.length != 10) {
       console.log("error")
       this.setData({ error: "ingrese un numero valido aqui" , inputVal: ""});
 
     } else {
-      my.showLoading({
-        content: "Cargando..."
-      });
+      this.showLoading();
       this.ValidateLineOrAccDocService(inputValue);
-      
     }
   },
   ValidateLineOrAccDocService(inputValue) {
@@ -100,7 +97,7 @@ Page({
         }
       })
       .catch(error => {
-        my.hideLoading();
+        this.hideLoading();
         if (error.data.status === 401  && error.data.response === 'Error de acceso, tiempo de sesion agotado') {
           my.alert({
             content: 'Su sesión ha expirado. Por favor, inicie sesión de nuevo.',
@@ -117,20 +114,19 @@ Page({
     requestApiGetMACCByMin(this.data.urlGetMACCByMin, this)
       .then(res => {
         if(res.data.error==0){
-          console.log("lineoracc--->",res.data.error)
           this.setData({ inputVal: inputValue});
           this.setData({
             isVisibleSearch :false
           })
         }
         else{
-          console.log("lineoracc--->error")
+          
           this.setData({ error: "ingrese un numero valido serv", inputVal: "" });
         }
-        my.hideLoading();
+        this.hideLoading();
       })
       .catch(error => {
-        my.hideLoading();
+        this.hideLoading();
         if (error.data.status === 401  && error.data.response === 'Error de acceso, tiempo de sesion agotado') {
           my.alert({
             content: 'Su sesión ha expirado. Por favor, inicie sesión de nuevo.',
@@ -152,4 +148,14 @@ Page({
       isVisibleSearch :false
     })
   },
+  showLoading() {
+    this.setData({
+      showLoading: true
+    });
+  },
+  hideLoading() {
+    this.setData({
+      showLoading: false
+    });
+  }
 });
