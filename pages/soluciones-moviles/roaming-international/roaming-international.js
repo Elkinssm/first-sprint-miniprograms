@@ -9,7 +9,7 @@ Page({
     loaded: false,
     modalVisibleDescription: false,
     response: {},
-    lineNumber: getApp().globalData.lineNumber,
+    lineNumber: "",
     nit: "900999998",
     isActive: false,
     expirationDate: "Indefinido",
@@ -33,10 +33,15 @@ Page({
   },
 
   onLoad() {
+    const numberLinerSearch=getApp().globalData.lineNumber;
+    this.setData({
+      lineNumber:numberLinerSearch
+    })
+    console.log(this.data.lineNumber)
     my.showLoading({
       content: "Cargando..."
     });
-    
+    console.log(getApp().globalData.lineNumber)
     requestApiretrieve(this.data.urlRetrieveRoaming, this)
       .then(res => {
         this.retrieveServiceValidation(res);
@@ -53,6 +58,7 @@ Page({
           buttonText: "Cerrar"
         });
       });
+      
   },
   retrieveServiceValidation(res) {
     var expritationDateStr = res.data.response.estado.fechaExpiracion;
@@ -64,25 +70,32 @@ Page({
     }
     if (isActiveService === "1") {
       this.setData({
-        switchServiceState: isActiveService,
+        switchServiceState: true,
         isActive: isActiveService
       });
     }
   },
-
   packageInstalledService() {
+    const errorGlobalSession=getApp().globalData.sessionError;
     requestApiCheckInstalled(this.data.urlChekingInstalled, this)
       .then(res => {
         this.packageInstalledValidation(res);
       })
       .catch(error => {
-        my.hideLoading({
-          page: this
-        });
-        my.alert({
-          content: error,
-          buttonText: "Cerrar"
-        });
+        my.hideLoading();
+        if (error.status === 401 && error.data && error.data.response === 'Error de acceso, tiempo de sesion agotado') {
+          my.alert({
+            content: 'Su sesión ha expirado. Por favor, inicie sesión de nuevo.',
+            buttonText: "Cerrar",
+            success: () => {
+              my.reLaunch({
+                url: '/pages/login-screen/login-screen'
+              }) 
+          },
+        })
+        } else {
+          my.alert({ content: error.data.response === undefined || error.data.response === null ? errorGlobalSession : error.data.response, buttonText: "Cerrar" });
+        }
       });
   },
   packageInstalledValidation(res) {
@@ -90,7 +103,6 @@ Page({
       const { name, description, codServ } = item;
       return { name, description, codServ };
     });
-    console.log(packageInstallList);
     this.setData({
       packagedInstalled: packageInstallList,
       loaded: true,
@@ -98,7 +110,6 @@ Page({
     });
     my.hideLoading();
   },
-
   packageDisableRoaming(disableData) {
     // console.log(disableData);
     requestApiDisableRoamingPackage(
@@ -114,7 +125,7 @@ Page({
           page: this
         });
         my.alert({
-          content: error,
+          content: "error de sesion,tiempo de sesion agotado",
           buttonText: "Cerrar"
         });
       });
@@ -167,7 +178,7 @@ Page({
       modalVisible: false
     });
   },
-  handleOpenModalDescriptionPlan(e) {   
+  handleOpenModalDescriptionPlan(e) {
     if (e.currentTarget.dataset.item) {
       this.setData({
         modalVisibleDescription: true,
