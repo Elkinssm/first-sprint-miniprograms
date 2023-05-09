@@ -1,4 +1,8 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "hr": "/components/hr/hr",
+    "arrow-button": "/components/arrow-button/arrow-button",
+    "hyperlink-button": "/components/hyperlink-button/hyperlink-button"
+  },
   "styleIsolation": "apply-shared"
 }

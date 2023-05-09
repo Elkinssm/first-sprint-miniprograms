@@ -6,6 +6,7 @@ Page({
     datos: {
       data: null
     },
+    nit: '900999998',
     url: 'https://apiselfservice.co/M3/Empresas/Postpago/GetAnyMAccList/'
   },
   onLoad(query) {
@@ -38,7 +39,7 @@ Page({
   onNavigatePage(e){
     const numberAccount = e.target.dataset.item.numberAccount;
     my.navigateTo({
-      url: `/pages/total-master-accounts/manage-your-invoice/manage-your-invoice?numberAccount=${numberAccount}`
+      url: `/pages/total-master-accounts/manage-your-invoice/manage-your-invoice?nit=${this.data.nit}&numberAccount=${numberAccount}`
     });
   }
 });

@@ -6,7 +6,7 @@
         Pruebas Dirección De Servicio Prueba
       </text>
       <text class="header-nit h2 red-text-500 font-weight-bold">
-        Nit. 900999998
+        Nit. {{nit}}
       </text>
     </view>
   </view>

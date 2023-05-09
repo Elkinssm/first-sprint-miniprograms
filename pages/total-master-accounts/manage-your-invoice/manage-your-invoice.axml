@@ -1,3 +1,59 @@
-<view>
-  New Page
+<view class="container">
+
+  <view class="header">
+    <view class="h2 gray-text-500 font-weight-bold">{{response.title}}</view>
+    <view class="header-info h2 gray-text-500">
+      <view>Nit: {{nit}}</view>
+      <view>Ref: {{response.ref}}</view>
+    </view>
+  </view>
+
+  
+  <view class="body">
+
+    <hr/>
+
+    <view class="scroll-y">
+      
+      <view class="item-info">
+        <view class="h2 gray-text-500 font-weight-bold">Número Cuenta Maestra:</view>
+        <view class="h2 gray-text-500">{{response.masterAccount}}</view>
+      </view>
+
+      <view class="item-info">
+        <view class="h2 gray-text-500 font-weight-bold">Fecha de pago oportuno:</view>
+        <view class="red-text-300 font-weight-bold">{{response.payDate}}</view>
+      </view>
+
+      <view class="item-info">
+        <view class="h2 gray-text-500 font-weight-bold">Fecha de inicio:</view>
+        <view class="h1 gray-text-500 font-weight-bold">{{response.startDate}}</view>
+      </view>
+
+      <view class="item-info">
+        <view class="h2 gray-text-500 font-weight-bold">Fecha de corte:</view>
+        <view class="h1 gray-text-500 font-weight-bold">{{response.endDate}}</view>
+      </view>
+
+      <view class="item-pay">
+        <view class="h2 gray-text-500 font-weight-bold">Total a pagar:</view>
+        <view class="hxl red-text-300 font-weight-bold">{{response.totalToPay}}</view>
+        <hyperlink-button>Ver histórico de pagos</hyperlink-button>
+      </view>
+
+      <view class="container-buttons">
+        <block a:for="{{ buttons }}" a:for-item="button" a:key="*this">
+          <arrow-button
+            stateImg="{{button.stateImg}}"
+            imgSrc="{{button.imgSrc}}"
+            iconArrowSrc="{{button.iconArrowSrc}}"
+            style="{{button.style}}"
+          >
+            {{button.name}}
+          </arrow-button>
+        </block>
+      </view>
+
+    </view>
+  </view>
 </view>
