@@ -40,6 +40,7 @@ Page({
 
   onLoad() {
     const numberLinerSearch = getApp().globalData.lineNumber;
+    console.log(numberLinerSearch)
     this.setData({
       lineNumber: numberLinerSearch
     });
