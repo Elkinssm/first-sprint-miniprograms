@@ -1,18 +1,10 @@
 <view class="container" hidden="{{!loaded}}">
-  <view class="container-item border-botton-container">
-    <view style="font-weight: bold;">
-      <text number-of-lines="1">Pruebas de direccion de servicio adicional</text>
-    </view>
-    <view style="color:var(--claro-color)">
-      {{nit}}
-    </view>
-  </view>
   <view class="container-item container-text-bold border-botton-container">
     <view class="item2">
       <view class="test-numero-linea">
         <image id="icon-phone" mode="scaleToFill" src="/assets/icons/roaming/phone-roaming.svg" />
         <view style="font-weight: bold;">
-          Número de línea
+          Administra tu Roaming
         </view>
       </view>
       <view style="font-weight: bold;">
@@ -48,7 +40,7 @@
     </view>
   </view>
 
-  <view class="container-item  paquetes-module" hidden="{{!loaded}}">
+  <view class="container-item  paquetes-module">
 
     <view a:if="{{switchServiceState}}" class="item-fecha-expiracion">
       <view a:if="{{switchServiceState}}">
@@ -212,7 +204,8 @@
   />
 
   <modal-check
-    content="Datos borrados con exito"
+    title="Tu servicio de Roaming internacional se ha desactivvado exitosamente"
+    content="Reinicia el equipo asociado a esa linea para terminar el proceso"
     visible="{{modalConfirmDisableService}}"
     onClose="handleCloseRoaming"
     primaryButtonText="Aceptar"
@@ -221,3 +214,5 @@
 
   <loading-component a:if="{{showLoading}}" />
 </view>
+
+

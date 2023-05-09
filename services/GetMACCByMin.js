@@ -1,17 +1,18 @@
 let requestParameter = getApp();
 
-export function requestApiCheckInstalled(url, that) {
+export function requestApiGetMACCByMin(url, that) {
   return new Promise((resolve, reject) => {
     my.request({
       url: url,
       method: 'POST',
       dataType: 'json',
       data:{data:{
-       min: requestParameter.globalData.lineNumber,
+        AccountId: that.data.inputVal,
+        DocumentNumber: ""
       }},
       headers: {
         'X-SESSION-ID':requestParameter.globalData.sessionId,
-        'X-MC-LINE': requestParameter.globalData.lineNumberR,
+        'X-MC-LINE': that.data.inputVal,
         'X-MC-LOB': '3',
         'Content-Type': 'application/json; charset=UTF-8',
         'X-MC-MAIL': 'angie.copete@neoris.com',
