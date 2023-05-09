@@ -212,7 +212,8 @@
   />
 
   <modal-check
-    content="Datos borrados con exito"
+    title="Tu servicio de Roaming internacional se ha desactivvado exitosamente"
+    content="Reinicia el equipo asociado a esa linea para terminar el proceso"
     visible="{{modalConfirmDisableService}}"
     onClose="handleCloseRoaming"
     primaryButtonText="Aceptar"
