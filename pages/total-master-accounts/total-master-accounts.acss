@@ -18,7 +18,7 @@
   display: flex;
   flex-flow: column wrap;
   width: 100%;
-  height: 4vh;
+  max-height: 10%;
 }
 
 .container-info {
@@ -45,9 +45,8 @@
 /* Body */
 
 .container-body {
-  margin-top: 10rpx;
   width: 100%;
-  height: 80vh;
+  height: 90%;
 }
 
 .scroll-y {
@@ -58,6 +57,12 @@
   flex-flow: column nowrap;
   gap: 20rpx;
   overflow: auto;
+}
+
+/* Alineación */
+
+.text-center {
+  text-align: center;
 }
 
 /* Tipos de letra */

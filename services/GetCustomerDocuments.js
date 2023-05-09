@@ -32,3 +32,24 @@ export function getCustomerDocuments(url, that){
     });
   });
 }
+
+// export function getCustomerDocuments(url, that){
+//   return new Promise((resolve, reject) => {
+//     my.request({
+//       url: url,
+//       method: 'POST',
+//       data: that.data.datos,
+//       headers: {
+//         "X-MC-LINE": that.data.datos.data.numeroCuenta,
+//         "X-MC-LOB:": 3,
+//         'X-SESSION-ID': requestParameter.globalData.tokenGetCustomerDocuments,
+//       },
+//       success: (res) => {
+//         resolve(res);
+//       },
+//       fail: (res) => {
+//         reject(res);
+//       }
+//     });
+//   });
+// }

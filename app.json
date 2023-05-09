@@ -23,7 +23,8 @@
     "pages/guia-novedades/redirect-guia/redirect-guia",
     "pages/solucion/solution-redirection/solution-redirection",
     "pages/total-master-accounts/total-master-accounts",
-    "pages/total-master-accounts/manage-your-invoice/manage-your-invoice"
+    "pages/total-master-accounts/manage-your-invoice/manage-your-invoice",
+    "pages/web-view/web-view"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",

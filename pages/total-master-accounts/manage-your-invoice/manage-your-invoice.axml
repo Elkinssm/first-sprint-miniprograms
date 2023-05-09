@@ -38,7 +38,16 @@
       <view class="item-pay">
         <view class="h2 gray-text-500 font-weight-bold">Total a pagar:</view>
         <view class="hxl red-text-300 font-weight-bold">{{response.totalToPay}}</view>
-        <hyperlink-button>Ver histórico de pagos</hyperlink-button>
+        <hyperlink-button
+          url=""
+          stateImg={{true}}
+          srcImg="/assets/icons/navigateNext.svg"
+          sizeImg="30rpx"
+          style="color: var(--claro-color)"
+          colorImg="var(--claro-color)"
+          underLine={{true}}>
+          Ver histórico de pagos
+        </hyperlink-button>
       </view>
 
       <view class="container-buttons">
@@ -47,8 +56,7 @@
             stateImg="{{button.stateImg}}"
             imgSrc="{{button.imgSrc}}"
             iconArrowSrc="{{button.iconArrowSrc}}"
-            style="{{button.style}}"
-          >
+            style="{{button.style}}">
             {{button.name}}
           </arrow-button>
         </block>

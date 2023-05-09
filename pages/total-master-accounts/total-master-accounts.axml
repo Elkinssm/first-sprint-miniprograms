@@ -11,9 +11,10 @@
     </view>
   </view>
 
-  <hr/>
-
   <view class="container-body">
+
+    <hr/>
+
     <text class="h3 gray-text-300 font-weight-bold">Selecciona una cuenta</text>
     <view class="scroll-y">
       <block a:for="{{ response }}" a:for-item="data" a:key="*this">
@@ -22,12 +23,12 @@
           stateImg={{true}}
           imgSrc="/assets/icons/descriptionBlack.svg"
           iconArrowSrc="/assets/icons/navigateNextBlack.svg"
-          dataInfo={{data}}
-        >
+          dataInfo={{data}}>
           <view class="font-weight-bold">{{data.numberAccount}}</view>
           <view class="red-text-500">Fecha pago oportuno: {{data.payDate}}</view>
         </arrow-button>
       </block>
     </view>
+
   </view>
 </view>

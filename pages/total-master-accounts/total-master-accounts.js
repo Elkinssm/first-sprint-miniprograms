@@ -17,7 +17,6 @@ Page({
     my.showLoading({ content: 'Loading Data...' });
     getAnyMAccList(this.data.url, this)
       .then(res => {
-        console.log(res);
         let mapper = res.data.response.masterAccountElement.map(account => {
           return {
             numberAccount: account.masterAccountNumber,
