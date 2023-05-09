@@ -3,13 +3,19 @@
   gap: 10rpx;
   cursor: pointer;
   align-items: center;
-  color: #16b6c9;
   font-size: 25rpx;
 }
 
 .links image {
-  background-color: #16b6c9;
   border-radius: 100%;
   width: 25rpx;
   height: 25rpx;
 }
+
+.under-line {
+  text-decoration: underline;
+}
+
+
+
+
