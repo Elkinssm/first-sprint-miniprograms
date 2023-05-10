@@ -1,4 +1,4 @@
-export function totalLinksTelephone(context) {
+export function reconnectionFO(context) {
   const myHeaders = {
     "x-carrier": "T-Mobile",
     "x-mc-app-v": "14.7.0",
@@ -25,13 +25,13 @@ export function totalLinksTelephone(context) {
 
   const myBody = {
     data: {
-      AccountNumber: context.accountNumber,
+      serial: context.linkNumber,
     },
   };
 
   return new Promise((resolve, reject) => {
     my.request({
-      url: "https://apiselfservice.co/M3/Empresas/Hogar/totalLinksTelephone/",
+      url: "https://apiselfservice.co/M3/Empresas/SuspensionReconnection/FO/reconnectionFO/",
       method: "POST",
       headers: { ...myHeaders },
       data: { ...myBody },
