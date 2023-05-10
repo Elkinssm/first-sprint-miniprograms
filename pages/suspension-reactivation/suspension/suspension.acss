@@ -1,0 +1,48 @@
+page {
+  padding: 30rpx;
+}
+
+.enterprise__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  margin: 10rpx 0rpx;
+}
+
+.enterprise__number {
+  color: var(--claro-color);
+}
+
+.text {
+  margin: 60rpx 0rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: flex-start;
+  margin: 40rpx 0rpx 60rpx 0rpx;
+}
+
+.radio:last-child {
+  margin-left: 200rpx;
+}
+
+.button {
+  height: 100rpx;
+  background-color: #e52a1b;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in;
+}
+
+.button--disabled {
+  background-color: #c2c2c2 !important;
+  color: #ffffff !important;
+}

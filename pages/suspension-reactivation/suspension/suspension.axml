@@ -1,0 +1,66 @@
+<view>
+  <loading-component a:if="{{showLoading}}"></loading-component>
+  <modal-accept
+    content="{{infoModalDescription}}"
+    visible="{{showInfoModal}}"
+    primaryButtonText="Aceptar"
+    onClose="onAcceptInfoModal"
+    onPrimaryButtonTap="onAcceptInfoModal"
+  >
+  </modal-accept>
+  <modal-accept-cancel
+    content="¡Hola! Para poder dar continuidad a tu requerimiento te invitamos a dirigirte a nuestro chat, selecciona la opción soporte técnico, en donde uno de nuestros asesores especializados tendrá el gusto de ayudarte."
+    visible="{{showErrorModal}}"
+    onClose="onHideErrorModal"
+    primaryButtonText="Ir al chat"
+    secondaryButtonText="Cerrar"
+    onPrimaryButtonTap="onAcceptErrorModal"
+    onSecondaryButtonTap="onHideErrorModal"
+  />
+  <modal-accept-cancel
+    content="{{suspendModalDescription}}"
+    visible="{{showSuspendModal}}"
+    onClose="onHideSuspendModal"
+    primaryButtonText="Suspender"
+    secondaryButtonText="Cancelar"
+    onPrimaryButtonTap="onAcceptSuspendModal"
+    onSecondaryButtonTap="onHideSuspendModal"
+  />
+  <view class="enterprise__info">
+    <view>
+      {{enterpriseName}}
+    </view>
+    <view class="enterprise__number">
+      {{enterpriseNumber}}
+    </view>
+  </view>
+  <divider lineHeight="1" lineColor="#383838" />
+  <view class="enterprise__info">
+    <view>
+      Número de Cuenta
+    </view>
+    <view>
+      {{accountNumber}}
+    </view>
+  </view>
+  <view class="text">
+    Suspensión Temporal
+  </view>
+  <view>
+    Selecciona el tiempo que deseas suspender tu servicio. Recuerda que se debes tener en cuenta el ciclo de facturación.
+  </view>
+  <radio-group class="radio-group" onChange="onSuspensionDaysChange" name="times">
+    <label a:for="{{suspensionDaysOptions}}" class="radio" a:key="*item">
+      <radio color="#E52A1B" value="{{item.value}}" />
+      <text class="radio-text">{{item.label}}</text>
+    </label>
+  </radio-group>
+  <button
+    size="default"
+    class="button {{!suspensionDays ? 'button--disabled' : ''}}"
+    disabled={{!suspensionDays ? true : false}}
+    onTap="onButtonTap"
+  >
+    Suspender temporalmente
+  </button>
+</view>
