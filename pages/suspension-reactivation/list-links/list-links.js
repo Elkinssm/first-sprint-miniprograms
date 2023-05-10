@@ -4,6 +4,7 @@ import { searchLinkTelephone } from "../../../services/searchLinkTelephone";
 Page({
   data: {
     LINK_TYPES: { MODEM: "modem", TELEPHONE: "telephone" },
+    showLoading: false,
     enterpriseName: "No enterprise",
     enterpriseNumber: "No number",
     accountNumber: "127053",
@@ -14,6 +15,7 @@ Page({
     listLinks: [],
   },
   onLoad(options) {
+    this.showLoading();
     const dispositiveType = options.dispositiveType;
     this.setData({
       linkType: dispositiveType,
@@ -23,7 +25,11 @@ Page({
       listLinks: listLinks,
     });
   },
+  onReady() {
+    this.hideLoading();
+  },
   async handleLink(e) {
+    this.showLoading();
     const { number } = e.target.dataset;
     const { serviceDescription } = e.target.dataset;
     let response = null;
@@ -36,6 +42,8 @@ Page({
         response = await searchLinkTelephone(this.data);
         data = response.data.response;
       }
+      this.hideLoading();
+
       this.setLinkAndNavigate(
         {
           number: number,
@@ -44,7 +52,9 @@ Page({
         data
       );
     } catch (error) {
-      console.log(error);
+      this.hideLoading();
+    } finally {
+      this.hideLoading();
     }
   },
   setLinkAndNavigate(link, data) {
@@ -59,6 +69,16 @@ Page({
 
     my.navigateTo({
       url: `/pages/suspension-reactivation/suspension-reactivation-consult/suspension-reactivation-consult`,
+    });
+  },
+  showLoading() {
+    this.setData({
+      showLoading: true,
+    });
+  },
+  hideLoading() {
+    this.setData({
+      showLoading: false,
     });
   },
 });

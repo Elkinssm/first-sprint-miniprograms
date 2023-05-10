@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "divider": "antd-mini/es/Divider/index"
+    "divider": "antd-mini/es/Divider/index",
+    "loading-component": "/components/loading-component/loading-component"
   },
   "styleIsolation": "apply-shared"
 }

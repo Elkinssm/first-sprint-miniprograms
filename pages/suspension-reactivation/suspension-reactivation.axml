@@ -1,4 +1,5 @@
 <view>
+  <loading-component a:if="{{showLoading}}"></loading-component>
   <view class="enterprise__info">
     <view>
       {{enterpriseName}}
