@@ -1,6 +1,10 @@
 {
   "usingComponents": {
-    "divider": "antd-mini/es/Divider/index"
+    "divider": "antd-mini/es/Divider/index",
+    "loading-component": "/components/loading-component/loading-component",
+    "modal-accept": "/components/modal-accept/modal-accept",
+    "modal-accept-cancel": "/components/modal-accept-cancel/modal-accept-cancel",
+    "loading-component": "/components/loading-component/loading-component"
   },
   "styleIsolation": "apply-shared"
 }

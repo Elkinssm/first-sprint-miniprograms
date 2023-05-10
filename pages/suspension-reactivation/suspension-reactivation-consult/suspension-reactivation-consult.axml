@@ -1,4 +1,23 @@
 <view>
+  <loading-component a:if="{{showLoading}}"></loading-component>
+  <modal-accept
+    content="{{infoModalDescription}}"
+    visible="{{showInfoModal}}"
+    primaryButtonText="Aceptar"
+    onClose="onAcceptInfoModal"
+    onPrimaryButtonTap="onAcceptInfoModal"
+  >
+  </modal-accept>
+  <modal-accept-cancel
+    title="Sr. Usuario:"
+    content="No es posible atender tu solicitud en este momento. Te sugerimos contactar a un asesor. Dirígete a la opción Soporte Técnico"
+    visible="{{showErrorModal}}"
+    onClose="onHideErrorModal"
+    primaryButtonText="Iniciar Chat"
+    secondaryButtonText="Cerrar"
+    onPrimaryButtonTap="onAcceptErrorModal"
+    onSecondaryButtonTap="onHideErrorModal"
+  />
   <view class="page__header">
     <view class="enterprise__info">
       <view>
