@@ -29,7 +29,9 @@
     "pages/soluciones-moviles/roaming-international/sessionIdConfig/sessionIdConfig",
     "pages/suspension-reactivation/suspension-reactivation",
     "pages/suspension-reactivation/list-links/list-links",
-    "pages/suspension-reactivation/suspension-reactivation-consult/suspension-reactivation-consult"
+    "pages/suspension-reactivation/suspension-reactivation-consult/suspension-reactivation-consult",
+    "pages/suspension-reactivation/suspension/suspension",
+    "pages/suspension-reactivation/support/support"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",
