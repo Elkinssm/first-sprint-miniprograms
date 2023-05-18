@@ -1,18 +1,10 @@
 <view class="container" hidden="{{!loaded}}">
-  <view class="container-item border-botton-container">
-    <view style="font-weight: bold;">
-      <text number-of-lines="1">Pruebas de direccion de servicio adicional</text>
-    </view>
-    <view style="color:var(--claro-color)">
-      {{nit}}
-    </view>
-  </view>
   <view class="container-item container-text-bold border-botton-container">
     <view class="item2">
       <view class="test-numero-linea">
         <image id="icon-phone" mode="scaleToFill" src="/assets/icons/roaming/phone-roaming.svg" />
         <view style="font-weight: bold;">
-          Número de línea
+          Administra tu Roaming
         </view>
       </view>
       <view style="font-weight: bold;">
@@ -21,7 +13,7 @@
     </view>
     <view>
       <text class="text-demo-text">
-        Navega,chatea,habla y comparte lo mejor de tu viaje en el exterior con roaming internacion claro.
+        Realiza y recibe llamadas, mensajes de texto y comparte en tus redes sociales cuando estés en el exterior con el servicio de Roaming Internacional de Claro.
       </text>
     </view>
     <view>
@@ -48,7 +40,7 @@
     </view>
   </view>
 
-  <view class="container-item  paquetes-module" hidden="{{!loaded}}">
+  <view class="container-item  paquetes-module">
 
     <view a:if="{{switchServiceState}}" class="item-fecha-expiracion">
       <view a:if="{{switchServiceState}}">
@@ -199,4 +191,28 @@
     primaryButtonText="Aceptar"
     onPrimaryButtonTap="handleClose"
   />
+
+  <modal-accept-cancel
+    title="Esta Seguro que desesas desactivar el servicio de Roaming internacional en tu linea" 
+    content="{{lineNumber}}"
+    visible="{{modalServiceVisible}}"
+    onClose="handleClose"
+    primaryButtonText="Aceptar"
+    secondaryButtonText="Cerrar"
+    onPrimaryButtonTap="onAcceptButtonRoamingTap"
+    onSecondaryButtonTap="onCancelButtonRoamingTap"  
+  />
+
+  <modal-check
+    title="Tu servicio de Roaming internacional se ha desactivvado exitosamente"
+    content="Reinicia el equipo asociado a esa linea para terminar el proceso"
+    visible="{{modalConfirmDisableService}}"
+    onClose="handleCloseRoaming"
+    primaryButtonText="Aceptar"
+    onPrimaryButtonTap="handleCloseRoaming"
+  />
+
+  <loading-component a:if="{{showLoading}}" />
 </view>
+
+

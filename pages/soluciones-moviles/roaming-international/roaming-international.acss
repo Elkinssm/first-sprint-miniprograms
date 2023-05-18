@@ -28,7 +28,9 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
+.loading-container{
+  height: 150px;
+}
 .item-text-estado-servicio {
   padding-top: 10px;
   padding-bottom: 10px;
