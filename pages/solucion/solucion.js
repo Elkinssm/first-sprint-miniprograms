@@ -1,7 +1,7 @@
 Page({
   data: {
     video: {
-      src: 'https://youtu.be/-QAFwCiLu44',
+      src: 'https://files.catbox.moe/odue40.mp4',
       showAllControls: true,
       showPlayButton: true,
       showCenterButton: true,
@@ -22,8 +22,6 @@ Page({
     backgroundColor: false
   },
   onLoad(query) {
-    // src: '/assets/videos/Soluciones_moviles_Claro.mp4',
-    this.videoContext = my.createVideoContext('myVideo');
     this.setInformation(query.data, query.id);
     this.onButtonStatusChange();
   },
@@ -106,6 +104,9 @@ Page({
     this.setData({
       backgroundColor: false
     });
+  },
+  onError(e){
+    console.log(e);
   },
   onRedirect(e){
     my.navigateTo({

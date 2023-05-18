@@ -30,6 +30,7 @@
             onPlay="onPlay"
             onPause="onPause"
             onEnded="onEnded"
+            onError="onError"
           />
 
           <view class="item-section {{backgroundColor == false ? 'box-shadow': ''}}">
