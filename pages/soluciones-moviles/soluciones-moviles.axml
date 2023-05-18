@@ -14,7 +14,7 @@
         Administrar Cuentra Maestra
       </hyperlink-button>
     </view>
-    <view class="settings">
+    <view onTap="configurarSessionId" class="settings">
       <image mode="aspectFit" src="/assets/icons/settings_white.svg" />
     </view>
   </view>
@@ -35,11 +35,27 @@
 
   </view>
 
+ 
+
   <view class="overlay">
-    <view class="btn-overlay">
-      <text class="text">3102659717</text>
-      <image mode="widthFix" src="/assets/icons/highlight_off.svg" />
+    <view onTap="visibleSearchbynumber" class="btn-overlay">
+      <text class="text">{{lineNumber}}</text>
+      <image mode="widthFix" src="/assets/icons/highlight_off.svg"  onTap="visibleSearchbynumber"/>
     </view>
   </view>
 
+  
 </view>
+<view a:if="{{ isVisibleSearch }}"  class="container2">
+  <view class="overlay">
+    <view class="btn-overlay">
+      <input class="text" placeholder="{{error}}"  value="{{inputVal}}" maxlength="10" onInput="handleInput"/>
+      <image mode="widthFix" src="/assets/icons/navigate_next_black.svg" onTap="handleImageTap"/>
+    </view>
+  </view>
+  <view class="backgroungClick" onTap="closeSearchWindows" >
+   
+  </view>
+</view>
+<loading-component a:if="{{showLoading}}" />
+
