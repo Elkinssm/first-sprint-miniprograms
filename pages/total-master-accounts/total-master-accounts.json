@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "hr": "/components/hr/hr",
+    "arrow-button": "/components/arrow-button/arrow-button"
+  }
+}
