@@ -9,7 +9,7 @@
         colorImg="white"
         sizeImg="25rpx"
         styles="color:white;"
-        under_line="{{true}}"
+        underLine="{{true}}"
       >
         Administrar Cuentra Maestra
       </hyperlink-button>
@@ -23,13 +23,11 @@
 
     <view class="scroll-y">
 
-      <view class="container-items-y">
-        
-        <block a:for="{{ roamingService }}" a:for-item="data" a:key="*this">
+      <view class="drag-sort-enable container-items-y">
 
-          <arrow-button onTap="onNavigate" imgSrc="{{ data.img }}" url="{{ url }}" dataInfo="{{ data }}">{{data.name}}</arrow-button>
-
-        </block>
+          <block a:for="{{ roamingService }}" a:for-item="data" a:key="*this">
+              <arrow-button onTap="onNavigate" imgSrc="{{ data.img }}" url="{{ url }}" dataInfo="{{ data }}">{{data.name}}</arrow-button>
+          </block>
 
       </view>
 
