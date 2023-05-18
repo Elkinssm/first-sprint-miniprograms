@@ -5,9 +5,9 @@ Component({
     styles: '',
     sizeImg: '',
     colorImg: '',
-    stateImg: '',
+    stateImg: 'false',
     srcImg: '',
-    under_line: false,
+    underLine: false,
     id: ''
   },
   didMount() {
@@ -16,7 +16,7 @@ Component({
   methods: {
     onWebView(e){
       my.navigateTo({
-        url: `/pages/solucion/solution-redirection/solution-redirection?url=${this.props.url}?id=${this.props.id}`
+        url: `/pages/web-view/web-view?url=${this.props.url}?id=${this.props.id}`
       });
     }
   }

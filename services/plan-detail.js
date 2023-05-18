@@ -1,4 +1,4 @@
-let requestParameter  = getApp();
+let requestParameter = getApp();
 
 export function requestApi(url, that){
   return new Promise((resolve, reject) => {
