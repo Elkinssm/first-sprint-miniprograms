@@ -1,28 +1,41 @@
+import{requestbannerList} from"/services/bannerList"
 Page({
   data: {
-    bannerList: []
+    bannerList: [],
+    url:"https://apiselfservice.co/api/index.php/v1/core/movil/bannersList.json?newDesing=1&tab=8",
+
   },
-  onLoad(query) {
-    
+  onLoad() {
     my.showLoading();
-    var url= "https://apiselfservice.co/api/index.php/v1/core/movil/bannersList.json?newDesing=1&tab=8";
-    my.httpRequest({
-        url: url,
-        method:'GET',
-        dataType: 'text',
-        success: res=>{
-          var expresionRegular = /{[\s\S]*}/; 
-          var response=JSON.parse(res.data.match(expresionRegular)[0]);
-          const filteredResponse = response.response.map(({ name, url, image }) => ({ name, url, image }));
-          this.setData({
-          bannerList:filteredResponse
-          })
-          my.hideLoading();
-      },
-      fail: function(res) {
-        console.log("Error Request Banners")
+    requestbannerList(this.data.url, this)
+    .then(res => {
+      console.log("respuesta---->",res)
+      if (
+        res &&
+        res.data &&
+        res.data.response &&
+        res.data.response !== null &&
+        res.data.response !== undefined &&
+        res.data.error == 0
+      ) {
+        const filteredResponse = res.data.response.map(({ name, url, image }) => ({ name, url, image }));
+        this.setData({
+        bannerList:filteredResponse
+        })
         my.hideLoading();
+      } else {
+        my.alert({
+          content: "Ha ocurrido un error. Intenta de nuevo.",
+          buttonText: "Cerrar"
+        });
       }
+      my.hideLoading();
+    })
+    .catch(error => {
+      my.alert({
+        content: "Ha ocurrido un error. Intenta de nuevo.",
+        buttonText: "Cerrar"
+      });
     });
   },
 
