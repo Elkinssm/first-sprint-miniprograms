@@ -9,27 +9,51 @@
     <claro-ol-list list="{{[{text: 'A través de nuestro portal Mi Claro Empresas En la Ruta Transacciones en línea - Cambio de plan'}]}}">
     </claro-ol-list>
     <view class="redirect-container">
-      <view
+      <!--<view
         data-link="miClaroPortal"
         class="h4 external-link redirect-text"
         onTap="goToExternalPage"
       >
+        Ingresa aqui</view> -->
+
+      <hyperlink-button
+        data="miClaroPortal"
+        srcImg='/assets/icons/navigateNext.svg'
+        colorImg="#07afbb"
+        stateImg={{true}}
+        style="color: #07afbb; font-size:18px;font-weight:bold;margin: 54rpx 20rpx 0rpx 20rpx;"
+        underLine={{true}}
+        onTap="goToExternalPage"
+      >
         Ingresa aqui
-      </view>
+      </hyperlink-button>
     </view>
+
     <view class="claro-gray-300-text claro-small-padding-text">
       Recuerda debes estar registrado. Si no lo estás, te invitamos para que te registres a través de este mismo link.
     </view>
     <claro-ol-list isCustomNumber customNumber=2 list="{{[{text: 'A través del portal E-Care únicamente para Fibra óptica podrás hacer ampliaciones de ancho de banda por demanda, esto aplica solo para servicios de internet dedicado y Mpls.'}]}}">
     </claro-ol-list>
     <view class="redirect-container">
-      <view
+      <!-- <view
         data-link="eCarePortal"
         class="h4 external-link redirect-text"
         onTap="goToExternalPage"
       >
         Ingresa aqui
-      </view>
+      </view> -->
+
+      <hyperlink-button
+        data="eCarePortal"
+        srcImg='/assets/icons/navigateNext.svg'
+        colorImg="#07afbb"
+        stateImg={{true}}
+        style="color: #07afbb; font-size:18px;font-weight:bold;margin: 54rpx 20rpx 0rpx 20rpx;"
+        underLine={{true}}
+        onTap="goToExternalPage"
+      >
+        Ingresa aqui
+      </hyperlink-button>
     </view>
     <view class="claro-gray-300-text claro-small-padding-text">
       Recuerda debes estar registrado. Si no lo estás, te invitamos para que te registres a través de este mismo link.

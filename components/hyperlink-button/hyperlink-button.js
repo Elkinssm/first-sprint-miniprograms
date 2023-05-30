@@ -1,19 +1,22 @@
 Component({
-  data: {
-    state: false
-  },
-  props: {
-    url: '',
-    linkIndex: ''
+  data: {},
+  props:{
+    data:'',
+    style: '',
+    sizeImg: '',
+    colorImg: '',
+    stateImg: 'false',
+    srcImg: '',
+    underLine: false,
+    id: '',
+    onTap: () => {}
   },
   didMount() {
     this.$page.hiperlinkButton = this;
   },
   methods: {
-    onWebView(e){
-      this.setData({
-        state: true
-      }); 
+    onRedirect(e){
+      this.props.onTap(e);
     }
   }
 });

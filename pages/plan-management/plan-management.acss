@@ -38,7 +38,7 @@
   width: 20rpx;
   height: 20rpx;
   display: block;
-  content: ">";
+   content: ">"; 
   position: absolute;
   padding: 6rpx;
   margin: 54rpx 20rpx 0rpx 20rpx;
