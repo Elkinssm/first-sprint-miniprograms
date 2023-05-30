@@ -45,6 +45,11 @@ Page({
         iconUrl: "/assets/icons/devices.svg",
         text: "Devolución de equipos",
         pageUrl: "/pages/returnOfEquipment/returnOfEquipment"
+      },
+      {
+        iconUrl: "/assets/icons/devices.svg",
+        text: "Soluciones Moviles",
+        pageUrl: "/pages/soluciones-moviles/soluciones-moviles"
       }
     ]
   },
@@ -52,6 +57,11 @@ Page({
   onIconClick(e) {
     const index = e.target.dataset.index;
     const pageUrl = this.data.access[index].pageUrl;
+    my.navigateTo({ url: pageUrl });
+  },
+
+   onProductsClick(e) {
+    const pageUrl = "/pages/test/test";
     my.navigateTo({ url: pageUrl });
   }
 });

@@ -1,7 +1,7 @@
 Page({
   data: {
     video: {
-      src: '/assets/videos/Soluciones_moviles_Claro.mp4',
+      src: 'https://files.catbox.moe/odue40.mp4',
       showAllControls: true,
       showPlayButton: true,
       showCenterButton: true,
@@ -104,6 +104,9 @@ Page({
     this.setData({
       backgroundColor: false
     });
+  },
+  onError(e){
+    console.log(e);
   },
   onRedirect(e){
     my.navigateTo({
