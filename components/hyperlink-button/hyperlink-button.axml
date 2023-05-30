@@ -1,7 +1,8 @@
 <view 
-  onTap="onWebView" 
+  onTap="onRedirect" 
+  data-link="{{data}}"
   class="links {{underLine == true ? 'under-line': ''}}" 
-  style="{{styles}}">
+  style="{{style}}">
   <view>
     <slot>Hiperlink Button</slot></view>
   <image
