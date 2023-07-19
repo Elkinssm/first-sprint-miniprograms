@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "generic-button": "/components/generic-button/generic-button"
-  },
-  "styleIsolation": "apply-shared"
-}

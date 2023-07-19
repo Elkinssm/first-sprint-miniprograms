@@ -1,9 +1,0 @@
-{
-  "usingComponents": {
-    "custom-header": "/components/custom-header/custom-header",
-    "claro-ol-list": "/components/claro-ol-list/claro-ol-list",
-    "custom-button": "/components/custom-button/custom-button"
-  },
-  "styleIsolation": "apply-shared",
-  "defaultTitle": "Traslados"
-}

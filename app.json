@@ -1,32 +1,7 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
-    "pages/home/home",
-    "pages/index/index",
-    "pages/zona-publica/zona-publica",
-    "pages/test/test",
-    "pages/login-screen/login-screen",
-    "pages/onlinePayments/onlinePayments",
-    "pages/chatService/chatService",
-    "pages/returnOfEquipment/returnOfEquipment",
-    "pages/guia-novedades/guia-novedades",
-    "pages/procedure-information/procedure-information",
-    "pages/contract-assignment/contract-assignment",
-    "pages/plan-management/plan-management",
-    "pages/transfer/transfer",
-    "pages/sim-management/sim-management",
-    "pages/plan-detail/plan-detail",
-    "pages/payment/payment",
-    "pages/soluciones/soluciones",
-    "pages/solucion/solucion",
-    "pages/adquirir-producto/adquirir-producto",
-    "pages/guia-novedades/redirect-guia/redirect-guia",
-    "pages/solucion/solution-redirection/solution-redirection",
-    "pages/soluciones-moviles/soluciones-moviles",
-    "pages/soluciones-moviles/roaming-international/roaming-international",
-    "pages/soluciones-moviles/roaming-international/redirectToOfers/redirectToOfers",
-    "pages/soluciones-moviles/roaming-international/redirectToRoamingWeb/redirectToRoamingWeb",
-    "pages/soluciones-moviles/roaming-international/sessionIdConfig/sessionIdConfig"
+    "main/ui/returnOfEquipment/returnOfEquipment"
   ],
   "window": {
     "defaultTitle": "SuperApp Claro",
