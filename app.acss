@@ -1,8 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/main/ui/assets/fonts/Roboto/Roboto-Light.ttf');
+}
+
+@font-face {
+  font-family: 'AMX';
+  src: url('/main/ui/assets/fonts/AMX/WOFF2/AMX-Medium.woff2');
+}
+
 page {
-  background: #f7f7f7;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #FDFDFF;
+  font-family: 'AMX', 'Roboto';
 }
 
 :root {
   --claro-color: #E52A1B;
+  --claro-red: #E03224;
+  --claro-gray: #404040;
+  --claro-gray-clarity: #B3B3B3;
+  --claro-blue: #187385;
+  --claro-green: #33d09b;
+}
+
+/* Colors */
+
+.pure-red {
+  color: #FF0000;
+}
+
+.orange-red {
+  color: #FF4500;
+}
+
+.coral-red {
+  color: #FF6347;
+}
+
+.salmon-red {
+  color: #FF7F50;
+}
+
+.crimson-red {
+  color: #DC143C;
+}
+
+.fire-red {
+  color: #B22222;
+}
+
+.dark-red {
+  color: #8B0000;
+}
+
+.light-red {
+  color: #FFA07A;
+}
+
+.violet-red {
+  color: #FF1493;
+}
+
+.pink-red {
+  color: #FFC0CB;
+}
+
+.claro-red {
+  color: var(--claro-red);
+}
+
+.gray-10 {
+  color: #0a0a0a;
+}
+
+.gray-20 {
+  color: #1a1a1a;
+}
+
+.gray-30 {
+  color: #2a2a2a;
+}
+
+.gray-40 {
+  color: #3a3a3a;
+}
+
+.gray-50 {
+  color: #5E5E5E;
+}
+
+.claro-gray {
+  color: var(--claro-gray);
+}
+
+.claro-gray-clarity {
+  color: var(--claro-gray-clarity);
+}
+
+.sky-blue {
+  color: #87CEEB;
+}
+
+.light-blue {
+  color: #ADD8E6;
+}
+
+.powder-blue {
+  color: #B0E0E6;
+}
+
+.steel-blue {
+  color: #4682B4;
+}
+
+.navy-blue {
+  color: #000080;
+}
+
+.dark-blue {
+  color: #00008B;
+}
+
+.cornflower-blue {
+  color: #6495ED;
+}
+
+.midnight-blue {
+  color: #191970;
+}
+
+.cerulean-blue {
+  color: #2A52BE;
+}
+
+.deep-blue {
+  color: #0000CD;
+}
+
+.claro-blue {
+  color: var(--claro-blue);
+}
+
+.claro-green {
+  color: var(--claro-green);
+}
+
+/* Fonts */
+
+.font-w-200 {
+  font-weight: 200;
+}
+
+.font-w-300 {
+  font-weight: 300;
+}
+
+.font-w-400 {
+  font-weight: 400;
+}
+
+.font-w-500 {
+  font-weight: 500;
+}
+
+.font-w-600 {
+  font-weight: 600;
+}
+
+.font-w-700 {
+  font-weight: 700;
+}
+
+.font-w-800 {
+  font-weight: 800;
+}
+
+.font-w-900 {
+  font-weight: 900;
+}
+
+.h0-style {
+  font-size: 70rpx;
+}
+
+.h1-style {
+  font-size: 50rpx;
+}
+
+.h2-style {
+  font-size: 40rpx;
+}
+
+.h3-style {
+  font-size: 32rpx;
+}
+
+.h4-style {
+  font-size: 28rpx;
+}
+
+.h5-style {
+  font-size: 24rpx;
+}
+
+.h6-style {
+  font-size: 20rpx;
+}
+
+/*Btns*/
+
+.btnRed {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 100rpx;
+  border-color: var(--claro-color);
+  background-color: var(--claro-color);
+  color: white;
+}
+
+.btnWhite {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 100rpx;
+  color: var(--claro-color);
+  background-color: white;
+  border-color: var(--claro-color);
+}
+
+.btnGray {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 100rpx;
+  border-color: var(--claro-gray-clarity);
+  background-color: var(--claro-gray-clarity);
+  color: white;
 }

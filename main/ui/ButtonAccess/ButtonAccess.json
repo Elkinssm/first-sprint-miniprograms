@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "header-image": "/main/ui/components/headerImage/headerImage"
+  },
+  "styleIsolation": "apply-shared"
+}

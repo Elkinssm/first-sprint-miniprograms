@@ -1,12 +1,15 @@
 {
   "subPackageBuildType": "shared",
   "pages": [
+    "main/ui/ButtonAccess/ButtonAccess",
     "main/ui/returnOfEquipment/returnOfEquipment"
   ],
   "window": {
-    "defaultTitle": "SuperApp Claro",
+    "defaultTitle": "",
     "titleBarColor": "#121D24",
     "gestureBack": "YES",
+    "transparentTitle": "always",
+    "responsive": true,
     "showTitleLoading": "YES"
   }
 }
