@@ -1,0 +1,19 @@
+{
+  "plugins": ["plugins/markdown"],
+  "source": {
+      "include" : ["main"],
+      "includePattern": ".js$",
+      "excludePattern": "(node_modules/)"
+  },
+  "tags": {
+      "allowUnknownTags": true
+  },
+  "templates": {
+      "cleverLinks": false,
+      "monospaceLinks": false
+  },
+  "opts" : {
+    "recurse": true,
+    "destination": "./documentation/"
+  }
+}

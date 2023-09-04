@@ -1,5 +1,11 @@
 {
   "dependencies": {
     "antd-mini": "^1.6.3"
+  },
+  "devDependencies": {
+    "jsdoc": "^4.0.2"
+  },
+  "scripts": {
+    "doc": "jsdoc -c jsdoc.json"
   }
 }
